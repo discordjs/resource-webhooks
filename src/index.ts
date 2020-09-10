@@ -1,11 +1,13 @@
 import { readFileSync, readdirSync } from 'fs';
 import { join } from 'path';
 import fetch from 'node-fetch';
+import { promisify } from 'util';
 
 const linkEscapeRegex = /\[(.+?)\]\((.+?)\)/gm;
 const linkEscapeReplacer = (_: any, p1: string, p2: string): string => {
 	return `[${p1}](<${p2}>)`;
 };
+const wait = promisify(setTimeout);
 
 const replacePatterns = {
 	'%RULES_CHANNEL%': '<#753589134970323075>',
@@ -71,6 +73,7 @@ async function main(): Promise<void> {
 				console.error(await res.json());
 				throw new Error(`[API] ${res.status}: ${res.statusText}`);
 			}
+			await wait(1000);
 		}
 	}
 }
