@@ -9,8 +9,10 @@
 	"license": "Apache-2.0",
 	"private": true,
 	"scripts": {
-		"lint": "eslint packages --ext .ts",
-		"lint:fix": "eslint packages --ext .ts --fix",
+		"build": "rimraf dist && tsc",
+		"deploy": "node --unhandled-rejections=strict dist/index.js",
+		"lint": "eslint src --ext .ts",
+		"lint:fix": "eslint src --ext .ts --fix",
 		"prettier": "prettier --write **/*.{ts,js,json,yml,yaml}"
 	},
 	"repository": {
@@ -27,10 +29,15 @@
 		"webhook",
 		"discordapp"
 	],
+	"dependencies": {
+		"node-fetch": "^2.6.1"
+	},
 	"devDependencies": {
 		"@commitlint/cli": "^9.1.2",
 		"@commitlint/config-angular": "^9.1.2",
 		"@types/jest": "^26.0.10",
+		"@types/node": "^14.6.4",
+		"@types/node-fetch": "^2.5.7",
 		"@typescript-eslint/eslint-plugin": "^3.10.1",
 		"@typescript-eslint/parser": "^3.10.1",
 		"eslint": "^7.7.0",
@@ -40,6 +47,7 @@
 		"husky": "^4.2.5",
 		"lint-staged": "^10.2.13",
 		"prettier": "^2.1.1",
+		"rimraf": "^3.0.2",
 		"typescript": "^4.0.2"
 	},
 	"engines": {
