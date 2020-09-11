@@ -73,6 +73,7 @@ async function main(): Promise<void> {
 			})) as unknown) as RESTPostAPIChannelMessageResult;
 			if (!firstMessage) firstMessage = response;
 		}
+		hook.destroy();
 	}
 }
 
