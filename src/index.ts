@@ -10,9 +10,9 @@ const linkEscapeReplacer = (_: any, p1: string, p2: string): string => {
 const wait = promisify(setTimeout);
 
 const replacePatterns = {
-	'%RULES_CHANNEL%': '<#753589134970323075>',
-	'%RESOURCES_CHANNEL%': '<#753589089290420225>',
-	'%USEFUL_SERVERS_CHANNEL%': '<#753589122714828881>',
+	'%RULES_CHANNEL%': '<#222109930545610754>',
+	'%RESOURCES_CHANNEL%': '<#729580210634358804>',
+	'%USEFUL_SERVERS_CHANNEL%': '<#237743386864517122>',
 } as const;
 
 function resolveIdentifier(channelName: string): string {
