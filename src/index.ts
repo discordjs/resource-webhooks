@@ -1,7 +1,7 @@
 import { readFileSync, readdirSync } from 'fs';
 import { join } from 'path';
 import { WebhookClient } from 'discord.js';
-import { RESTPostAPIChannelMessageResult } from 'discord-api-types';
+import { RESTPostAPIChannelMessageResult } from 'discord-api-types/v6';
 
 const jumpRegex = /%JUMP_TO_TOP%/gm;
 
