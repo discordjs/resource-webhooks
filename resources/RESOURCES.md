@@ -91,4 +91,4 @@ _ _
 • [Google Cloud](https://cloud.google.com/free) free tier
 _ _
 
-⬆ [jump to the top](https://canary.discordapp.com/channels/222078108977594368/729580210634358804/0)
+⬆ [jump to the top](%JUMP_TO_TOP%)
