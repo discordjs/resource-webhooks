@@ -1,13 +1,14 @@
 import { readFileSync, readdirSync } from 'fs';
 import { join } from 'path';
-import fetch from 'node-fetch';
-import { promisify } from 'util';
+import { WebhookClient } from 'discord.js';
+import { RESTPostAPIChannelMessageResult } from 'discord-api-types/v6';
+
+const jumpRegex = /%JUMP_TO_TOP%/gm;
 
 const linkEscapeRegex = /\[(.+?)\]\((.+?)\)/gm;
 const linkEscapeReplacer = (_: any, p1: string, p2: string): string => {
 	return `[${p1}](<${p2}>)`;
 };
-const wait = promisify(setTimeout);
 
 const replacePatterns = {
 	'%RULES_CHANNEL%': '<#222109930545610754>',
@@ -45,7 +46,8 @@ async function main(): Promise<void> {
 	for (const channel of channels) {
 		console.log(`[STARTING] Deploying ${channel}`);
 
-		const hook = process.env[channel]!;
+		const [hookID, hookToken] = process.env[channel]!.split('/').slice(-2);
+		const hook = new WebhookClient(hookID, hookToken);
 		const fileName = `${channel}.md`;
 
 		const raw = readFileSync(join(__dirname, '..', 'resources', fileName)).toString();
@@ -56,25 +58,22 @@ async function main(): Promise<void> {
 		}, r1);
 		const parts = r2.split('\n\n');
 
-		for (const part of parts) {
-			const body = {
-				avatar_url: process.env.WEBHOOK_AVATAR,
-				username: process.env.WEBHOOK_NAME,
-				content: part,
-			};
-
-			const res = await fetch(hook, {
-				method: 'post',
-				body: JSON.stringify(body),
-				headers: { 'Content-Type': 'application/json' },
-			});
-
-			if (res.status !== 204) {
-				console.error(await res.json());
-				throw new Error(`[API] ${res.status}: ${res.statusText}`);
+		let firstMessage: RESTPostAPIChannelMessageResult | null = null;
+		for (let part of parts) {
+			if (firstMessage) {
+				part = part.replace(
+					jumpRegex,
+					`https://discord.com/channels/222078108977594368/${firstMessage.channel_id}/${firstMessage.id}`,
+				);
 			}
-			await wait(1000);
+			// A raw API response is returned here, not a Message object as the typings indicate
+			const response = ((await hook.send(part, {
+				avatarURL: process.env.WEBHOOK_AVATAR,
+				username: process.env.WEBHOOK_NAME,
+			})) as unknown) as RESTPostAPIChannelMessageResult;
+			if (!firstMessage) firstMessage = response;
 		}
+		hook.destroy();
 	}
 }
 

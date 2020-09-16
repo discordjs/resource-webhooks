@@ -28,7 +28,7 @@ _ _
 **Regular expressions:**
 Trying to get some content out of a string but it's too complicated for slicing and dicing? Regular Expressions might be what you need:
 • [Regex Guide](https://blog.bitsrc.io/a-beginners-guide-to-regular-expressions-regex-in-javascript-9c58feb27eb4)
-• Online Tester/Debugger:  [regex101](https://regex101.com/) | [regexr](http://regexr.com/) | [debuggex](https://www.debuggex.com/)
+• Online Tester/Debugger: [regex101](https://regex101.com/) | [regexr](http://regexr.com/) | [debuggex](https://www.debuggex.com/)
 • Interactive Guide: [regexone](https://regexone.com/)
 _ _
 
@@ -91,4 +91,4 @@ _ _
 • [Google Cloud](https://cloud.google.com/free) free tier
 _ _
 
-⬆ [jump to the top](https://canary.discordapp.com/channels/222078108977594368/729580210634358804/0)
+⬆ [jump to the top](%JUMP_TO_TOP%)
