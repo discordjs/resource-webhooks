@@ -45,7 +45,7 @@ _ _
 **Popular modules:**
 • [Canvas](https://www.npmjs.com/package/canvas) (image processing)
 • [Jimp](https://www.npmjs.com/package/jimp) (image processing)
-• [Moment](https://www.npmjs.com/package/moment) (date parsing)
+• [Luxon (from the creators of Moment)](https://www.npmjs.com/package/luxon) (date parsing)
 • [DateFNS](https://www.npmjs.com/package/date-fns) (date parsing)
 • [ms](https://www.npmjs.com/package/ms) (duration parsing)
 • [Sqlite](https://www.npmjs.com/package/sqlite) (single file database)
