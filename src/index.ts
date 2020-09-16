@@ -2,6 +2,7 @@ import { readFileSync, readdirSync } from 'fs';
 import { join } from 'path';
 import { WebhookClient } from 'discord.js';
 import { RESTPostAPIChannelMessageResult } from 'discord-api-types/v6';
+import { promisify } from 'util';
 
 const jumpRegex = /%JUMP_TO_TOP%/gm;
 
@@ -19,6 +20,8 @@ const replacePatterns = {
 function resolveIdentifier(channelName: string): string {
 	return channelName.toUpperCase().replace(/-/gm, '_');
 }
+
+const wait = promisify(setTimeout);
 
 async function main(): Promise<void> {
 	const deployChannelString = process.env.DEPLOY_CHANNELS;
@@ -72,6 +75,8 @@ async function main(): Promise<void> {
 				username: process.env.WEBHOOK_NAME,
 			})) as unknown) as RESTPostAPIChannelMessageResult;
 			if (!firstMessage) firstMessage = response;
+
+			await wait(1000);
 		}
 		hook.destroy();
 	}
