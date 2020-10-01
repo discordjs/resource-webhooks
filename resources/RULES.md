@@ -5,7 +5,7 @@ _ _
 **1.** No spamming, advertising, or NSFW content. Don't be a jerk or generally obnoxious - nobody likes trolls.
 
 _ _
-**2.** We expect you to have a solid understanding of JavaScript. Do not ask general questions here. There is a countless number of exceptional online resources at your disposal, all you have to do is look for them. Some have been provided for you already in %RESOURCES_CHANNEL%. We can usually point you in the right direction, but don't expect us to teach you the fundamentals from scratch.
+**2.** We expect you to have a solid understanding of JavaScript. Do not ask general questions here. There is a countless number of exceptional online resources at your disposal, some of which we have provided for you in %RESOURCES_CHANNEL%. We can usually point you in the right direction, but don't expect us to teach you the fundamentals from scratch.
 
 _ _
 **3.** This server is for discord.js. We are not able to assist you with unrelated libraries.
