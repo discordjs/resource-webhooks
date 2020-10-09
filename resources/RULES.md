@@ -23,4 +23,4 @@ _ _
 **7.** If your username can't be easily mentioned, please set your nickname to something mentionable. For example, "ᐃᑦᑎᓂᖅᓯᐅᑐᖅ ᑕᖅᓴᖅ" isn't particularly useful.
 
 _ _
-**8.** No political / controversial content on this server. If you wish to discuss those head over to: https://discord.gg/q4KdJFP
+**8.** No controversial content is allowed, including politics and religion.
