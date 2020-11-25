@@ -5,7 +5,7 @@ Each file in `./resources` expects a github webhook in the repositories secrets 
 Deploying the webhook messages is done manually via [workflow dispatch](https://github.blog/changelog/2020-07-06-github-actions-manual-triggers-with-workflow_dispatch/).
 
 The provided tags are the resource names in discord channel format and separated by the `,` character.   
-Example: `rules, useful-servers` 
+Example: `resources, useful-servers` 
 
 The repository requires the `WEBHOOK_AVATAR` and `WEBHOOK_NAME` repository secrets which control the webhooks avatar and name respectively for all deployed webhook resources.
 
@@ -21,6 +21,6 @@ The repository requires the `WEBHOOK_AVATAR` and `WEBHOOK_NAME` repository secre
 ### Adding content
 
 1. Add the file into `./resources` (The file name should be derived from the channel the webhook will post to for added verbosity. The channel `foo-bar` becomes `FOO_BAR.md`)
-2. Each new paragraph (double newline character) will be posted in a new message. Try to use as few messages as possible (the limit is 2000 characters per message) to avoid ratelimiting. You can add a spacer and simulate a new message with `_ _`
+2. Each new paragraph (double newline character) will be posted in a new message. Try to use as few messages as possible (the limit is 2000 characters per message) to avoid rate limiting. You can add a spacer and simulate a new message with `_ _`
 3. Channel names and other escape sequences should have the format `%FOO_BAR%` and need to be added to the mapping `replacePatterns` in `./src/index.ts`
 2. Add a Webhook requirement to `./.github/workflows/deploy.yml`. The repository secret should be prefixed with `WEBHOOK_` for added verbosity. The entry for our example is `FOO_BAR: ${{ secrets.WEBHOOK_FOO_BAR }}`
