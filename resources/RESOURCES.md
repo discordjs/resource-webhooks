@@ -11,7 +11,7 @@ _ _
 _ _
 **Learning JavaScript and node.js:**
 • [CodeCademy online course](https://www.codecademy.com/learn/javascript)
-• [Eloquent Javascript, free book](http://eloquentjavascript.net/)
+• [Eloquent JavaScript, free book](http://eloquentjavascript.net/)
 • [MDN's JavaScript guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Introduction)
 • [You Don't Know JS (free book series)](https://github.com/getify/You-Dont-Know-JS)
 • [Some Node](https://nodeschool.io/)
