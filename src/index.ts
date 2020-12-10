@@ -12,7 +12,6 @@ const linkEscapeReplacer = (_: any, p1: string, p2: string): string => {
 };
 
 const replacePatterns = {
-	'%RULES_CHANNEL%': '<#222109930545610754>',
 	'%RESOURCES_CHANNEL%': '<#729580210634358804>',
 	'%USEFUL_SERVERS_CHANNEL%': '<#237743386864517122>',
 } as const;
