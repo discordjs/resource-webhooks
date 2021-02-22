@@ -86,6 +86,7 @@ _ _
 • [Time4VPS](https://www.time4vps.eu/) Starting at €3.99/month for 1 core, 2GB RAM, 20GB SSD
 • [VIRMACH](https://virmach.com/) Full Windows and Linux Desktop VPS starting at $7/mo and $1/mo respectively
 • [Netcup](https://www.netcup.eu/) Starting at €2.62/mo for 1 core, 2GB RAM, 20GB SSD
+• [Novonode](https://novonode.com/discord-hosting) Starting at $0.70/mo for 1 core, 256MB RAM, 2GB SSD
 • [GitHub education](https://education.github.com/pack) Free credit and other offers for students
 • [Microsoft students](https://azure.microsoft.com/en-us/free/students/) Free credit for students
 • [Google Cloud](https://cloud.google.com/free) free tier
