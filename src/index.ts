@@ -15,8 +15,8 @@ const replacePatterns = {
 	'%RULES_CHANNEL%': '<#222109930545610754>',
 	'%RESOURCES_CHANNEL%': '<#729580210634358804>',
 	'%USEFUL_SERVERS_CHANNEL%': '<#237743386864517122>',
-	'%GETTING_HELP_CHANNEL%': '',
-	'%HOW_TO_ASK_CHANNEL%': '',
+	'%GETTING_HELP_CHANNEL%': '<#824398829834207313>',
+	'%HOW_TO_ASK_CHANNEL%': '<#824398871106551828>',
 } as const;
 
 function resolveIdentifier(channelName: string): string {
