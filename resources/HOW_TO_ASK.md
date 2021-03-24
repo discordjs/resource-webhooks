@@ -19,6 +19,7 @@ _ _
 > - [discord.js guide](https://discordjs.guide/)
 > - [frequently asked questions](https://discordjs.guide/popular-topics/common-questions.html)
 
+_ _
 **• Debug your code**
 > We do not have immediate access to your code. Please do some debugging on your own before asking your question here.
 > 
@@ -37,6 +38,7 @@ _ _
 > - [commond discord.js errors](https://discordjs.guide/popular-topics/errors.html#how-to-diagnose-api-errors)
 > - [a lot of general questions have been answered already](https://stackoverflow.com/)
 
+_ _
 **• Asking the question**
 > - provide all information needed (your code, errors you receive, steps you took to debug, things you do that cause the issue (circumstances, commands used, pictures of the output where applicable)).
 > - do not paraphrase errors but provide them as is and with a full stack trace (the stack trace shows where the error originates).
@@ -47,6 +49,7 @@ _ _
 > - If you did not understand a given answer, be specific about what exactly it is you did not understand. "What?!", "Huh", "That didn't help", "Don't just send docs", "I don't understand" do not help to improve the answer, so you understand it.
 > - Don't delete your question! Someone else might find it through the search function and benefit from it!
 
+_ _
 ** • More resources on good questions**
 > - [Asking Technical Questions - Clarkson](https://www.cs.cornell.edu/courses/cs3110/2017fa/thoughtful.html)
 > - [How to ask Questions the smart way - Raymond](http://www.catb.org/~esr/faqs/smart-questions.html)
