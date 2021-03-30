@@ -40,7 +40,7 @@ _ _
 
 _ _
 **Asking the question**
-• provide all information needed (your code, errors you receive, steps you took to debug, things you do that cause the issue (circumstances, commands used, pictures of the output where applicable)).
+• provide all information needed: your code, errors you receive, steps you took to debug, things you do that cause the issue (circumstances, commands used, pictures of the output where applicable).
 • do not paraphrase errors but provide them as is and with a full stack trace (the stack trace shows where the error originates).
 • prepare your question, make sure it's comprehensible, and don't write every thought down. Messages like "hmm", "ooooh", "I'm so dumb", "HELP!!!", or similar clutter the channel.
 _ _
