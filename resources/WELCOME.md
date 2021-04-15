@@ -3,7 +3,7 @@
 
 Welcome to the **Sapphire** Discord server!
 _ _
-To get access to the rest of the channels be sure to pass the member screening process, and react <:greenTick:637706251253317669> on the message below to get the <@&737447999311052810> role.
+To get access to the rest of the channels be sure to pass the member screening process, and react <:blobsapphire:773916319895781427> on the message below to get the <@&737447999311052810> role.
 
 
 %PNG_ROOMS%
@@ -18,8 +18,10 @@ _ _
 **CHAT**
 <:sapphire:746069730170896405> <#737142209639350343> For all banter, chatting, and talking about mostly everything.
 <:sapphire:746069730170896405> <#792132881903386664> (NSFW - only visible to people of 18 years or older) For talking about anything that can be considered NSFW. NSFW related topics are strictly forbidden from other channels. See below for further rules specific to this channel.
+_ _
 > ❯ No nudes. Lewds, depictions of nude art, gore, scat, and blood should be kept to a minimum. Other NSFW images are exclusively allowed if they are absolutely needed for the context of the conversation. Staff have the final say when something is too far, even for the NSFW chat.
 > ❯ While Discord gates NSFW channels for those under 18 (or those on iOS), we may manually remove your access from the channel if we deem fit. Violating the rules of this channel several times, or being too young (liar liar, pants on fire :fire:) will get your access removed. If your access was revoked due to age concerns then you may contact a staff once you turn 18 and you will regain access.
+_ _
 <:sapphire:746069730170896405> <#768153232136077334> For discussing any controversial topics such as politics, religion and similar.
 <:sapphire:746069730170896405> <#737452979162054717> For using <@266624760782258186>'s or <@419164839835992075>'s commands.
 _ _
