@@ -32,7 +32,7 @@ _ _
 <:sapphire:746069730170896405> <#737142325217722478> For talking about anything coding.
 <:sapphire:746069730170896405> <#737142774738190377> Development chat for [`@sapphire/framework`](https://github.com/sapphire-community/framework).
 <:sapphire:746069730170896405> <#737142871622156369> Development chat for [`@sapphire/pieces`](https://github.com/sapphire-community/pieces).
-<:sapphire:746069730170896405> <#737142940777971773> Development chat for any of the [`@sapphire/plugin-`](https://github.com/sapphire-community/plugins) packages.
+<:sapphire:746069730170896405> <#737142940777971773> Development chat for any of the [`@sapphire/plugin-*`](https://github.com/sapphire-community/plugins) packages.
 <:sapphire:746069730170896405> <#759750007087431721> Development chat for any of the [Sapphire Utilities](https://github.com/sapphire-community/utilities) packages.
 <:sapphire:746069730170896405> <#795723882556162058> Development chat for [the Sapphire website](https://sapphirejs.com).
 _ _
