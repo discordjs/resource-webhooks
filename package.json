@@ -1,117 +1,69 @@
 {
-	"$schema": "http://json.schemastore.org/package",
 	"name": "resource-webhooks",
-	"version": "0.1.0",
-	"description": "",
+	"version": "1.0.0",
+	"description": "A collection of webhooks to update our rules channel on Discord",
 	"contributors": [
-		"Crawl <icrawltogo@gmail.com>"
+		"Crawl <icrawltogo@gmail.com>",
+		"Favna <support@favware.tech>"
 	],
-	"license": "Apache-2.0",
+	"license": "MIT",
 	"private": true,
+	"main": "dist/index.js",
+	"type": "module",
 	"scripts": {
-		"build": "rimraf dist && tsc",
-		"deploy": "node --unhandled-rejections=strict dist/index.js",
-		"lint": "eslint src --ext .ts",
-		"lint:fix": "eslint src --ext .ts --fix",
-		"prettier": "prettier --write **/*.{ts,js,json,yml,yaml}"
+		"lint": "eslint src tests scripts --ext mjs,ts --fix",
+		"format": "prettier --write {src,tests,scripts}/**/*.ts",
+		"update": "yarn upgrade-interactive --latest",
+		"deploy": "node --unhandled-rejections=strict dist/resource-webhooks.js",
+		"build": "tsc -b src",
+		"clean": "tsc -b src --clean",
+		"watch": "tsc -b src --watch",
+		"commit": "git-cz",
+		"cz": "git-cz"
+	},
+	"dependencies": {
+		"discord.js": "^12.5.3"
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/discordjs/resource-webhooks.git"
+		"url": "git+https://github.com/sapphire-community/resource-webhooks.git"
 	},
 	"bugs": {
-		"url": "https://github.com/discordjs/resource-webhooks/issues"
+		"url": "https://github.com/sapphire-community/resource-webhooks/issues"
 	},
-	"homepage": "https://github.com/discordjs/resource-webhooks#readme",
-	"keywords": [
-		"discord",
-		"api",
-		"webhook",
-		"discordapp"
-	],
-	"dependencies": {
-		"discord.js": "^12.3.1"
-	},
+	"homepage": "https://github.com/sapphire-community/resource-webhooks#readme",
 	"devDependencies": {
-		"@commitlint/cli": "^9.1.2",
-		"@commitlint/config-angular": "^9.1.2",
-		"@types/jest": "^26.0.10",
-		"@types/node": "^14.6.4",
-		"@typescript-eslint/eslint-plugin": "^3.10.1",
-		"@typescript-eslint/parser": "^3.10.1",
-		"discord-api-types": "^0.2.0",
-		"eslint": "^7.7.0",
-		"eslint-config-marine": "^7.2.0",
-		"eslint-config-prettier": "^6.11.0",
-		"eslint-plugin-prettier": "^3.1.4",
-		"husky": "^4.2.5",
-		"lint-staged": "^10.2.13",
-		"prettier": "^2.1.1",
-		"rimraf": "^3.0.2",
-		"typescript": "^4.0.2"
+		"@commitlint/cli": "^12.1.1",
+		"@commitlint/config-angular": "^12.1.1",
+		"@commitlint/config-conventional": "^12.1.1",
+		"@sapphire/eslint-config": "^3.0.3",
+		"@sapphire/prettier-config": "^1.0.9",
+		"@sapphire/ts-config": "^2.1.1",
+		"@types/node": "^14.14.39",
+		"@types/ws": "^7.4.1",
+		"cz-conventional-changelog": "^3.3.0",
+		"discord-api-types": "^0.16.0",
+		"husky": "^6.0.0",
+		"lint-staged": "^10.5.4",
+		"prettier": "^2.2.1",
+		"pretty-quick": "^3.1.0",
+		"typescript": "^4.2.4"
 	},
 	"engines": {
-		"node": ">=14.0.0"
-	},
-	"eslintConfig": {
-		"extends": "marine/prettier/node",
-		"parserOptions": {
-			"project": "./tsconfig.eslint.json"
-		},
-		"rules": {
-			"@typescript-eslint/naming-convention": 0
-		}
-	},
-	"prettier": {
-		"printWidth": 120,
-		"useTabs": true,
-		"singleQuote": true,
-		"quoteProps": "as-needed",
-		"trailingComma": "all",
-		"endOfLine": "lf"
-	},
-	"husky": {
-		"hooks": {
-			"pre-commit": "lint-staged",
-			"commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-		}
-	},
-	"lint-staged": {
-		"*.js": [
-			"prettier --write"
-		],
-		"*.ts": [
-			"eslint --fix",
-			"prettier --write"
-		],
-		"*.{json,yml,yaml}": [
-			"prettier --write"
-		]
+		"node": ">=15"
 	},
 	"commitlint": {
 		"extends": [
-			"@commitlint/config-angular"
-		],
-		"rules": {
-			"type-enum": [
-				2,
-				"always",
-				[
-					"chore",
-					"build",
-					"ci",
-					"docs",
-					"feat",
-					"fix",
-					"perf",
-					"refactor",
-					"revert",
-					"style",
-					"test",
-					"types",
-					"wip"
-				]
-			]
+			"@commitlint/config-conventional"
+		]
+	},
+	"lint-staged": {
+		"*.{mjs,js,ts}": "eslint --fix --ext mjs,js,ts"
+	},
+	"config": {
+		"commitizen": {
+			"path": "./node_modules/cz-conventional-changelog"
 		}
-	}
+	},
+	"prettier": "@sapphire/prettier-config"
 }

@@ -1,7 +1,7 @@
-import { readFileSync, readdirSync } from 'fs';
-import { join } from 'path';
+import type { RESTPostAPIChannelMessageResult } from 'discord-api-types/v6';
 import { WebhookClient } from 'discord.js';
-import { RESTPostAPIChannelMessageResult } from 'discord-api-types/v6';
+import { readdirSync, readFileSync } from 'fs';
+import { join } from 'path';
 import { promisify } from 'util';
 
 const jumpRegex = /%JUMP_TO_TOP%/gm;
@@ -14,7 +14,7 @@ const linkEscapeReplacer = (_: any, p1: string, p2: string): string => {
 const replacePatterns = {
 	'%RULES_CHANNEL%': '<#222109930545610754>',
 	'%RESOURCES_CHANNEL%': '<#729580210634358804>',
-	'%USEFUL_SERVERS_CHANNEL%': '<#237743386864517122>',
+	'%USEFUL_SERVERS_CHANNEL%': '<#237743386864517122>'
 } as const;
 
 function resolveIdentifier(channelName: string): string {
@@ -64,15 +64,12 @@ async function main(): Promise<void> {
 		let firstMessage: RESTPostAPIChannelMessageResult | null = null;
 		for (let part of parts) {
 			if (firstMessage) {
-				part = part.replace(
-					jumpRegex,
-					`https://discord.com/channels/222078108977594368/${firstMessage.channel_id}/${firstMessage.id}`,
-				);
+				part = part.replace(jumpRegex, `https://discord.com/channels/222078108977594368/${firstMessage.channel_id}/${firstMessage.id}`);
 			}
 			// A raw API response is returned here, not a Message object as the typings indicate
 			const response = ((await hook.send(part, {
 				avatarURL: process.env.WEBHOOK_AVATAR,
-				username: process.env.WEBHOOK_NAME,
+				username: process.env.WEBHOOK_NAME
 			})) as unknown) as RESTPostAPIChannelMessageResult;
 			if (!firstMessage) firstMessage = response;
 

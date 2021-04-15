@@ -1,4 +1,5 @@
-name: Deploy
+name: Deployment
+
 on:
   workflow_dispatch:
     inputs:
@@ -11,22 +12,23 @@ jobs:
     name: Build and deploy webhooks
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: Checkout Project
         uses: actions/checkout@v2
-
-      - name: Install Node
-        uses: actions/setup-node@v1
+      - name: Use Node.js 15
+        uses: actions/setup-node@v2
         with:
-          node-version: 12
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Build code
-        run: npm run build
-
+          node-version: 15
+      - name: Restore CI Cache
+        uses: actions/cache@v2.1.4
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-15-${{ hashFiles('**/yarn.lock') }}
+      - name: Install Dependencies
+        run: yarn --ignore-scripts --frozen-lockfile
+      - name: Build Code
+        run: yarn build
       - name: Run deploy code
-        run: npm run deploy
+        run: yarn deploy
         env:
           RESOURCES: ${{ secrets.WEBHOOK_RESOURCES }}
           RULES: ${{ secrets.WEBHOOK_RULES }}
