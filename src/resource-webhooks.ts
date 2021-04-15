@@ -74,7 +74,11 @@ for (const channel of channels) {
 		// A raw API response is returned here, not a Message object as the typings indicate
 		const response = ((await hook.send(part, {
 			avatarURL: process.env.WEBHOOK_AVATAR,
-			username: process.env.WEBHOOK_NAME
+			username: process.env.WEBHOOK_NAME,
+			allowedMentions: {
+				users: [],
+				roles: []
+			}
 		})) as unknown) as RESTPostAPIChannelMessageResult;
 
 		if (!firstMessage) firstMessage = response;

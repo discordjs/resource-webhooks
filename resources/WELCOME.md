@@ -3,7 +3,7 @@
 
 Welcome to the **Sapphire** Discord server!
 _ _
-To get access to the rest of the channels be sure to pass the member screening process, and react :greenTick: on the message below to get the <@&737447999311052810> role.
+To get access to the rest of the channels be sure to pass the member screening process, and react <:greenTick:637706251253317669> on the message below to get the <@&737447999311052810> role.
 
 
 %PNG_ROOMS%
@@ -98,4 +98,4 @@ _ _
 <:sapphire:746069730170896405> [Donate through Open Collective](https://sapphirejs.com/opencollective)
 
 
-⬆ [jump to the top](%JUMP_TO_TOP%)
+⬆ [Jump to the top](%JUMP_TO_TOP%)
