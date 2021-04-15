@@ -60,7 +60,7 @@ for (const channel of channels) {
 		const regex = new RegExp(k, 'gm');
 		return acc.replace(regex, v);
 	}, r1);
-	const r3 = r2.replace(/%PNG_([A-Z_]+)%/, `${imagesBaseUrl}/${channel}/$1.png`);
+	const r3 = r2.replace(/%PNG_([A-Z_]+)%/gm, `${imagesBaseUrl}/${channel}/$1.png`);
 
 	const parts = r3.split('\n\n');
 
