@@ -56,7 +56,7 @@ _ _
 
 
 <:sapphire:746069730170896405> <@&826932387816013846> The role assigned to people when it is their birthday. Set your birthday with `s!birthday` in <#737452979162054717>.
-<:sapphire:746069730170896405> <@&773511162070564875> A role that can be requested with `s!role` "Controversial Access" to get access to <#768153232136077334>.
+<:sapphire:746069730170896405> <@&773511162070564875> A role that can be requested with `s!role "Controversial Access"` to get access to <#768153232136077334>.
 <:sapphire:746069730170896405> <@&737720527266775083> The role assigned to people who use their Discord Nitro to boost this server, thank you :heart:.
 <:sapphire:746069730170896405> <@&801904484996612137> The role assigned to people who support us on [Patreon](https://sapphirejs.com/patreon). Much love for supporting Sapphire :heart:!
 <:sapphire:746069730170896405> <@&737143830020620288> People who can help you with Sapphire questions.
