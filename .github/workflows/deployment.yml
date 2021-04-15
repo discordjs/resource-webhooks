@@ -30,9 +30,7 @@ jobs:
       - name: Run deploy code
         run: yarn deploy
         env:
-          RESOURCES: ${{ secrets.WEBHOOK_RESOURCES }}
-          RULES: ${{ secrets.WEBHOOK_RULES }}
-          USEFUL_SERVERS: ${{ secrets.WEBHOOK_USEFUL_SERVERS }}
+          WELCOME: ${{ secrets.WEBHOOK_WELCOME }}
           WEBHOOK_AVATAR: ${{ secrets.WEBHOOK_AVATAR }}
           WEBHOOK_NAME: ${{ secrets.WEBHOOK_NAME }}
           DEPLOY_CHANNELS: ${{ github.event.inputs.deployChannels }}
