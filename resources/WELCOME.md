@@ -38,7 +38,7 @@ _ _
 _ _
 **SUPPORT**
 <:sapphire:746069730170896405> <#737142503043498015> For getting support with [`@sapphire/framework`](https://github.com/sapphire-community/framework) and other Sapphire libraries.
-<:sapphire:746069730170896405> <#750799332445519884> For getting support with [DiscordJS](https://discord.js.org).
+<:sapphire:746069730170896405> <#750799332445519884> For getting support with [discord.js](https://discord.js.org).
 _ _
 **AUTOMATED CHANNELS**
 <:sapphire:746069730170896405> <#797263701811396628> Automated messages that show changelogs when we make new releases of any of the Sapphire packages.
