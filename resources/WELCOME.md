@@ -79,7 +79,7 @@ _ _
 <:sapphire:746069730170896405> Focus on what is best not just for us here on Discord, but for the overall community.
 
 
-<:sapphire:746069730170896405> For as far as Discord bot development is concerned, this server is primarily for Sapphire. While we can help you with Discord.js related problems, it is often advisable to join [the official Discord.js server](https://discord.gg/djs).
+<:sapphire:746069730170896405> For as far as Discord bot development is concerned, this server is primarily for Sapphire. While we can help you with Discord.js related problems, it is often advisable to join <[the official Discord.js server](https://discord.gg/djs)>.
 <:sapphire:746069730170896405> When asking for help, make sure to provide as much detail as possible. What have you tried so far? Do you have stacktraces that you can show us? What are you trying to achieve? Try to answer these questions and others, so we do not have to ask for them afterwards.
 > ❯ For a good guide on how to ask questions, see [the instructions that StackOverflow gives](https://stackoverflow.com/help/how-to-ask). You should try to always follow these guidelines.
 > ❯ For an excellent video that shows how **not** to ask technical questions is this, watch [this YouTube video by LiveOverflow](https://youtu.be/53zkBvL4ZB4).
