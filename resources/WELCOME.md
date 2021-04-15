@@ -3,7 +3,7 @@
 
 Welcome to the **Sapphire** Discord server!
 _ _
-To get access to the rest of the channels be sure to pass the member screening process, and react <:blobsapphire:773916319895781427> on the message below to get the <@&737447999311052810> role.
+To get access to the rest of the channels be sure to pass the member screening process, and react <:greenTick:832292523418189908> on the message below to get the <@&737447999311052810> role.
 
 
 %PNG_ROOMS%
