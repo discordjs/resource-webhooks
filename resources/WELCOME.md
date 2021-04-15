@@ -49,7 +49,7 @@ _ _
 **LOGS**
 <:sapphire:746069730170896405> <#826930829564444732> For all the moderation action logs.
 <:sapphire:746069730170896405> <#826930903049306163> For all the member action logs.
-<:sapphire:746069730170896405> <#826931005423878144> For all the actions performed in the <#792132881903386664> channel.
+<:sapphire:746069730170896405> <#826931005423878144> For all the message actions performed in the <#792132881903386664> channel.
 
 
 %PNG_ROLES%
