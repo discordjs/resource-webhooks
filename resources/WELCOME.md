@@ -20,6 +20,7 @@ _ _
 <:sapphire:746069730170896405> <#792132881903386664> (NSFW - only visible to people of 18 years or older) For talking about anything that can be considered NSFW. NSFW related topics are strictly forbidden from other channels. See below for further rules specific to this channel.
 _ _
 > ❯ No nudes. Lewds, depictions of nude art, gore, scat, and blood should be kept to a minimum. Other NSFW images are exclusively allowed if they are absolutely needed for the context of the conversation. Staff have the final say when something is too far, even for the NSFW chat.
+_ _
 > ❯ While Discord gates NSFW channels for those under 18 (or those on iOS), we may manually remove your access from the channel if we deem fit. Violating the rules of this channel several times, or being too young (liar liar, pants on fire :fire:) will get your access removed. If your access was revoked due to age concerns then you may contact a staff once you turn 18 and you will regain access.
 _ _
 <:sapphire:746069730170896405> <#768153232136077334> For discussing any controversial topics such as politics, religion and similar.
@@ -83,6 +84,7 @@ _ _
 <:sapphire:746069730170896405> For as far as Discord bot development is concerned, this server is primarily for Sapphire. While we can help you with Discord.js related problems, it is often advisable to join [the official Discord.js server](https://discord.gg/djs).
 <:sapphire:746069730170896405> When asking for help, make sure to provide as much detail as possible. What have you tried so far? Do you have stacktraces that you can show us? What are you trying to achieve? Try to answer these questions and others, so we do not have to ask for them afterwards.
 > For a good guide on how to ask questions, see [the instructions that StackOverflow gives](https://stackoverflow.com/help/how-to-ask). You should try to always follow these guidelines.
+_ _
 > For an excellent video that shows how **not** to ask technical questions is this, watch [this YouTube video by LiveOverflow](https://youtu.be/53zkBvL4ZB4).
 <:sapphire:746069730170896405> If your username can't be easily mentioned, please set your nickname to something mentionable. For example, "ᐃᑦᑎᓂᖅᓯᐅᑐᖅ ᑕᖅᓴᖅ" isn't particularly useful.
 <:sapphire:746069730170896405> Controversial content, including politics and religion, is _exclusively_ allowed in the <#768153232136077334> channel.
