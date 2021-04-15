@@ -12,11 +12,7 @@ const linkEscapeRegex = /\[(.+?)\]\((.+?)\)/gm;
 const resolveIdentifier = (channelName: string): string => channelName.toUpperCase().replace(/-/gm, '_');
 const linkEscapeReplacer = (_: any, p1: string, p2: string): string => `[${p1}](<${p2}>)`;
 
-const replacePatterns = {
-	'%RULES_CHANNEL%': '<#222109930545610754>',
-	'%RESOURCES_CHANNEL%': '<#729580210634358804>',
-	'%USEFUL_SERVERS_CHANNEL%': '<#237743386864517122>'
-} as const;
+const replacePatterns: Record<string, string> = {} as const;
 
 const wait: {
 	(ms: number): Promise<void>;
