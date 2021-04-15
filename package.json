@@ -11,8 +11,8 @@
 	"main": "dist/index.js",
 	"type": "module",
 	"scripts": {
-		"lint": "eslint src tests scripts --ext mjs,ts --fix",
-		"format": "prettier --write {src,tests,scripts}/**/*.ts",
+		"lint": "eslint src --ext ts --fix",
+		"format": "prettier --write src/**/*.ts",
 		"update": "yarn upgrade-interactive --latest",
 		"deploy": "node --unhandled-rejections=strict dist/resource-webhooks.js",
 		"build": "tsc -b src",
