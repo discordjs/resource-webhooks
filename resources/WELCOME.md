@@ -25,6 +25,8 @@ _ _
 _ _
 **VOICE**
 <:sapphire:746069730170896405> <#750105399172137011> For anything which only makes sense in the context of the voice channels. Sharing images, or typing when your mic is off, etc.
+
+
 _ _
 **DEV ZONE**
 <:sapphire:746069730170896405> <#737142325217722478> For talking about anything coding.
