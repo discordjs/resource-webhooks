@@ -39,7 +39,7 @@ _ _
 <:sapphire:746069730170896405> <#795723882556162058> Development chat for [the Sapphire website](https://sapphirejs.com).
 _ _
 **SUPPORT**
-<:sapphire:746069730170896405> <#737142503043498015> For getting support with `@sapphire/framework` and other Sapphire libraries.
+<:sapphire:746069730170896405> <#737142503043498015> For getting support with [`@sapphire/framework`](https://github.com/sapphire-community/framework) and other Sapphire libraries.
 <:sapphire:746069730170896405> <#750799332445519884> For getting support with DiscordJS.
 _ _
 **AUTOMATED CHANNELS**
@@ -93,7 +93,7 @@ _ _
 %PNG_LINKS%
 
 
-<:sapphire:746069730170896405> [Permalink to join this guild](https://sapphirejs.com/discord)
+<:sapphire:746069730170896405> [Permalink to join this server](https://sapphirejs.com/discord)
 <:sapphire:746069730170896405> [Permalink to the GitHub organization](https://sapphirejs.com/ghorg)
 _ _
 <:sapphire:746069730170896405> [Donate through Patreon](https://sapphirejs.com/patreon)
