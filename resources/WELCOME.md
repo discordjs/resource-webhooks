@@ -25,7 +25,7 @@ _ _
 _ _
 **VOICE**
 <:sapphire:746069730170896405> <#750105399172137011> For anything which only makes sense in the context of the voice channels. Sharing images, or typing when your mic is off, etc.
-
+_ _
 **DEV ZONE**
 <:sapphire:746069730170896405> <#737142325217722478> For talking about anything coding.
 <:sapphire:746069730170896405> <#737142774738190377> Development chat for [`@sapphire/framework`](https://github.com/sapphire-community/framework).
@@ -70,7 +70,7 @@ _ _
 <:sapphire:746069730170896405> Be respectful and demonstrate kindness and empathy to others.
 <:sapphire:746069730170896405> Do not harass anyone, either publicly or privately.
 <:sapphire:746069730170896405> No spamming, advertising, NSFW content, use of sexualized language or imagery, sexual attention or advances of any kind. Don't be a jerk, or generally obnoxious - nobody likes trolls.
-<:sapphire:746069730170896405> No circlejerking. This includes but is not limited to "<Programming thing> sucks, use this", "<Operating system> is bad", "<Your code> is slow, use <other programming language>", "<Programming language> is bad it has <security holes | resource hogging | etc>", "<Web browser> is bad, use <Firefox | Chrome | Edge | etc>" and more.
+<:sapphire:746069730170896405> No circlejerking. This includes but is not limited to `<Programming thing> sucks, use this`, `<Operating system> is bad`, `<Your code> is slow, use <other programming language>`, `<Programming language> is bad it has <security holes | resource hogging | etc>`, `<Web browser> is bad, use <Firefox | Chrome | Edge | etc>` and more.
 <:sapphire:746069730170896405> When giving feedback, make sure it is constructive and helpful. Simply saying "You can do this better" or "That's bad" without providing better solutions and reasoning behind those solutions doesn't help anyone.
 <:sapphire:746069730170896405> When you make a mistake, own up to it and accept responsibility. Apologize to those affected and learn from your experience.
 <:sapphire:746069730170896405> Focus on what is best not just for us here on Discord, but for the overall community.
