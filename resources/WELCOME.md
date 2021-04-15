@@ -101,4 +101,4 @@ _ _
 <:sapphire:746069730170896405> [Donate through Open Collective](https://sapphirejs.com/opencollective)
 
 
-⬆ [Jump to the top](%JUMP_TO_TOP%)
+⬆️ [Jump to the top](%JUMP_TO_TOP%)
