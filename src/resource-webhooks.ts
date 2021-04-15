@@ -8,6 +8,7 @@ import { promisify } from 'util';
 
 const jumpRegex = /%JUMP_TO_TOP%/gm;
 
+const imagesBaseUrl = 'https://raw.githubusercontent.com/sapphire-community/resource-webhooks/main/resources/images';
 const linkEscapeRegex = /\[(.+?)\]\((.+?)\)/gm;
 const resolveIdentifier = (channelName: string): string => channelName.toUpperCase().replace(/-/gm, '_');
 const linkEscapeReplacer = (_: any, p1: string, p2: string): string => `[${p1}](<${p2}>)`;
@@ -54,13 +55,14 @@ for (const channel of channels) {
 	const fileName = `${channel}.md`;
 
 	const raw = await readFile(new URL(fileName, resourcesDir), { encoding: 'utf8' });
-	const r1 = raw.replace(linkEscapeRegex, linkEscapeReplacer).replace(/"/g, '\\"');
+	const r1 = raw.replace(linkEscapeRegex, linkEscapeReplacer);
 	const r2 = Object.entries(replacePatterns).reduce((acc, [k, v]) => {
 		const regex = new RegExp(k, 'gm');
 		return acc.replace(regex, v);
 	}, r1);
+	const r3 = r2.replace(/%PNG_([A-Z_]+)%/, `${imagesBaseUrl}/${channel}/$1.png`);
 
-	const parts = r2.split('\n\n');
+	const parts = r3.split('\n\n');
 
 	let firstMessage: RESTPostAPIChannelMessageResult | null = null;
 

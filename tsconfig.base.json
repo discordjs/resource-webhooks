@@ -2,9 +2,6 @@
 	"extends": "@sapphire/ts-config",
 	"compilerOptions": {
 		"module": "ESNext",
-		"lib": ["ESNext"],
-		"declaration": false,
-		"declarationMap": false,
-		"sourceMap": false
+		"lib": ["ESNext"]
 	}
 }
