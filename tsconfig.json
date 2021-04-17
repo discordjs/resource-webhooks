@@ -2,9 +2,9 @@
 	"compilerOptions": {
 		"strict": true,
 		"moduleResolution": "node",
-		"module": "commonjs",
-		"target": "es2019",
-		"lib": ["esnext", "esnext.array", "esnext.asynciterable", "esnext.intl", "esnext.symbol"],
+		"module": "ESNext",
+		"target": "ES2019",
+		"lib": ["ESNext"],
 		"declaration": true,
 		"sourceMap": true,
 		"removeComments": false,
@@ -17,5 +17,5 @@
 		"skipLibCheck": true,
 		"esModuleInterop": true
 	},
-	"exclude": ["**/*.test.ts"]
+	"files": ["src/index.ts"]
 }
