@@ -22,9 +22,6 @@ _ _
 > ❯ While Discord gates NSFW channels for those under 18 (or those on iOS), we may manually remove your access from the channel if we deem fit. Violating the rules of this channel several times, or being too young (liar liar, pants on fire :fire:) will get your access removed. If your access was revoked due to age concerns, then you may contact a staff once you turn 18 and you will regain access.
 <:sapphire:746069730170896405> <#768153232136077334> For discussing any controversial topics such as politics, religion and similar.
 <:sapphire:746069730170896405> <#737452979162054717> For using <@266624760782258186>'s or <@419164839835992075>'s commands.
-_ _
-**VOICE**
-<:sapphire:746069730170896405> <#750105399172137011> For anything which only makes sense in the context of the voice channels. Sharing images, or typing when your mic is off, etc.
 
 
 _ _
@@ -39,6 +36,11 @@ _ _
 **SUPPORT**
 <:sapphire:746069730170896405> <#737142503043498015> For getting support with [`@sapphire/framework`](https://github.com/sapphire-community/framework) and other Sapphire libraries.
 <:sapphire:746069730170896405> <#750799332445519884> For getting support with [discord.js](https://discord.js.org).
+_ _
+**VOICE**
+<:sapphire:746069730170896405> <#750105399172137011> For anything which only makes sense in the context of the voice channels. Sharing images, or typing when your mic is off, etc.
+
+
 _ _
 **AUTOMATED CHANNELS**
 <:sapphire:746069730170896405> <#797263701811396628> Automated messages that show changelogs when we make new releases of any of the Sapphire packages.
