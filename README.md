@@ -9,7 +9,7 @@
 [![GitHub](https://img.shields.io/github/license/sapphire-community/resource-webhooks)](https://github.com/sapphire-community/resource-webhooks/blob/main/LICENSE.md)
 [![Depfu](https://badges.depfu.com/badges/3e687d5f136ff4e619f690491b831270/count.svg)](https://depfu.com/github/sapphire-community/resource-webhooks?project_id=24218)
 
-[![Support Server](https://discord.com/api/guilds/737141877803057244/embed.png?style=banner2)](https://sapphirejs.com/discord)
+[![Support Server](https://discord.com/api/guilds/737141877803057244/embed.png?style=banner2)](https://sapphirejs.dev/discord)
 
 </div>
 
@@ -45,10 +45,10 @@ We accept donations through Open Collective, Ko-fi, Paypal, Patreon and GitHub S
 
 |   Donate With   |                       Address                       |
 | :-------------: | :-------------------------------------------------: |
-| Open Collective | [Click Here](https://sapphirejs.com/opencollective) |
-|      Ko-fi      |      [Click Here](https://sapphirejs.com/kofi)      |
-|     Patreon     |    [Click Here](https://sapphirejs.com/patreon)     |
-|     PayPal      |     [Click Here](https://sapphirejs.com/paypal)     |
+| Open Collective | [Click Here](https://sapphirejs.dev/opencollective) |
+|      Ko-fi      |      [Click Here](https://sapphirejs.dev/kofi)      |
+|     Patreon     |    [Click Here](https://sapphirejs.dev/patreon)     |
+|     PayPal      |     [Click Here](https://sapphirejs.dev/paypal)     |
 
 ## Contributors ✨
 

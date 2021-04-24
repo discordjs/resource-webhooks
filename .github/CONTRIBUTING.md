@@ -29,7 +29,7 @@ There are a number of guidelines considered when reviewing Pull Requests to be m
 
 <!-- Code -->
 
-[discord server]: https://sapphirejs.com/discord
+[discord server]: https://sapphirejs.dev/discord
 [here]: https://github.com/sapphire-community/framework/pulls
 [eslint]: https://eslint.org/
 [scripts]: /scripts

@@ -31,7 +31,7 @@ _ _
 <:sapphire:746069730170896405> <#737142871622156369> Development chat for [`@sapphire/pieces`](https://github.com/sapphire-community/pieces).
 <:sapphire:746069730170896405> <#737142940777971773> Development chat for any of the [`@sapphire/plugin-*`](https://github.com/sapphire-community/plugins) packages.
 <:sapphire:746069730170896405> <#759750007087431721> Development chat for any of the [Sapphire Utilities](https://github.com/sapphire-community/utilities) packages.
-<:sapphire:746069730170896405> <#795723882556162058> Development chat for [the Sapphire website](https://sapphirejs.com).
+<:sapphire:746069730170896405> <#795723882556162058> Development chat for [the Sapphire website](https://sapphirejs.dev).
 _ _
 **SUPPORT**
 <:sapphire:746069730170896405> <#737142503043498015> For getting support with [`@sapphire/framework`](https://github.com/sapphire-community/framework) and other Sapphire libraries.
@@ -60,7 +60,7 @@ _ _
 <:sapphire:746069730170896405> <@&826932387816013846> The role assigned to people when it is their birthday. Set your birthday with `s!birthday` in <#737452979162054717>.
 <:sapphire:746069730170896405> <@&773511162070564875> A role that can be requested with `s!role "Controversial Access"` to get access to <#768153232136077334>.
 <:sapphire:746069730170896405> <@&737720527266775083> The role assigned to people who use their Discord Nitro to boost this server, thank you :heart:.
-<:sapphire:746069730170896405> <@&801904484996612137> The role assigned to people who support us on [Patreon](https://sapphirejs.com/patreon). Much love for supporting Sapphire :heart:!
+<:sapphire:746069730170896405> <@&801904484996612137> The role assigned to people who support us on [Patreon](https://sapphirejs.dev/patreon). Much love for supporting Sapphire :heart:!
 <:sapphire:746069730170896405> <@&737143830020620288> People who can help you with Sapphire questions.
 <:sapphire:746069730170896405> <@&831995541453144174> People who can had their access to <#792132881903386664> restricted.
 
@@ -94,13 +94,13 @@ _ _
 %PNG_LINKS%
 
 
-<:sapphire:746069730170896405> [Permalink to join this server](https://sapphirejs.com/discord)
-<:sapphire:746069730170896405> [Permalink to the GitHub organization](https://sapphirejs.com/ghorg)
+<:sapphire:746069730170896405> [Permalink to join this server](https://sapphirejs.dev/discord)
+<:sapphire:746069730170896405> [Permalink to the GitHub organization](https://sapphirejs.dev/ghorg)
 _ _
-<:sapphire:746069730170896405> [Donate through Patreon](https://sapphirejs.com/patreon)
-<:sapphire:746069730170896405> [Donate through Ko-Fi](https://sapphirejs.com/kofi)
-<:sapphire:746069730170896405> [Donate through Paypal](https://sapphirejs.com/paypal)
-<:sapphire:746069730170896405> [Donate through Open Collective](https://sapphirejs.com/opencollective)
+<:sapphire:746069730170896405> [Donate through Patreon](https://sapphirejs.dev/patreon)
+<:sapphire:746069730170896405> [Donate through Ko-Fi](https://sapphirejs.dev/kofi)
+<:sapphire:746069730170896405> [Donate through Paypal](https://sapphirejs.dev/paypal)
+<:sapphire:746069730170896405> [Donate through Open Collective](https://sapphirejs.dev/opencollective)
 
 
 ⬆️ [Jump to the top](%JUMP_TO_TOP%)
