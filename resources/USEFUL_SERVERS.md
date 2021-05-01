@@ -19,6 +19,12 @@ _ _
 > https://discord.gg/arTauDY
 
 _ _
+**• Sapphire Support**
+> Want to find out how to make the next big bot using Sapphire?
+> Join the official support server for the Sapphire framework!
+> https://discord.gg/j8ACK6u
+
+- -
 **• Discord Testers**
 > Found a bug in discord? This is the place to report it.
 > https://discord.gg/discord-testers
