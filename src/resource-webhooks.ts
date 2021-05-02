@@ -8,7 +8,7 @@ import { promisify } from 'util';
 
 const jumpRegex = /%JUMP_TO_TOP%/gm;
 
-const imagesBaseUrl = 'https://raw.githubusercontent.com/sapphire-community/resource-webhooks/main/resources/images';
+const imagesBaseUrl = 'https://raw.githubusercontent.com/sapphiredev/resource-webhooks/main/resources/images';
 const linkEscapeRegex = /\[(.+?)\]\((.+?)\)/gm;
 const resolveIdentifier = (channelName: string): string => channelName.toUpperCase().replace(/-/gm, '_');
 const linkEscapeReplacer = (_: any, p1: string, p2: string): string => `[${p1}](<${p2}>)`;

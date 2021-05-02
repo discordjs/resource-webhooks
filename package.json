@@ -26,12 +26,12 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/sapphire-community/resource-webhooks.git"
+		"url": "git+https://github.com/sapphiredev/resource-webhooks.git"
 	},
 	"bugs": {
-		"url": "https://github.com/sapphire-community/resource-webhooks/issues"
+		"url": "https://github.com/sapphiredev/resource-webhooks/issues"
 	},
-	"homepage": "https://github.com/sapphire-community/resource-webhooks#readme",
+	"homepage": "https://github.com/sapphiredev/resource-webhooks#readme",
 	"devDependencies": {
 		"@commitlint/cli": "^12.1.1",
 		"@commitlint/config-angular": "^12.1.1",

@@ -27,14 +27,14 @@ _ _
 _ _
 **DEV ZONE**
 <:sapphire:746069730170896405> <#737142325217722478> For talking about anything coding.
-<:sapphire:746069730170896405> <#737142774738190377> Development chat for [`@sapphire/framework`](https://github.com/sapphire-community/framework).
-<:sapphire:746069730170896405> <#737142871622156369> Development chat for [`@sapphire/pieces`](https://github.com/sapphire-community/pieces).
-<:sapphire:746069730170896405> <#737142940777971773> Development chat for any of the [`@sapphire/plugin-*`](https://github.com/sapphire-community/plugins) packages.
-<:sapphire:746069730170896405> <#759750007087431721> Development chat for any of the [Sapphire Utilities](https://github.com/sapphire-community/utilities) packages.
+<:sapphire:746069730170896405> <#737142774738190377> Development chat for [`@sapphire/framework`](https://github.com/sapphiredev/framework).
+<:sapphire:746069730170896405> <#737142871622156369> Development chat for [`@sapphire/pieces`](https://github.com/sapphiredev/pieces).
+<:sapphire:746069730170896405> <#737142940777971773> Development chat for any of the [`@sapphire/plugin-*`](https://github.com/sapphiredev/plugins) packages.
+<:sapphire:746069730170896405> <#759750007087431721> Development chat for any of the [Sapphire Utilities](https://github.com/sapphiredev/utilities) packages.
 <:sapphire:746069730170896405> <#795723882556162058> Development chat for [the Sapphire website](https://sapphirejs.dev).
 _ _
 **SUPPORT**
-<:sapphire:746069730170896405> <#737142503043498015> For getting support with [`@sapphire/framework`](https://github.com/sapphire-community/framework) and other Sapphire libraries.
+<:sapphire:746069730170896405> <#737142503043498015> For getting support with [`@sapphire/framework`](https://github.com/sapphiredev/framework) and other Sapphire libraries.
 <:sapphire:746069730170896405> <#750799332445519884> For getting support with [discord.js](https://discord.js.org).
 _ _
 **VOICE**
@@ -70,12 +70,12 @@ _ _
 
 <:sapphire:746069730170896405> Follow [Discord's Terms of Service](https://discord.com/terms).
 <:sapphire:746069730170896405> Follow [Discord's Guidelines](https://discord.com/guidelines).
-<:sapphire:746069730170896405> Follow [Sapphire's Code of Conduct](https://github.com/sapphire-community/readme/blob/main/CODE_OF_CONDUCT.md).
+<:sapphire:746069730170896405> Follow [Sapphire's Code of Conduct](https://github.com/sapphiredev/readme/blob/main/CODE_OF_CONDUCT.md).
 <:sapphire:746069730170896405> Be respectful and demonstrate kindness and empathy to others.
 <:sapphire:746069730170896405> Do not harass anyone, either publicly or privately.
 <:sapphire:746069730170896405> No spamming, advertising, NSFW content, use of sexualized language or imagery, sexual attention or advances of any kind. Don't be a jerk, or generally obnoxious - nobody likes trolls.
 <:sapphire:746069730170896405> No circlejerking. This includes but is not limited to `<Programming thing> sucks, use this`, `<Operating system> is bad`, `<Your code> is slow, use <other programming language>`, `<Programming language> is bad it has <security holes | resource hogging | etc>`, `<Web browser> is bad, use <Firefox | Chrome | Edge | etc>` and more.
-<:sapphire:746069730170896405> We have filters for certain words in place. Attempting to dodge this will result in action being taken by the Sapphire staff team, in accordance with the [Sapphire Code of Conduct](https://github.com/sapphire-community/readme/blob/main/CODE_OF_CONDUCT.md#enforcement-guidelines).
+<:sapphire:746069730170896405> We have filters for certain words in place. Attempting to dodge this will result in action being taken by the Sapphire staff team, in accordance with the [Sapphire Code of Conduct](https://github.com/sapphiredev/readme/blob/main/CODE_OF_CONDUCT.md#enforcement-guidelines).
 <:sapphire:746069730170896405> When giving feedback, make sure it is constructive and helpful. Simply saying "You can do this better" or "That's bad" without providing better solutions and reasoning behind those solutions doesn't help anyone.
 <:sapphire:746069730170896405> When you make a mistake, own up to it and accept responsibility. Apologize to those affected and learn from your experience.
 <:sapphire:746069730170896405> Focus on what is best not just for us here on Discord, but for the overall community.
