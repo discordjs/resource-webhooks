@@ -1,9 +1,12 @@
 import { fetch, FetchMethods, FetchResultTypes } from '@sapphire/fetch';
 import { stripIndents } from 'common-tags';
 
+const linkEscapeRegex = /\[(.+?)\]\((.+?)\)/gm;
+const linkEscapeReplacer = (_, p1, p2) => `[${p1}](<${p2}>)`;
+
 const content = stripIndents`
 content
-`;
+`.replace(linkEscapeRegex, linkEscapeReplacer);
 
 const messageID = '';
 const webhookURL = process.env.WEBHOOK_URL ?? '';
