@@ -24,7 +24,7 @@ _ _
 > Join the official support server for the Sapphire framework!
 > https://discord.gg/j8ACK6u
 
-- -
+_ _
 **• Discord Testers**
 > Found a bug in discord? This is the place to report it.
 > https://discord.gg/discord-testers
