@@ -1,7 +1,7 @@
 import type { RESTPostAPIChannelMessageResult } from 'discord-api-types/v6';
 import { WebhookClient } from 'discord.js';
-import { readdir, readFile } from 'node:fs/promises';
-import { URL } from 'node:url';
+import { readdir, readFile } from 'fs/promises';
+import { URL } from 'url';
 import { promisify } from 'util';
 
 /* Regexes and utility functions */
@@ -72,14 +72,14 @@ for (const channel of channels) {
 		}
 
 		// A raw API response is returned here, not a Message object as the typings indicate
-		const response = ((await hook.send(part, {
+		const response = (await hook.send(part, {
 			avatarURL: process.env.WEBHOOK_AVATAR,
 			username: process.env.WEBHOOK_NAME,
 			allowedMentions: {
 				users: [],
 				roles: []
 			}
-		})) as unknown) as RESTPostAPIChannelMessageResult;
+		})) as unknown as RESTPostAPIChannelMessageResult;
 
 		if (!firstMessage) firstMessage = response;
 
