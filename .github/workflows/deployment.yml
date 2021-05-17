@@ -20,14 +20,21 @@ jobs:
           node-version: 16
       - name: Restore CI Cache
         uses: actions/cache@v2.1.5
-        id: cache-restore
+        id: node-cache-restore
         with:
           path: node_modules
           key: ${{ runner.os }}-16-${{ hashFiles('**/yarn.lock') }}
       - name: Install Dependencies if Cache Miss
-        if: ${{ !steps.cache-restore.outputs.cache-hit }}
+        if: ${{ !steps.node-cache-restore.outputs.cache-hit }}
         run: yarn --frozen-lockfile
+      - name: Restore dist cache
+        uses: actions/cache@v2.1.5
+        id: dist-cache-restore
+        with:
+          path: dist
+          key: ${{ runner.os }}-16-${{ hashFiles('src/resource-webhooks.ts') }}
       - name: Build Code
+        if: ${{ !steps.dist-cache-restore.outputs.cache-hit }}
         run: yarn build
       - name: Run deploy code
         run: yarn deploy
