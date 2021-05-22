@@ -8,6 +8,8 @@
 	],
 	"license": "MIT",
 	"private": true,
+	"main": "dist/index.js",
+	"type": "module",
 	"scripts": {
 		"build": "rimraf dist && tsc",
 		"deploy": "node --unhandled-rejections=strict dist/index.js",
@@ -30,25 +32,24 @@
 		"discordapp"
 	],
 	"dependencies": {
-		"discord.js": "^12.3.1"
+		"discord.js": "^12.5.3"
 	},
 	"devDependencies": {
-		"@commitlint/cli": "^9.1.2",
-		"@commitlint/config-angular": "^9.1.2",
-		"@types/jest": "^26.0.10",
-		"@types/node": "^14.6.4",
-		"@typescript-eslint/eslint-plugin": "^3.10.1",
-		"@typescript-eslint/parser": "^3.10.1",
-		"discord-api-types": "^0.2.0",
-		"eslint": "^7.7.0",
-		"eslint-config-marine": "^7.2.0",
-		"eslint-config-prettier": "^6.11.0",
-		"eslint-plugin-prettier": "^3.1.4",
-		"husky": "^4.2.5",
-		"lint-staged": "^10.2.13",
-		"prettier": "^2.1.1",
+		"@commitlint/cli": "^12.1.1",
+		"@commitlint/config-angular": "^12.1.1",
+		"@types/node": "^14.14.41",
+		"@typescript-eslint/eslint-plugin": "^4.22.0",
+		"@typescript-eslint/parser": "^4.22.0",
+		"discord-api-types": "^0.16.0",
+		"eslint": "^7.24.0",
+		"eslint-config-marine": "^8.3.2",
+		"eslint-config-prettier": "^8.2.0",
+		"eslint-plugin-prettier": "^3.4.0",
+		"husky": "^4.3.8",
+		"lint-staged": "^10.5.4",
+		"prettier": "^2.2.1",
 		"rimraf": "^3.0.2",
-		"typescript": "^4.0.2"
+		"typescript": "^4.2.4"
 	},
 	"engines": {
 		"node": ">=14.0.0"
