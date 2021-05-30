@@ -19,7 +19,7 @@ jobs:
         with:
           node-version: 16
       - name: Restore CI Cache
-        uses: actions/cache@v2.1.5
+        uses: actions/cache@v2.1.6
         id: node-cache-restore
         with:
           path: node_modules
@@ -28,7 +28,7 @@ jobs:
         if: ${{ !steps.node-cache-restore.outputs.cache-hit }}
         run: yarn --frozen-lockfile
       - name: Restore dist cache
-        uses: actions/cache@v2.1.5
+        uses: actions/cache@v2.1.6
         id: dist-cache-restore
         with:
           path: dist
