@@ -8,11 +8,6 @@ _ _
 > https://discord.gg/BQN6BYE
 
 _ _
-**• The JS Programming Language Community Server**
-> A place for JS programmers new and old to discuss JS, hang out, find events, and more. 
-> https://discord.gg/Y8Mqbkk
-
-_ _
 **• Akairo Support**
 > Want to find out how to make the next big bot using Akairo?
 > Join the official support server for the Akairo framework!
