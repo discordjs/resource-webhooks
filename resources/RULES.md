@@ -20,7 +20,7 @@ _ _
 **6.** Do not mention or DM individual members just for help. You may not get a reply quickly, if at all. Post your question in the public channels where more people can see it.
 
 _ _
-**7.** If your username can't be easily mentioned, please set your nickname to something mentionable. For example, "ᐃᑦᑎᓂᖅᓯᐅᑐᖅ ᑕᖅᓴᖅ" isn't particularly useful.
+**7.** If your username can't be easily mentioned, please politely ask staff to set nickname to something mentionable. For example, "ᐃᑦᑎᓂᖅᓯᐅᑐᖅ ᑕᖅᓴᖅ" isn't particularly useful.
 
 _ _
 **8.** No controversial content is allowed, including politics and religion.
