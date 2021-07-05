@@ -33,3 +33,8 @@ _ _
 **• Discord Developers:**
 > FAQ about Verification, Game SDK support and API announcements.
 > https://discord.gg/discord-developers
+
+_ _
+**• Game Creators Area**
+> A French programming discord for people of all skill levels. We can help you, in French, to create the bot you have imagined! :flag_fr: 
+> https://discord.gg/YdkmxW8
