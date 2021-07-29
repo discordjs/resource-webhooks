@@ -8,6 +8,12 @@ _ _
 > https://discord.gg/BQN6BYE
 
 _ _
+**• TypeScript Community**
+> Having trouble with TypeScript?
+> TypeScript Community is the perfect server for learning and getting help with TypeScript!
+> https://discord.gg/typescript
+
+_ _
 **• Akairo Support**
 > Want to find out how to make the next big bot using Akairo?
 > Join the official support server for the Akairo framework!
