@@ -22,8 +22,12 @@ _ _
 > ❯ While Discord gates NSFW channels for those under 18 (or those on iOS), we may manually remove your access from the channel if we deem fit. Violating the rules of this channel several times, or being too young (liar liar, pants on fire :fire:) will get your access removed. If your access was revoked due to age concerns, then you may contact a staff once you turn 18 and you will regain access.
 <:sapphire:746069730170896405> <#768153232136077334> For discussing any controversial topics such as politics, religion and similar.
 <:sapphire:746069730170896405> <#737452979162054717> For using <@266624760782258186>'s or <@419164839835992075>'s commands.
+<:sapphire:746069730170896405> <#750076466099912804> <@266624760782258186>'s Starboard.
 
-
+_ _
+**SUPPORT**
+<:sapphire:746069730170896405> <#737142503043498015> For getting support with [`@sapphire/framework`](https://github.com/sapphiredev/framework) and other Sapphire libraries.
+<:sapphire:746069730170896405> <#750799332445519884> For getting support with [discord.js](https://discord.js.org).
 _ _
 **DEV ZONE**
 <:sapphire:746069730170896405> <#737142325217722478> For talking about anything coding.
@@ -33,10 +37,6 @@ _ _
 <:sapphire:746069730170896405> <#759750007087431721> Development chat for any of the [Sapphire Utilities](https://github.com/sapphiredev/utilities) packages.
 <:sapphire:746069730170896405> <#795723882556162058> Development chat for [the Sapphire website](https://sapphirejs.dev).
 _ _
-**SUPPORT**
-<:sapphire:746069730170896405> <#737142503043498015> For getting support with [`@sapphire/framework`](https://github.com/sapphiredev/framework) and other Sapphire libraries.
-<:sapphire:746069730170896405> <#750799332445519884> For getting support with [discord.js](https://discord.js.org).
-_ _
 **VOICE**
 <:sapphire:746069730170896405> <#750105399172137011> For anything which only makes sense in the context of the voice channels. Sharing images, or typing when your mic is off, etc.
 
@@ -44,7 +44,6 @@ _ _
 _ _
 **AUTOMATED CHANNELS**
 <:sapphire:746069730170896405> <#797263701811396628> Automated messages that show changelogs when we make new releases of any of the Sapphire packages.
-<:sapphire:746069730170896405> <#750076466099912804> <@266624760782258186>'s Starboard.
 <:sapphire:746069730170896405> <#737142131675627521> Automated messages from the Discord Developers webhook.
 <:sapphire:746069730170896405> <#737143305347006564> Automated messages from the GitHub organization webhook.
 _ _
