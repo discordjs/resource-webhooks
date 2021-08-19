@@ -1,12 +1,12 @@
 **Limitless invite link to this server:**
-https://discord.gg/bRCvFy9
+https://discord.gg/djs
 
 _ _
 **Main discord.js resources:**
 • [Documentation](https://discord.js.org/#/docs/main/stable)
 • [GitHub](https://github.com/discordjs/discord.js)
 • [Guide](https://discordjs.guide/)
-• [Update to version 12](https://discordjs.guide/additional-info/changes-in-v12.html?v=12)
+• [Update to version 13](https://discordjs.guide/additional-info/changes-in-v13.html)
 • [Discord Developer Documentation](https://discord.com/developers/docs) (needed permissions etc.)
 _ _
 **Learning JavaScript and node.js:**
