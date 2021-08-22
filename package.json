@@ -41,7 +41,7 @@
 		"@sapphire/prettier-config": "^1.1.6",
 		"@sapphire/ts-config": "^2.3.2",
 		"@types/common-tags": "^1.8.1",
-		"@types/node": "^15.14.0",
+		"@types/node": "^15.14.9",
 		"@types/ws": "^7.4.7",
 		"common-tags": "^1.8.0",
 		"cz-conventional-changelog": "^3.3.0",
