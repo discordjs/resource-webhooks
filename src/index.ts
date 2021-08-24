@@ -1,5 +1,5 @@
 import { APIMessage } from 'discord-api-types/v9';
-import { WebhookClient } from 'discord.js';
+import { WebhookClient, Formatters } from 'discord.js';
 import { readdir, readFile } from 'fs/promises';
 import { URL } from 'url';
 import { promisify } from 'util';
@@ -7,9 +7,8 @@ import { promisify } from 'util';
 const jumpRegex = /%JUMP_TO_TOP%/gm;
 
 const linkEscapeRegex = /\[(.+?)\]\((.+?)\)/gm;
-const linkEscapeReplacer = (_: any, p1: string, p2: string): string => {
-	return `[${p1}](<${p2}>)`;
-};
+const linkEscapeReplacer = (_: any, p1: string, p2: string): string =>
+	Formatters.hyperlink(p1, Formatters.hideLinkEmbed(p2));
 
 const replacePatterns = {
 	'%RULES_CHANNEL%': '<#222109930545610754>',
@@ -17,9 +16,7 @@ const replacePatterns = {
 	'%USEFUL_SERVERS_CHANNEL%': '<#237743386864517122>',
 } as const;
 
-function resolveIdentifier(channelName: string): string {
-	return channelName.toUpperCase().replace(/-/gm, '_');
-}
+const resolveIdentifier = (channelName: string): string => channelName.toUpperCase().replace(/-/gm, '_');
 
 const wait = promisify(setTimeout);
 
