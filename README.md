@@ -16,7 +16,7 @@ The repository requires the `WEBHOOK_AVATAR` and `WEBHOOK_NAME` repository secre
 3. Code your heart out!
 4. Run `npm run lint` to run ESLint
 5. Run `npm run build` to transpile into JavaScript and ensure no type errors remain
-6. [Submit a pull request](https://github.com/discordjs/resource-webhooks/compare) (Make sure you follow the [conventional commit format](https://github.com/discordjs/discord.js-next/blob/master/.github/COMMIT_CONVENTION.md))
+6. [Submit a pull request](https://github.com/discordjs/resource-webhooks/compare) (Make sure you follow the [conventional commit format](https://github.com/discordjs/discord.js-modules/blob/main/.github/COMMIT_CONVENTION.md))
 
 ### Adding content
 
