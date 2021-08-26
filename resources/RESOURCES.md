@@ -39,8 +39,9 @@ Discord.js heavily relies on promises, if you are new to the topic here are some
 • [javascript.info](https://javascript.info/async-await)
 _ _
 **Popular bot frameworks:**
-•  [Akairo](https://www.npmjs.com/package/discord-akairo)
-•  [Commando](https://www.npmjs.com/package/discord.js-commando)
+•  [Sapphire](https://www.npmjs.com/package/@sapphire/framework) (updated for v13)
+•  [Akairo](https://www.npmjs.com/package/discord-akairo) (will not be updated for v13)
+•  [Commando](https://www.npmjs.com/package/discord.js-commando) (will not be updated for v13)
 _ _
 **Popular modules:**
 • [Canvas](https://www.npmjs.com/package/canvas) (image processing)
