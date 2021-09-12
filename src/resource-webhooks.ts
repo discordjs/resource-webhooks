@@ -1,4 +1,4 @@
-import type { RESTPostAPIChannelMessageResult } from 'discord-api-types/v8';
+import type { RESTPostAPIChannelMessageResult } from 'discord-api-types/v9';
 import { WebhookClient } from 'discord.js';
 import { readdir, readFile } from 'fs/promises';
 import { URL } from 'url';
@@ -58,7 +58,7 @@ for (const channel of channels) {
 
 	// Get the hookID and hookToken. If it is a release channel then just get the release environment variable.
 	const [hookID, hookToken] = process.env[channel]!.split('/').slice(-2);
-	const hook = new WebhookClient(hookID, hookToken);
+	const hook = new WebhookClient({ id: hookID, token: hookToken });
 
 	// Get the proper file name
 	const fileName = `${channel}.md`;
@@ -85,7 +85,8 @@ for (const channel of channels) {
 		}
 
 		// A raw API response is returned here, not a Message object as the typings indicate
-		const response = (await hook.send(part, {
+		const response = (await hook.send({
+			content: part,
 			avatarURL: process.env.WEBHOOK_AVATAR,
 			username: process.env.WEBHOOK_NAME,
 			allowedMentions: {
