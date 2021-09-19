@@ -1,8 +1,8 @@
 import type { RESTPostAPIChannelMessageResult } from 'discord-api-types/v9';
 import { WebhookClient } from 'discord.js';
 import { readdir, readFile } from 'fs/promises';
+import { setTimeout as wait } from 'timers/promises';
 import { URL } from 'url';
-import { promisify } from 'util';
 
 /* Regexes, constants, and utility functions */
 const jumpRegex = /%JUMP_TO_TOP%/gm;
@@ -13,11 +13,6 @@ const replacePatterns: Record<string, string> = {} as const;
 const linkEscapeRegex = /\[(.+?)\]\((.+?)\)/gm;
 const resolveIdentifier = (channelName: string): string => channelName.toUpperCase().replace(/-/gm, '_');
 const linkEscapeReplacer = (_: any, p1: string, p2: string): string => `[${p1}](<${p2}>)`;
-
-const wait: {
-	(ms: number): Promise<void>;
-	<T>(ms: number, value: T): Promise<T>;
-} = promisify(setTimeout);
 
 /* Start processing */
 
