@@ -7,7 +7,6 @@
 **Webhook scripts to update Sapphire rules**
 
 [![GitHub](https://img.shields.io/github/license/sapphiredev/resource-webhooks)](https://github.com/sapphiredev/resource-webhooks/blob/main/LICENSE.md)
-[![Depfu](https://badges.depfu.com/badges/3e687d5f136ff4e619f690491b831270/count.svg)](https://depfu.com/github/sapphiredev/e-webhooks?project_id=24218)
 
 [![Support Server](https://discord.com/api/guilds/737141877803057244/embed.png?style=banner2)](https://sapphirejs.dev/discord)
 
