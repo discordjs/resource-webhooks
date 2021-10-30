@@ -23,13 +23,13 @@ in your text editor or IDE of your choice to ensure builds from GitHub Actions d
 There are a number of guidelines considered when reviewing Pull Requests to be merged. _This is by no means an exhaustive list, but here are some things to consider before/while submitting your ideas._
 
 -   Everything should follow our ESLint rules as closely as possible, and should pass lint tests even if you must disable a rule for a single line.
--   Scripts that are to be ran outside of the scope of the bot should be added to [scripts] directory and should be in the `.mjs` file format.
 
 <!-- Link Dump -->
 
-<!-- Code -->
-
 [discord server]: https://sapphirejs.dev/discord
-[here]: https://github.com/sapphiredev/resource-webhooks/pulls
+[here]: https://github.com/sapphiredev/cli/pulls
 [eslint]: https://eslint.org/
+[node.js]: https://nodejs.org/en/download/
+[yarn]: https://yarnpkg.com/getting-started/install
+[oop paradigms]: https://en.wikipedia.org/wiki/Object-oriented_programming
 [scripts]: /scripts
