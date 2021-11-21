@@ -12,7 +12,6 @@ module.exports = class MyPrecondition extends CorePreconditions.ClientPermission
   // Do stuff
 }
 ```
-_ _
 *TypeScript / ESM*
 ```ts
 import { CorePreconditions, Precondition } from '@sapphire/framework';
@@ -20,7 +19,6 @@ export class MyPrecondition extends CorePreconditions.ClientPermissions {
   // Do stuff
 }
 ```
-_ _
 _**Bug Fixes**_
 _ _
 ⫸ (TypeScript Only): TypeScript 4.5 introduced some build issues with 1 particular line in the Listener class. We have fixed that.
@@ -57,10 +55,9 @@ Now you can use this formatter in your i18next JSON like so:
 }
 ```
 And you can remove the legacy style of defining formatters by removing `clientOptions.i18n.i18next.interpolation.format`
-_ _
-_ _
-_ _
-Lastly all of the following packages have the namespaces change as @sapphire/framework:
+
+
+Lastly all of the following packages have the same namespaces change as @sapphire/framework:
 _ _
 ⫸ **[@sapphire/plugin-i18next v2.1.0](https://github.com/sapphiredev/plugins/compare/@sapphire/plugin-i18next@2.0.2...@sapphire/plugin-i18next@2.1.0)**
 ⫸ **[@sapphire/plugin-api v2.1.0](https://github.com/sapphiredev/plugins/compare/@sapphire/plugin-api@3.0.2...@sapphire/plugin-api@3.1.0)**
