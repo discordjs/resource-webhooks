@@ -24,14 +24,6 @@
 	"dependencies": {
 		"discord.js": "^13.3.1"
 	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/sapphiredev/resource-webhooks.git"
-	},
-	"bugs": {
-		"url": "https://github.com/sapphiredev/resource-webhooks/issues"
-	},
-	"homepage": "https://github.com/sapphiredev/resource-webhooks#readme",
 	"devDependencies": {
 		"@commitlint/cli": "^15.0.0",
 		"@commitlint/config-angular": "^15.0.0",
@@ -56,11 +48,6 @@
 		"prettier": "^2.4.1",
 		"pretty-quick": "^3.1.2",
 		"typescript": "^4.5.2"
-	},
-	"resolutions": {
-		"lodash": "^4.17.21",
-		"merge": "^2.1.1",
-		"trim": "^1.0.1"
 	},
 	"engines": {
 		"node": ">=16.6.0",

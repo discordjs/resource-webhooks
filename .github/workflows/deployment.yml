@@ -40,6 +40,8 @@ jobs:
         run: yarn deploy
         env:
           WELCOME: ${{ secrets.WEBHOOK_WELCOME }}
+          ANNOUNCEMENT: ${{ secrets.WEBHOOK_ANNOUNCEMENT }}
+          DRAFT: ${{ secrets.WEBHOOK_DRAFT }}
           WEBHOOK_AVATAR: ${{ secrets.WEBHOOK_AVATAR }}
           WEBHOOK_NAME: ${{ secrets.WEBHOOK_NAME }}
           DEPLOY_CHANNELS: ${{ github.event.inputs.deployChannels }}
