@@ -72,6 +72,7 @@ for (const channel of channels) {
 
 	// The env var to use
 	const envVarToUse = isAnnouncement(channel) ? 'ANNOUNCEMENT' : isDraft(channel) ? 'DRAFT' : channel;
+	const roleToMention = isAnnouncement(channel) ? '912088476290273300' : isDraft(channel) ? '901237389257744426' : null;
 
 	// Get the hookID and hookToken. If it is a release channel then just get the release environment variable.
 	const [hookID, hookToken] = process.env[envVarToUse]!.split('/').slice(-2);
@@ -83,14 +84,15 @@ for (const channel of channels) {
 	// Read the file and replace some content in it to make it Discord message ready
 	const raw = await readFile(new URL(fileName, resourcesDir), { encoding: 'utf8' });
 
-	const r1 = raw.replace(linkEscapeRegex, linkEscapeReplacer);
-	const r2 = Object.entries(replacePatterns).reduce((acc, [k, v]) => {
+	const r1 = isAnnouncement(channel) || isDraft(channel) ? `**New announcement for** <@&${roleToMention}>:\n${raw}` : raw;
+	const r2 = r1.replace(linkEscapeRegex, linkEscapeReplacer);
+	const r3 = Object.entries(replacePatterns).reduce((acc, [k, v]) => {
 		const regex = new RegExp(k, 'gm');
 		return acc.replace(regex, v);
-	}, r1);
-	const r3 = r2.replace(/%PNG_([A-Z_]+)%/gm, `${imagesBaseUrl}/${channel}/$1.png`);
+	}, r2);
+	const r4 = r3.replace(/%PNG_([A-Z_]+)%/gm, `${imagesBaseUrl}/${channel}/$1.png`);
 
-	const parts = r3.split('\n\n');
+	const parts = r4.split('\n\n');
 
 	// Store a reference to the first message
 	let firstMessage: RESTPostAPIChannelMessageResult | null = null;
@@ -108,7 +110,7 @@ for (const channel of channels) {
 			username: process.env.WEBHOOK_NAME,
 			allowedMentions: {
 				users: [],
-				roles: []
+				roles: roleToMention ? [roleToMention] : []
 			}
 		})) as unknown as RESTPostAPIChannelMessageResult;
 
