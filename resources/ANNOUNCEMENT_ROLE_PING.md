@@ -1,0 +1,1 @@
+Want to be pinged about new releases in the future? Use `s!subscribe` in <#737452979162054717>!
