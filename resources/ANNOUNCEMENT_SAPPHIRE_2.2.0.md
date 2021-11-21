@@ -8,7 +8,6 @@ _ _
 *JavaScript*
 ```js
 const { CorePreconditions, Precondition } = require('@sapphire/framework');
-
 module.exports = class MyPrecondition extends CorePreconditions.ClientPermissions {
   // Do stuff
 }
@@ -17,7 +16,6 @@ _ _
 *TypeScript / ESM*
 ```ts
 import { CorePreconditions, Precondition } from '@sapphire/framework';
-
 export class MyPrecondition extends CorePreconditions.ClientPermissions {
   // Do stuff
 }
@@ -40,7 +38,6 @@ _ _
 ⫸ Support for the new syntax for i18next formatters has been added. All you need to do to register your formatters is configure them in `clientOptions.i18n.formatters`. For example:
 ```ts
 import { SapphireClient } from "@sapphire/framework";
-
 const myClient = new SapphireClient({
   intents: ["whatever"],
   i18n: {
