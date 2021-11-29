@@ -25,6 +25,11 @@ Example: `rules, useful-servers`
 
 The repository requires the `WEBHOOK_AVATAR` and `WEBHOOK_NAME` repository secrets which control the webhooks avatar and name respectively for all deployed webhook resources.
 
+### Adding announcements
+
+1. Add the file into [`./resources`](/resources). The file name must be `ANNNOUNCEMENT_TOPIC`.
+2. Follow steps 2-5 from [Adding content](#adding-content)
+
 ### Adding content
 
 1. Add the file into [`./resources`](/resources) (The file name should be derived from the channel the webhook will post to for added verbosity. The channel `foo-bar` becomes `FOO_BAR.md`)
@@ -44,6 +49,11 @@ Once a document is done for posting it can be deployed with [the GitHub workflow
 2. Click "Run workflow"
 3. In the input field add the file name of the file to deploy
 4. Confirm with "Run workflow"
+
+#### Testing an `ANNOUNCEMENT` deployment
+
+Announcements in particular often need to be verified in Discord before they get published to the announcement channel.
+To this end it is possible to replace the `ANNOUNCEMENT` part of the file name with `DRAFT` and it will post to the [`#mod-bot-commands`](https://discord.com/channels/737141877803057244/868830230503100426) channel as opposed to [`#announcements`](https://discord.com/channels/737141877803057244/737142071319855105).
 
 ## Buy us some doughnuts
 
