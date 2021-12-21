@@ -2,4 +2,4 @@
 _ _
 _**Bug Fixes**_
 _ _
-⫸ Whenever a non-existing route is requested we no longer return a status code of 200, but a status code of 404 as it should've been.
+⫸ Whenever a non-existing route is requested we no longer return a status code of 200, but instead a status code of 404.
