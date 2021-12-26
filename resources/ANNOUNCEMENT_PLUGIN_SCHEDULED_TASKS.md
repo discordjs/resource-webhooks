@@ -8,5 +8,5 @@ Many bots have features that need to run periodically, such as uploading analyti
 _ _
 For further reading you can go to:
 - The plugin on NPM: <https://www.npmjs.com/package/@sapphire/plugin-scheduled-tasks>
-- The source code on GitHub: <https://github.com/sapphiredev/plugins/tree/main/packages/scheduled-tasks>.
+- The source code on GitHub: <https://github.com/sapphiredev/plugins/tree/main/packages/scheduled-tasks>
 - The API documentation on our website: <https://www.sapphirejs.dev/docs/Documentation/api-plugins/modules/sapphire_plugin_scheduled_tasks>
