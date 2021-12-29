@@ -18,7 +18,7 @@ export class WoofCommand extends PatternCommand {
 			chance: 85
 		});
 	}
-// _ _
+	// _ _	
 	public messageRun(message: Message) {
 		message.reply('Woof!');
 	}
