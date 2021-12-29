@@ -30,7 +30,7 @@ For further reading you can go to:
 -   The source code on GitHub: <https://github.com/sapphiredev/plugins/tree/main/packages/pattern-commands>
 -   The API documentation on our website: <https://www.sapphirejs.dev/docs/Documentation/api-plugins/modules/sapphire_plugin_pattern_commands>
 
-**[@sapphire/plugin-scheduled-tasks v1.1.0](https://github.com/sapphiredev/plugin-scheduled-tasks/compare/v1.0.0...v1.1.0) has been released** ‼️
+**[@sapphire/plugin-scheduled-tasks v1.1.0](https://github.com/sapphiredev/plugin-scheduled-tasks/compare/v1.0.0...v1.1.0) has been released**
 _ _
 **_Features_**
 _ _
