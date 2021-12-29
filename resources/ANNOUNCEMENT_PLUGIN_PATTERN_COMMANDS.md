@@ -9,7 +9,7 @@ With pattern commands you can define rules to which the bot may respond. For exa
 import type { Message } from 'discord.js';
 import { PatternCommand } from '@sapphire/plugin-pattern-commands';
 import { ApplyOptions } from '@sapphire/decorators';
-// _ _
+​
 export class WoofCommand extends PatternCommand {
 	public constructor(context: PatternCommand.Context, options: PatternCommand.Options) {
 		super(context, {
@@ -18,7 +18,7 @@ export class WoofCommand extends PatternCommand {
 			chance: 85
 		});
 	}
-	// _ _	
+​
 	public messageRun(message: Message) {
 		message.reply('Woof!');
 	}
