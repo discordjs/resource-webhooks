@@ -8,7 +8,6 @@ With pattern commands you can define rules to which the bot may respond. For exa
 ```typescript
 import type { Message } from 'discord.js';
 import { PatternCommand } from '@sapphire/plugin-pattern-commands';
-import { ApplyOptions } from '@sapphire/decorators';
 ​
 export class WoofCommand extends PatternCommand {
 	public constructor(context: PatternCommand.Context, options: PatternCommand.Options) {
