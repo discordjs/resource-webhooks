@@ -24,6 +24,7 @@ export class WoofCommand extends PatternCommand {
 	}
 }
 ```
+(*Warning, there are zero width spaces above `messageRun` and `export class...` for formatting in this announcement*)
 _ _
 For further reading you can go to:
 -   The plugin on NPM: <https://www.npmjs.com/package/@sapphire/plugin-pattern-commands>
