@@ -77,7 +77,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://favware.tech/"><img src="https://avatars.githubusercontent.com/u/4019718?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Jeroen Claassens</b></sub></a><br /><a href="https://github.com/sapphiredev/resource-webhooks/commits?author=Favna" title="Code">💻</a> <a href="#content-Favna" title="Content">🖋</a> <a href="https://github.com/sapphiredev/resource-webhooks/commits?author=Favna" title="Documentation">📖</a> <a href="#design-Favna" title="Design">🎨</a> <a href="#maintenance-Favna" title="Maintenance">🚧</a> <a href="#projectManagement-Favna" title="Project Management">📆</a></td>
+    <td align="center"><a href="https://favware.tech/"><img src="https://avatars.githubusercontent.com/u/4019718?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Jeroen Claassens</b></sub></a><br /><a href="https://github.com/sapphiredev/resource-webhooks/commits?author=favna" title="Code">💻</a> <a href="#content-favna" title="Content">🖋</a> <a href="https://github.com/sapphiredev/resource-webhooks/commits?author=favna" title="Documentation">📖</a> <a href="#design-favna" title="Design">🎨</a> <a href="#maintenance-favna" title="Maintenance">🚧</a> <a href="#projectManagement-favna" title="Project Management">📆</a></td>
     <td align="center"><a href="https://github.com/almostSouji"><img src="https://avatars.githubusercontent.com/u/26532370?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Souji</b></sub></a><br /><a href="https://github.com/sapphiredev/resource-webhooks/commits?author=almostSouji" title="Code">💻</a></td>
     <td align="center"><a href="https://ko-fi.com/crawltogo"><img src="https://avatars.githubusercontent.com/u/20760160?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Noel</b></sub></a><br /><a href="https://github.com/sapphiredev/resource-webhooks/commits?author=iCrawl" title="Code">💻</a></td>
     <td align="center"><a href="https://fyko.net/"><img src="https://avatars.githubusercontent.com/u/45381083?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Carter</b></sub></a><br /><a href="https://github.com/sapphiredev/resource-webhooks/commits?author=Fyko" title="Code">💻</a></td>
@@ -88,6 +88,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   <tr>
     <td align="center"><a href="https://github.com/monbrey"><img src="https://avatars.githubusercontent.com/u/5294381?v=4?s=100" width="100px;" alt=""/><br /><sub><b>monbrey</b></sub></a><br /><a href="https://github.com/sapphiredev/resource-webhooks/commits?author=monbrey" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/apps/dependabot"><img src="https://avatars.githubusercontent.com/in/29110?v=4?s=100" width="100px;" alt=""/><br /><sub><b>dependabot[bot]</b></sub></a><br /><a href="#maintenance-dependabot[bot]" title="Maintenance">🚧</a></td>
+    <td align="center"><a href="https://github.com/apps/depfu"><img src="https://avatars.githubusercontent.com/in/715?v=4?s=100" width="100px;" alt=""/><br /><sub><b>depfu[bot]</b></sub></a><br /><a href="#maintenance-depfu[bot]" title="Maintenance">🚧</a></td>
   </tr>
 </table>
 
