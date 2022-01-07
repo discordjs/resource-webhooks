@@ -3,14 +3,15 @@ https://discord.gg/djs
 
 _ _
 **Main discord.js resources:**
-• [Documentation](https://discord.js.org/#/docs/main/stable/general/welcome)
+
+• [Documentation](https://discord.js.org/#/docs/discord.js/stable/general/welcome)
 • [GitHub](https://github.com/discordjs/discord.js)
 • [Guide](https://discordjs.guide/)
 • [Update to version 13](https://discordjs.guide/additional-info/changes-in-v13.html)
 • [Discord Developer Documentation](https://discord.com/developers/docs) (needed permissions etc.)
 _ _
 **Learning JavaScript and node.js:**
-• [CodeCademy online course](https://www.codecademy.com/learn/javascript)
+• [CodeCademy online course](https://www.codecademy.com/learn/introduction-to-javascript)
 • [Eloquent JavaScript, free book](http://eloquentjavascript.net/)
 • [MDN's JavaScript guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Introduction)
 • [You Don't Know JS (free book series)](https://github.com/getify/You-Dont-Know-JS)
