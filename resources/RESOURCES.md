@@ -3,7 +3,6 @@ https://discord.gg/djs
 
 _ _
 **Main discord.js resources:**
-
 • [Documentation](https://discord.js.org/#/docs/discord.js/stable/general/welcome)
 • [GitHub](https://github.com/discordjs/discord.js)
 • [Guide](https://discordjs.guide/)
