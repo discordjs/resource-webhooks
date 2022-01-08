@@ -1,4 +1,4 @@
-‼️ **[@sapphire/framework v2.3.0](https://github.com/sapphiredev/framework/compare/v2.2.1...v2.3.0) has been released** ‼️
+**[@sapphire/framework v2.3.0](https://github.com/sapphiredev/framework/compare/v2.2.2...v2.3.0) has been released**
 _ _
 _**Features**_
 _ _
