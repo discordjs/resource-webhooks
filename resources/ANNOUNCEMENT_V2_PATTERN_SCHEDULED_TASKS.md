@@ -21,5 +21,5 @@ _ _
 　⪢ The parameters for `patternCommandFinished` are in order `command`, `duration`, `payload`.
 　⪢ **BREAKING CHANGE:** This plugin now depends on `@sapphire/stopwatch`. Make sure to add it to your dependencies if you haven't already.
 ⫸ Introduced a new property for the pattern command options (`PatternCommandOptions`), `matchFullName`.
-　⪢ Setting this to true will ensure that RegEx matches only match if the full content matches the name or alias. For example given the key `post` and the content `postman` and this option set to true will not give a match, but will when set to false.
+　⪢ Setting this to true will ensure that RegEx matches only match if the full content matches the name of the command. For example given the command name `post` and the content `postman` and this option set to true will not give a match, but will when set to false.
 　⪢ The default value is `false`.
