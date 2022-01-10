@@ -23,3 +23,32 @@ _ _
 ⫸ Introduced a new property for the pattern command options (`PatternCommandOptions`), `matchFullName`.
 　⪢ Setting this to true will ensure that RegEx matches only match if the full content matches the name of the command. For example given the command name `post` and the content `postman` and this option set to true will not give a match, but will when set to false.
 　⪢ The default value is `false`.
+
+**[@sapphire/utilities v3.2.0](https://github.com/sapphiredev/plugins/compare/@sapphire/utilities@3.1.0...@sapphire/utilities@3.2.0) has been released**
+_ _
+_**Bug Fixes**_
+_ _
+⫸ Make the `NonNullObject` type require `object`
+_ _
+_**Features**_
+_ _
+⫸ Add support for optional custom constructors in the `isObject` method, useful for when passing a class instance into this method.
+_ _
+**[@sapphire/event-iterator v1.4.0](https://github.com/sapphiredev/plugins/compare/@sapphire/event-iterator@1.3.3...@sapphire/event-iterator@1.4.0) has been released**
+_ _
+_**Features**_
+_ _
+⫸ No longer bundle this package for browsers using rollup, this package was always meant to be used with a NodeJS environment only.
+_ _
+**[@sapphire/discord-utilities v2.5.0](https://github.com/sapphiredev/plugins/compare/@sapphire/discord-utilities@2.4.0...@sapphire/discord-utilities@2.5.0) has been released**
+_ _
+_**Features**_
+_ _
+⫸ Added more limits:
+　⪢ `ChannelLimits.MaximumReactions`
+　⪢ `ChannelLimits.MaximumUploadSize`
+　⪢ `ChannelLimits.MaximumNitroUploadSize`
+　⪢ `ChannelLimits.MaximumUploadSizeInGuild`
+　⪢ `ModerationLimits.MaximumTimeoutDuration`
+　⪢ `UserLimits.MaximumUsersPerDMGroup`
+　⪢ `UserLimits.MaximumBiographyLength`
