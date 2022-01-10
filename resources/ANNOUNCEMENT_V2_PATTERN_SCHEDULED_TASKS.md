@@ -11,7 +11,7 @@ _ _
 ⫸ Added a `duration` parameter to `scheduledTaskError` and `scheduledTaskFinished` events to indicate how long running the task took.
 　⪢ BREAKING CHANGE: The `duration` argument is the parameter _before_ the `payload` parameter for the events, thus shifting `payload` one position to the right of the parameter list.
 　⪢ BREAKING CHANGE: This plugin now depends on `@sapphire/stopwatch`. Make sure to add it to your dependencies if you haven't already.
-_ _
+
 **[@sapphire/plugin-pattern-commands v2.0.0](https://github.com/sapphiredev/plugins/compare/@sapphire/plugin-pattern-commands@1.0.2...@sapphire/plugin-pattern-commands@2.0.0) has been released**
 _ _
 _**Features**_
