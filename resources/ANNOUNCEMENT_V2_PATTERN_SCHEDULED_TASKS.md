@@ -52,3 +52,5 @@ _ _
 　⪢ `ModerationLimits.MaximumTimeoutDuration`
 　⪢ `UserLimits.MaximumUsersPerDMGroup`
 　⪢ `UserLimits.MaximumBiographyLength`
+_ _
+TL;DR: New releases for `@sapphire/plugin-scheduled-tasks`, `@sapphire/plugin-pattern-commands`, `@sapphire/utilities`, `@sapphire/event-iterator`, and `@sapphire/discord-utilities`
