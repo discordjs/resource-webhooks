@@ -16,7 +16,7 @@ _ _
 For further reading you can go to:
 -   The package on NPM: <https://www.npmjs.com/package/@sapphire/phisherman>
 -   The source code on GitHub: <https://github.com/sapphiredev/utilities/tree/main/packages/phisherman>
--   The API documentation on our website: <https://www.sapphirejs.dev/docs/Documentation/api-utilities/modules/???> (TODO: good link)
+-   The API documentation on our website: <https://www.sapphirejs.dev/docs/Documentation/api-utilities/modules/sapphire_phisherman>
 
 
 **[@sapphire/plugin-hmr v1.1.0](https://github.com/sapphiredev/plugins/compare/@sapphire/plugin-hmr@1.0.1...@sapphire/plugin-hmr@1.1.0) has been released**
