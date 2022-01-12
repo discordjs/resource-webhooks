@@ -1,4 +1,4 @@
-___**[This release is lit]**___(https://youtu.be/U1ei5rwO7ZI) <a:snoopdogg:930868548459446313>
+___**[This release is lit](https://youtu.be/U1ei5rwO7ZI)**___ <a:snoopdogg:930868548459446313>
 _ _
 **[@sapphire/discord.js-utilities v4.2.0](https://github.com/sapphiredev/utilities/compare/@sapphire/discord.js-utilities@4.1.6...@sapphire/discord.js-utilities@4.2.0) has been released**
 _**Features**_
