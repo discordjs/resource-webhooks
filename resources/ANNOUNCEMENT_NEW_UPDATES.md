@@ -4,7 +4,7 @@ _ _
 _ _
 _**Features**_
 _ _
-⫸ Added `PaginatedMessageEmbedFields` class. Thank you <@188341077902753794>.
+⫸ Added `PaginatedMessageEmbedFields` class.
 　⪢ `PaginatedMessageEmbedFields` (this new one) differs from `PaginatedFieldMessageEmbed` as the items here are whole fields, that are added to the embed, whereas `PaginatedFieldMessageEmbed` concatenates the items in a single field with a given formatter function.
 _ _
 📦 New utility package! 📦
