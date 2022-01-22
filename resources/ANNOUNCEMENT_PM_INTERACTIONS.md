@@ -6,7 +6,7 @@ _**Bug Fixes**_
 _**Features**_
 ⫸ The moment you've all been waiting for has finally arrived! PaginatedMessage now supports interactions! On top of supporting messages, you can now start your PaginatedMessage based on Command Interactions, Select Menu Interactions, and Button Interactions! For example when using `@sapphire/framework@next` (which support application commands) you can do the following:
 ```ts
-public override async chatInputRun(...[interaction]: Parameters<ChatInputCommand['chatInputRun']>) {
+public override async chatInputRun(interaction: CommandInteraction) {
   await interaction.deferReply();
 ​
   const myQuery = interaction.options.getString('query', true);
