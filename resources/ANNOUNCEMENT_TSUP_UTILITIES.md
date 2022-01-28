@@ -11,6 +11,7 @@ _**Features that apply to all the packages below**_
 - **[@sapphire/phisherman v1.2.0](https://github.com/sapphiredev/phisherman/compare/@sapphire/phisherman@1.1.0..@sapphire/utilities@1.2.0)**
 - **[@sapphire/prettier-config v1.3.0](https://github.com/sapphiredev/prettier-config/compare/@sapphire/prettier-config@1.2.9..@sapphire/utilities@1.3.0)**
 - **[@sapphire/ratelimits v2.2.0](https://github.com/sapphiredev/ratelimits/compare/@sapphire/ratelimits@2.1.12..@sapphire/utilities@2.2.0)**
+
 - **[@sapphire/snowflake v3.1.0](https://github.com/sapphiredev/snowflake/compare/@sapphire/snowflake@3.0.1..@sapphire/utilities@3.1.0)**
 - **[@sapphire/stopwatch v1.3.0](https://github.com/sapphiredev/stopwatch/compare/@sapphire/stopwatch@1.2.5..@sapphire/utilities@1.3.0)**
 - **[@sapphire/time-utilities v1.6.0](https://github.com/sapphiredev/time-utilities/compare/@sapphire/time-utilities@1.5.2..@sapphire/utilities@1.6.0)**
