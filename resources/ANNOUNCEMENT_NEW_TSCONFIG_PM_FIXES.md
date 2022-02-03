@@ -1,21 +1,15 @@
 **[@sapphire/discord.js-utilities v4.6.0](https://github.com/sapphiredev/utilities/compare/@sapphire/discord.js-utilities@4.5.0...@sapphire/discord.js-utilities@4.6.0) has been released**
 _**Bug Fixes**_
 ⫸ Fixed `PaginatedMessage` not filtering to the correct response and user, causing very weird behaviour when 2 people used a command with `PaginatedMessage` in the same channel.
-⫸ Adjusted the default `wrongUserInteractionReply` message for `PaginatedMessage` to account for the fact that there is also a Select Menu on the `PaginatedMessage` by default.
-from:
-> Please stop clicking the buttons on this message.
-to:
-> Please stop interacting with the components on this message.
-　⪢ Reminder that this message can be edited with [`setWrongUserInteractionReply`](<https://www.sapphirejs.dev/docs/Documentation/api-utilities/classes/sapphire_discord_js_utilities.PaginatedMessage#setwronguserinteractionreply>)
-⫸ Adjusted error message thrown when no actions are provided to the `PaginatedMessage`
-from:
-> There are no messages.
-to:
-> There are no actions.
+_ _
+⫸ Adjusted the default `wrongUserInteractionReply` message for `PaginatedMessage` to account for the fact that there is also a Select Menu on the `PaginatedMessage` by default. The message has been changed from `Please stop clicking the buttons on this message.` to `Please stop interacting with the components on this message.`
+_ _
+⫸ Adjusted error message thrown when no actions are provided to the `PaginatedMessage` from `There are no messages.` to `There are no actions.`
 _**Features**_
 ⫸ Added new type guards: `isVoiceBasedChannel` and `isMessageInstance`
 　⪢ `isVoiceBasedChannel` takes a channel and is truthy if that channel is a voice based channel.
 　⪢ `isMessageInstance` takes a message and is truthy if that message is a message instance, and not an `APIMessage`
+_ _
 ⫸ Added a new utility function: `canJoinVoiceChannel`
 　⪢ `canJoinVoiceChannel` takes a channel and returns true if that channel is a voice based channel and the bot can join that channel.
 
