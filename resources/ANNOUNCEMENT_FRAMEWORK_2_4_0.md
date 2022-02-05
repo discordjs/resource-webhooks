@@ -5,8 +5,8 @@ _**Bug Fixes**_
 _**Features**_
 ⫸ Made it possible for a command's `detailedDescription` property to be an object instead of a string. This way you can pass rich data into this property that can be read in a `help` command.
 　⪢ (TypeScript Only): If you want the `detailedDescription` object to be strictly typed then you can module augment the `DetailedDescriptionCommandObject` interface:
-　```ts
-　declare module '@sapphire/framework' {
-	　interface DetailedDescriptionCommandObject {} // Your module augmentation here
-　}
-　```
+```ts
+declare module '@sapphire/framework' {
+	interface DetailedDescriptionCommandObject {} // Your module augmentation here
+}
+```
