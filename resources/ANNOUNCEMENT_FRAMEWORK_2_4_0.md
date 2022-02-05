@@ -1,3 +1,5 @@
+_**Who wouldda thonked? A new `@sapphire/framework` release before we release v3!**_
+
 ‼️ **[@sapphire/framework v2.4.0](https://github.com/sapphiredev/framework/compare/v2.3.0...v2.4.0) has been released** ‼️
 _**Bug Fixes**_
 ⫸ Bumped the `@sapphire` dependencies to their latest versions
