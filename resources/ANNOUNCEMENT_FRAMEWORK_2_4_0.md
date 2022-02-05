@@ -1,6 +1,6 @@
 _**Who wouldda thonked? A new `@sapphire/framework` release before we release v3!**_
-
-‼️ **[@sapphire/framework v2.4.0](https://github.com/sapphiredev/framework/compare/v2.3.0...v2.4.0) has been released** ‼️
+_ _
+**[@sapphire/framework v2.4.0](https://github.com/sapphiredev/framework/compare/v2.3.0...v2.4.0) has been released**
 _**Bug Fixes**_
 ⫸ Bumped the `@sapphire` dependencies to their latest versions
 ⫸ Ensure commands do not run when your bot has been timed out through the "Time Out" Discord feature. This was caused a lot of errors for bots.
