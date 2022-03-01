@@ -1,8 +1,8 @@
 import type { RESTPostAPIChannelMessageResult } from 'discord-api-types/v9';
 import { WebhookClient } from 'discord.js';
-import { readdir, readFile } from 'fs/promises';
-import { setTimeout as wait } from 'timers/promises';
-import { URL } from 'url';
+import { readdir, readFile } from 'node:fs/promises';
+import { setTimeout as wait } from 'node:timers/promises';
+import { URL } from 'node:url';
 
 /* Regexes, constants, and utility functions */
 const jumpRegex = /%JUMP_TO_TOP%/gm;
