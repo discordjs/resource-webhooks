@@ -4,4 +4,4 @@ _**Bug Fixes**_
 _ _
 **[@sapphire/plugin-scheduled-tasks v2.3.1](https://github.com/sapphiredev/plugins/compare/@sapphire/plugin-scheduled-tasks@2.3.0...@sapphire/plugin-scheduled-tasks@2.3.1) has been released**
 _**Bug Fixes**_
-⫸ Fixed a bug where cron scheduled tasks would be created with the name `__default__` instead of a unique name, causing conflicts when having 2 different cron scheduled tasks.
+⫸ (Bull Provider only) Fixed a bug where cron scheduled tasks would be created with the name `__default__` instead of a unique name, causing conflicts when having 2 different cron scheduled tasks.
