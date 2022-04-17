@@ -12,8 +12,8 @@
 	"type": "module",
 	"scripts": {
 		"lint": "eslint src scripts --ext mjs,ts --fix",
-		"format": "prettier --write {src,scripts}/**/*.{mjs,ts}",
-		"update": "yarn upgrade-interactive --latest",
+		"format": "prettier --write \"{src,scripts}/**/*.{mjs,ts}\"",
+		"update": "yarn upgrade-interactive",
 		"deploy": "node --unhandled-rejections=strict dist/resource-webhooks.js",
 		"build": "tsc -b src",
 		"clean": "tsc -b src --clean",
@@ -21,41 +21,37 @@
 		"commit": "git-cz",
 		"cz": "git-cz"
 	},
-	"dependencies": {
-		"discord.js": "^13.6.0"
-	},
 	"devDependencies": {
-		"@commitlint/cli": "^16.0.2",
-		"@commitlint/config-angular": "^16.0.0",
-		"@commitlint/config-conventional": "^16.0.0",
-		"@sapphire/eslint-config": "^4.0.9",
-		"@sapphire/fetch": "^2.0.4",
-		"@sapphire/prettier-config": "^1.2.8",
-		"@sapphire/ts-config": "^3.1.7",
+		"@commitlint/cli": "^16.2.3",
+		"@commitlint/config-angular": "^16.2.3",
+		"@commitlint/config-conventional": "^16.2.1",
+		"@sapphire/eslint-config": "^4.3.3",
+		"@sapphire/fetch": "^2.3.1",
+		"@sapphire/prettier-config": "^1.4.2",
+		"@sapphire/ts-config": "^3.3.4",
 		"@types/common-tags": "^1.8.1",
-		"@types/node": "^17.0.8",
-		"@types/ws": "^8.2.2",
-		"@typescript-eslint/eslint-plugin": "^5.9.1",
-		"@typescript-eslint/parser": "^5.9.1",
+		"@types/node": "^17.0.24",
+		"@types/ws": "^8.5.3",
+		"@typescript-eslint/eslint-plugin": "^5.19.0",
+		"@typescript-eslint/parser": "^5.19.0",
 		"common-tags": "^1.8.2",
 		"cz-conventional-changelog": "^3.3.0",
-		"discord-api-types": "^0.26.1",
-		"eslint": "^8.9.0",
-		"eslint-config-prettier": "^8.3.0",
+		"discord-api-types": "^0.31.1",
+		"eslint": "^8.13.0",
+		"eslint-config-prettier": "^8.5.0",
 		"eslint-plugin-prettier": "^4.0.0",
 		"husky": "^7.0.4",
-		"lint-staged": "^12.1.7",
-		"prettier": "^2.5.1",
+		"lint-staged": "^12.3.8",
+		"prettier": "^2.6.2",
 		"pretty-quick": "^3.1.3",
-		"typescript": "^4.5.4"
+		"typescript": "^4.6.3"
 	},
 	"resolutions": {
 		"ansi-regex": "^5.0.1",
 		"minimist": "^1.2.6"
 	},
 	"engines": {
-		"node": ">=16.6.0",
-		"npm": ">=7.0.0"
+		"node": ">=16"
 	},
 	"commitlint": {
 		"extends": [

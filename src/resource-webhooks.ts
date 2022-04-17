@@ -1,12 +1,14 @@
-import type { RESTPostAPIChannelMessageResult } from 'discord-api-types/v9';
-import { WebhookClient } from 'discord.js';
+import { fetch, FetchMethods, FetchResultTypes } from '@sapphire/fetch';
+import { RouteBases, Routes, type RESTPostAPIChannelMessageResult, type RESTPostAPIWebhookWithTokenJSONBody } from 'discord-api-types/v10';
 import { readdir, readFile } from 'node:fs/promises';
+import { platform, release } from 'node:os';
 import { setTimeout as wait } from 'node:timers/promises';
 import { URL } from 'node:url';
 
 /* Regexes, constants, and utility functions */
 const jumpRegex = /%JUMP_TO_TOP%/gm;
 
+const FetchUserAgent = `Sapphire Resource Webhooks/2.0.0 (fetch) ${platform()}/${release()} (https://github.com/sapphiredev/resource-webhooks/tree/main)`;
 const SapphireServerId = '737141877803057244';
 const imagesBaseUrl = 'https://raw.githubusercontent.com/sapphiredev/resource-webhooks/main/resources/images';
 const replacePatterns: Record<string, string> = {} as const;
@@ -16,6 +18,11 @@ const linkEscapeReplacer = (_: any, p1: string, p2: string): string => `[${p1}](
 const isDraft = (channelName: string) => channelName.toLowerCase().startsWith('draft');
 const isAnnouncement = (channelName: string) => channelName.toLowerCase().startsWith('announcement');
 const transformDraftToRelease = (channelName: string) => channelName.replace('DRAFT', 'ANNOUNCEMENT');
+
+const baseBody: RESTPostAPIWebhookWithTokenJSONBody = {
+	avatar_url: process.env.WEBHOOK_AVATAR,
+	username: process.env.WEBHOOK_NAME
+};
 
 /* Start processing */
 
@@ -74,9 +81,16 @@ for (const channel of channels) {
 	const envVarToUse = isAnnouncement(channel) ? 'ANNOUNCEMENT' : isDraft(channel) ? 'DRAFT' : channel;
 	const roleToMention = isAnnouncement(channel) ? '912088476290273300' : isDraft(channel) ? '901237389257744426' : null;
 
+	const bodyWithMentions: RESTPostAPIWebhookWithTokenJSONBody = {
+		...baseBody,
+		allowed_mentions: {
+			users: [],
+			roles: roleToMention ? [roleToMention] : []
+		}
+	};
+
 	// Get the hookID and hookToken. If it is a release channel then just get the release environment variable.
 	const [hookID, hookToken] = process.env[envVarToUse]!.split('/').slice(-2);
-	const hook = new WebhookClient({ id: hookID, token: hookToken });
 
 	// Get the proper file name
 	const fileName = `${transformDraftToRelease(channel)}.md`;
@@ -97,27 +111,36 @@ for (const channel of channels) {
 	// Store a reference to the first message
 	let firstMessage: RESTPostAPIChannelMessageResult | null = null;
 
+	// Construct the URL to POST to
+	const url = new URL(RouteBases.api + Routes.webhook(hookID, hookToken));
+	url.searchParams.append('wait', 'true');
+
 	// Send each of the parts
 	for (let part of parts) {
 		if (firstMessage) {
 			part = part.replace(jumpRegex, `https://discord.com/channels/${SapphireServerId}/${firstMessage.channel_id}/${firstMessage.id}`);
 		}
 
-		// A raw API response is returned here, not a Message object as the typings indicate
-		const response = (await hook.send({
-			content: part,
-			avatarURL: process.env.WEBHOOK_AVATAR,
-			username: process.env.WEBHOOK_NAME,
-			allowedMentions: {
-				users: [],
-				roles: roleToMention ? [roleToMention] : []
-			}
-		})) as unknown as RESTPostAPIChannelMessageResult;
+		const body: RESTPostAPIWebhookWithTokenJSONBody = {
+			...bodyWithMentions,
+			content: part
+		};
+
+		const response = await fetch<RESTPostAPIChannelMessageResult>(
+			url,
+			{
+				method: FetchMethods.Post,
+				body: JSON.stringify(body),
+				headers: {
+					'Content-Type': 'application/json',
+					'User-Agent': FetchUserAgent
+				}
+			},
+			FetchResultTypes.JSON
+		);
 
 		if (!firstMessage) firstMessage = response;
 
 		await wait(1000);
 	}
-
-	hook.destroy();
 }
