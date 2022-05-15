@@ -1,4 +1,4 @@
-**[2.5.0](https://github.com/sapphiredev/framework/compare/v2.4.1...v2.5.0) has been released**
+**[@sapphire/framework@2.5.0](https://github.com/sapphiredev/framework/compare/v2.4.1...v2.5.0) has been released**
 _**🚀 Features**_
 ⫸ Update to discord.js v13.7.0 (#435) ([a2ea376](https://github.com/sapphiredev/framework/commit/a2ea376))
 _ _
