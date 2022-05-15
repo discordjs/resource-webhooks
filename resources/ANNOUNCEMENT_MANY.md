@@ -18,7 +18,7 @@ _**🐛 Bug Fixes**_
 _**🚀 Features**_
 ⫸ Update to DJS v13.7 ([76e4efd](https://github.com/sapphiredev/utilities/commit/76e4efdafa150ca1279e0335f1feda4180f10619))
 ⫸ IsGuildMember type guard (#349) ([c3a77c0](https://github.com/sapphiredev/utilities/commit/c3a77c033c2694f7cd2501ac33c635684ede1f0d))
-_ _
+
 **[@sapphire/plugin-i18next@2.5.1](https://github.com/sapphiredev/plugins/compare/@sapphire/plugin-i18next@2.5.0...@sapphire/plugin-i18next@2.5.1) has been released**
 _**🏃 Performance**_
 ⫸ Switch to new backend library ([21cd166](https://github.com/sapphiredev/plugins/commit/21cd1665c3bcba9c3dbc9711e9d57153ad768276))
