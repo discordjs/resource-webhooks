@@ -23,7 +23,7 @@ _ _
 **• Sapphire Support**
 > Sapphire is a fully customizable framework with first-class TypeScript support that you can use as a robust base for your next Discord bot!
 > Join the official support server for the Sapphire framework!
-> https://discord.gg/j8ACK6u
+> https://discord.gg/sapphiredev
 
 _ _
 **• Discord Testers**
