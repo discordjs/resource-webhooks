@@ -1,6 +1,6 @@
 **• The Coding Den**
 > Have a general node.js question? Need some JavaScript help? Or even programming in another language? The Coding Den is exactly the place you need to be.
-> http://discord.gg/0xZXblUU30hYo1vJ
+> https://discord.gg/0xZXblUU30hYo1vJ
 
 _ _
 **• The Programmer's Hangout**
