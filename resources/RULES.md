@@ -24,3 +24,10 @@ _ _
 
 _ _
 **8.** No excessive controversial content is allowed, including politics and religion.
+
+We are not Discord! 
+We are just some nerds who develop discord bots! 
+• https://dis.gd/report reports (harassment/hacking/abuse) and appeals
+• https://dis.gd/support anything discord related
+• https://dis.gd/billing payment/nitro
+• https://dis.gd/feedback feedback/feature requests
