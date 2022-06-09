@@ -25,6 +25,7 @@ _ _
 _ _
 **8.** No excessive controversial content is allowed, including politics and religion.
 
+_ _
 We are not Discord! 
 We are just some nerds who develop discord bots! 
 • https://dis.gd/report reports (harassment/hacking/abuse) and appeals
