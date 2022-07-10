@@ -1,4 +1,4 @@
-_**[3.5.0](https://github.com/sapphiredev/shapeshift/compare/v3.4.1...v3.5.0) has been released**_
+_**[@sapphire/shapeshift v3.5.0](https://github.com/sapphiredev/shapeshift/compare/v3.4.1...v3.5.0) has been released**_
 **🏠 Refactor**
 ⫸ Port net module for browser compatibility ([5f26e32](https://github.com/sapphiredev/shapeshift/commit/5f26e32b0f87d2b100ca13471d5835c0067ddee8))=
 **🐛 Bug Fixes**
