@@ -4,6 +4,8 @@ import { stripIndents } from 'common-tags';
 const linkEscapeRegex = /\[(.+?)\]\((.+?)\)/gm;
 const linkEscapeReplacer = (_, p1, p2) => `[${p1}](<${p2}>)`;
 
+const roleToMention = `912088476290273300`;
+
 const content = stripIndents`
 content
 `.replace(linkEscapeRegex, linkEscapeReplacer);
@@ -20,7 +22,7 @@ try {
 				content,
 				allowed_mentions: {
 					users: [],
-					roles: []
+					roles: ['912088476290273300']
 				}
 			}),
 			headers: {
