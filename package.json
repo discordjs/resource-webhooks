@@ -1,5 +1,5 @@
 {
-	"name": "webhooks-ui",
+	"name": "webhooks",
 	"version": "1.0.0",
 	"description": "A webhooks UI to easily send announcements and messages to a Discord server",
 	"license": "MIT",
@@ -15,11 +15,14 @@
 	"dependencies": {
 		"@emotion/react": "^11.9.3",
 		"@emotion/styled": "^11.9.3",
+		"@hookform/resolvers": "^2.9.5",
 		"@mui/icons-material": "^5.8.4",
 		"@mui/material": "^5.9.0",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
-		"react-router-dom": "^6.3.0"
+		"react-hook-form": "^7.33.1",
+		"react-router-dom": "^6.3.0",
+		"yup": "^0.32.11"
 	},
 	"devDependencies": {
 		"@sapphire/eslint-config": "^4.3.7",
@@ -35,7 +38,10 @@
 		"discord-api-types": "^0.36.1",
 		"eslint": "^8.19.0",
 		"eslint-config-prettier": "^8.5.0",
+		"eslint-plugin-jsx-a11y": "^6.6.0",
 		"eslint-plugin-prettier": "^4.2.1",
+		"eslint-plugin-react": "^7.30.1",
+		"eslint-plugin-react-hooks": "^4.6.0",
 		"prettier": "^2.7.1",
 		"pretty-quick": "^3.1.3",
 		"typescript": "^4.7.4",
