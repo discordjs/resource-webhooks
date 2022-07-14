@@ -1,3 +1,11 @@
 {
-	"extends": "@sapphire"
+	"extends": "@sapphire",
+	"overrides": [
+		{
+			"files": ["vite-env.d.ts"],
+			"rules": {
+				"spaced-comment": "off"
+			}
+		}
+	]
 }

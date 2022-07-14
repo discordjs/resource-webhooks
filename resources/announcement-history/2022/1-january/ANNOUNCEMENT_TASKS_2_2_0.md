@@ -1,5 +1,0 @@
-**[@sapphire/plugin-scheduled-tasks v2.2.0](https://github.com/sapphiredev/plugins/compare/@sapphire/plugin-scheduled-tasks@2.1.0...@sapphire/plugin-scheduled-tasks@2.2.0) has been released**
-_**Bug Fixes**_
-⫸ Previously a vague error was thrown when a task failed. It would say that `result.value.duration` was being read while `result.value` was undefined. This caused you to not see the actual error of the task. This is now fixed. The side effect of this is that duration is not passed into the error event any more, as it simply is not available.
-_**Features**_
-⫸ When using the Redis strategy it is now possible to pass additional Bull `JobOptions` for repeated tasks (i.e. tasks on a cron schedule). You can configure this through the `bullJobOptions` property in the piece options, which will have a module augmented type when importing the Redis strategy. It will have a type of `unknown` before importing the strategy, or if you are using the SQS strategy.
