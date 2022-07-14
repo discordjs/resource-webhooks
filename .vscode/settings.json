@@ -5,6 +5,5 @@
 	"editor.insertSpaces": false,
 	"editor.detectIndentation": false,
 	"files.eol": "\n",
-	"deepscan.enable": true,
-	"typescript.tsdk": "node_modules\\typescript\\lib"
+	"deepscan.enable": true
 }
