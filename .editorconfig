@@ -6,7 +6,7 @@ end_of_line = lf
 insert_final_newline = true
 trim_trailing_whitespace = true
 
-[*.{js,ts}]
+[*.{js,ts,tsx}]
 indent_size = 4
 indent_style = tab
 block_comment_start = /*

@@ -1,7 +1,9 @@
 {
-	"extends": "@sapphire/ts-config",
+	"extends": "@sapphire/ts-config/extra-strict-without-decorators",
 	"compilerOptions": {
 		"module": "ESNext",
-		"lib": ["ESNext"]
+		"target": "ESNext",
+		"lib": ["ESNext", "DOM"],
+		"incremental": false
 	}
 }

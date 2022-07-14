@@ -1,1 +1,0 @@
-The `/tag` and `/djs` slash commands now have autocomplete! Now it's even easier to find a tag or some piece of DiscordJS documentation.
