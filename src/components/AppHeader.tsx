@@ -58,13 +58,14 @@ const AppHeader = () => {
 							{pages.map((page) => (
 								<MenuItem key={page} onClick={handleCloseNavMenu}>
 									<RouterLink
-										label={page}
 										to={page.toLowerCase()}
 										LinkProps={{
 											textAlign: 'center',
 											underline: 'none'
 										}}
-									/>
+									>
+										{page}
+									</RouterLink>
 								</MenuItem>
 							))}
 						</Menu>
@@ -74,13 +75,14 @@ const AppHeader = () => {
 						{pages.map((page) => (
 							<Button key={page} onClick={handleCloseNavMenu} sx={{ my: 2, color: 'white', display: 'block' }}>
 								<RouterLink
-									label={page}
 									to={page.toLowerCase()}
 									LinkProps={{
 										textAlign: 'center',
 										underline: 'none'
 									}}
-								/>
+								>
+									{page}
+								</RouterLink>
 							</Button>
 						))}
 					</Box>

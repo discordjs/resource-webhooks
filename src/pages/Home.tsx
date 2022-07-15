@@ -30,14 +30,15 @@ const Home = () => {
 						<CardActions sx={{ pl: 2 }}>
 							<RouterLink
 								to={card.to}
-								label={card.toLabel}
 								LinkProps={{
 									underline: 'none',
 									sx: {
 										color: 'text.primary'
 									}
 								}}
-							/>
+							>
+								{card.toLabel}
+							</RouterLink>
 						</CardActions>
 					</Card>
 				</Grid>

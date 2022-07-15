@@ -13,7 +13,8 @@
 		"jsx-a11y/anchor-is-valid": [
 			"warn",
 			{
-				"aspects": ["noHref", "invalidHref"]
+				"aspects": ["noHref", "invalidHref"],
+				"specialLink": ["to"]
 			}
 		],
 		"jsx-a11y/aria-activedescendant-has-tabindex": "warn",
@@ -53,6 +54,15 @@
 	"settings": {
 		"react": {
 			"version": "detect"
+		},
+		"jsx-a11y": {
+			"components": {
+				"Link": "a",
+				"RouterLink": "a",
+				"Button": "button",
+				"IconButton": "button",
+				"Typography": "span"
+			}
 		}
 	},
 	"overrides": [
