@@ -1,6 +1,7 @@
-import { Container, Paper } from '@mui/material';
+import { Container } from '@mui/material';
 import { Outlet } from 'react-router-dom';
 import AppHeader from './AppHeader';
+import Footer from './Footer';
 
 const Layout = () => {
 	return (
@@ -17,9 +18,7 @@ const Layout = () => {
 			>
 				<Outlet />
 			</Container>
-			<Paper square sx={{ position: 'fixed', bottom: 0, left: 0, right: 0, maxHeight: 64, minHeight: 64 }} elevation={3}>
-				Footer
-			</Paper>
+			<Footer />
 		</>
 	);
 };
