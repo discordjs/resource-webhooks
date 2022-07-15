@@ -62,7 +62,6 @@ const AppHeader = () => {
 										to={page.toLowerCase()}
 										LinkProps={{
 											textAlign: 'center',
-											color: 'textPrimary',
 											underline: 'none'
 										}}
 									/>
@@ -79,7 +78,6 @@ const AppHeader = () => {
 									to={page.toLowerCase()}
 									LinkProps={{
 										textAlign: 'center',
-										color: 'textPrimary',
 										underline: 'none'
 									}}
 								/>
