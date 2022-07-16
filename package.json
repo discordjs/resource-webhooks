@@ -1,6 +1,6 @@
 {
 	"name": "webhooks",
-	"version": "1.0.0",
+	"version": "2.0.0",
 	"description": "A webhooks UI to easily send announcements and messages to a Discord server",
 	"license": "MIT",
 	"private": true,
