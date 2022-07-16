@@ -1,11 +1,8 @@
-import { createTheme, CssBaseline, ThemeProvider, useMediaQuery } from '@mui/material';
+import { createTheme, CssBaseline, Grow, ThemeProvider, useMediaQuery } from '@mui/material';
+import { SnackbarProvider } from 'notistack';
 import { useMemo } from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Layout from './components/Layout';
-import Home from './pages/Home';
-import NotFound from './pages/NotFound';
-import Post from './pages/Post';
-import Update from './pages/Update';
+import AppRouter from './AppRouter';
+import SnackbarDismissButton from './components/SnackbarDismissButton';
 
 function App() {
 	const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
@@ -21,6 +18,21 @@ function App() {
 					secondary: {
 						main: '#1EA7C7'
 					}
+				},
+				components: {
+					MuiButton: {
+						defaultProps: {
+							variant: 'contained',
+							color: 'primary'
+						}
+					},
+					MuiFormHelperText: {
+						styleOverrides: {
+							root: {
+								margin: 0
+							}
+						}
+					}
 				}
 			}),
 		[prefersDarkMode]
@@ -30,17 +42,13 @@ function App() {
 		<>
 			<ThemeProvider theme={theme}>
 				<CssBaseline />
-				<BrowserRouter>
-					<Routes>
-						<Route path="*" element={<Layout />}>
-							<Route path="" element={<Home />} />
-							<Route path="home" element={<Home />} />
-							<Route path="post" element={<Post />} />
-							<Route path="update" element={<Update />} />
-							<Route path="*" element={<NotFound />} />
-						</Route>
-					</Routes>
-				</BrowserRouter>
+				<SnackbarProvider
+					maxSnack={5}
+					TransitionComponent={Grow}
+					action={(snackbarKey) => <SnackbarDismissButton snackbarKey={snackbarKey} />}
+				>
+					<AppRouter />
+				</SnackbarProvider>
 			</ThemeProvider>
 		</>
 	);

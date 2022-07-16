@@ -1,18 +1,13 @@
-import { Box, Tooltip, useTheme } from '@mui/material';
+import { Box, List, ListItem, ListItemText, Tooltip } from '@mui/material';
 
 import { filterNullish, isNullishOrEmpty, type AnyObject } from '@sapphire/utilities';
-import type { ReactNode } from 'react';
+import type { ReactElement } from 'react';
 import { get, useFormContext, type FieldErrors, type FieldValues } from 'react-hook-form';
 
 interface FormValidationsTooltipProps<TFieldValues extends FieldValues = FieldValues> {
 	errors?: FieldErrors<TFieldValues>;
-	children: ReactNode;
+	children: ReactElement;
 }
-
-const ChildrenOfTooltip = (children: ReactNode) => (
-	// eslint-disable-next-line react/jsx-no-useless-fragment
-	<>{children}</>
-);
 
 function getErrorMessages<TFieldValues extends FieldValues = FieldValues>(errors: FieldErrors<TFieldValues>, fieldNames: string[]) {
 	const collectedErrorMessages: string[] = [];
@@ -25,7 +20,7 @@ function getErrorMessages<TFieldValues extends FieldValues = FieldValues>(errors
 		}
 	}
 
-	return collectedErrorMessages.filter(filterNullish);
+	return collectedErrorMessages.filter(filterNullish).sort();
 }
 
 function getDeepKeys<T>(obj: AnyObject<T>) {
@@ -46,47 +41,32 @@ function getDeepKeys<T>(obj: AnyObject<T>) {
 const FormValidationsTooltip = <TFieldValues extends FieldValues = FieldValues>({
 	children,
 	errors
-}: FormValidationsTooltipProps<TFieldValues>): JSX.Element => {
-	const theme = useTheme();
-
+}: FormValidationsTooltipProps<TFieldValues>): ReactElement => {
 	const { getValues, formState } = useFormContext<TFieldValues>();
 
 	const formFieldNames = getDeepKeys(getValues());
 
 	if (isNullishOrEmpty(formFieldNames)) {
-		return ChildrenOfTooltip(children);
+		return children;
 	}
 
 	const errorMessages = getErrorMessages(errors || formState.errors, formFieldNames);
 
 	if (isNullishOrEmpty(errorMessages)) {
-		return ChildrenOfTooltip(children);
+		return children;
 	}
 
 	return (
 		<Tooltip
 			title={
-				<Box sx={{ p: 1 }}>
-					<ul style={{ paddingInlineStart: '10px' }}>
-						{errorMessages.map((error, index) => (
-							<li key={index} style={{ paddingBottom: '8px' }}>
-								{error}
-								<br />
-							</li>
-						))}
-					</ul>
-				</Box>
+				<List sx={{ paddingInlineStart: '10px' }} dense disablePadding>
+					{errorMessages.map((error, index) => (
+						<ListItem key={index} disableGutters>
+							<ListItemText primary={error} primaryTypographyProps={{ variant: 'body1' }} />
+						</ListItem>
+					))}
+				</List>
 			}
-			placement="top"
-			enterDelay={300}
-			sx={{
-				backgroundColor: 'white',
-				boxShadow: theme.shadows[5],
-				color: 'black',
-				fontSize: '0.8rem',
-				transition: '.2s ease-out,-webkit-transform .2s ease-out',
-				transform: 'translateZ(0)'
-			}}
 		>
 			<Box>{children}</Box>
 		</Tooltip>

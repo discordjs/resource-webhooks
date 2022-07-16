@@ -100,13 +100,8 @@ for (const channel of channels) {
 
 	const r1 = isAnnouncement(channel) || isDraft(channel) ? `**New announcement for** <@&${roleToMention}>:\n${raw}` : raw;
 	const r2 = r1.replace(linkEscapeRegex, linkEscapeReplacer);
-	const r3 = Object.entries(replacePatterns).reduce((acc, [k, v]) => {
-		const regex = new RegExp(k, 'gm');
-		return acc.replace(regex, v);
-	}, r2);
-	const r4 = r3.replace(/%PNG_([A-Z_]+)%/gm, `${imagesBaseUrl}/${channel}/$1.png`);
 
-	const parts = r4.split('\n\n');
+	const parts = r2.split('\n\n');
 
 	// Store a reference to the first message
 	let firstMessage: RESTPostAPIChannelMessageResult | null = null;

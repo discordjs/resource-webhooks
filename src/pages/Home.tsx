@@ -18,7 +18,7 @@ const Home = () => {
 		<Grid container justifyContent="center" alignContent="center" alignItems="center" spacing={4}>
 			{cardData.map((card, index) => (
 				<Grid item xs={12} sm={6} md={4} key={index}>
-					<Card sx={{ maxWidth: 345 }}>
+					<Card sx={{ maxWidth: 345, minHeight: 150, maxHeight: 150 }}>
 						<CardContent>
 							<Typography gutterBottom variant="h5" component="div">
 								{card.primary}

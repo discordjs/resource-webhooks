@@ -41,10 +41,9 @@ const FormTextFieldMultiline = <TFieldValues extends FieldValues = FieldValues, 
 			defaultValue={defaultValue}
 			render={({ field }) => (
 				<TextField
-					fullWidth={true}
-					variant="standard"
 					{...TextFieldProps}
 					{...field}
+					fullWidth
 					label={label}
 					multiline={true}
 					minRows={minRows ?? TextFieldProps?.minRows ?? 2}

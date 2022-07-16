@@ -12,25 +12,20 @@ import parse from 'autosuggest-highlight/parse';
 import { useRef, type HTMLAttributes } from 'react';
 import { Controller, useFormContext, type FieldValues, type Path } from 'react-hook-form';
 
-import type { CommonFormFieldProps, StringOrUndefinedOrNull } from './types';
+import type { CommonFormFieldPropsWithLabel, StringOrUndefinedOrNull } from './types';
 
-interface Option {
+export interface AutocompleteOption {
 	label: string;
-	value: string | number;
+	value: string;
 }
 
 interface FormAutoCompleteProps<
 	TFieldValues extends FieldValues = FieldValues,
-	TObject extends Option = Option,
+	TObject extends AutocompleteOption | string = AutocompleteOption,
 	TName extends Path<TFieldValues> = Path<TFieldValues>
-> extends CommonFormFieldProps<TFieldValues, TName> {
+> extends CommonFormFieldPropsWithLabel<TFieldValues, TName> {
 	/** The items that should be rendered as menu items */
 	options: TObject[];
-	/**
-	 * Whether this input is disabled
-	 * @default false
-	 */
-	disabled?: boolean;
 	/**
 	 * Whether to call the blur method on the input of the TextField when a value has been selected
 	 * @default false
@@ -48,16 +43,20 @@ function generateUniqueAutoCompleteKey(htmlAttributesWithData: HTMLAttributes<HT
 	return `${htmlAttributesWithData.key}-${htmlAttributesWithData['data-option-index']}`;
 }
 
+function optionIsAutocompleteOption(option: AutocompleteOption | string): option is AutocompleteOption {
+	return typeof option === 'object' && (option as AutocompleteOption).label !== undefined && (option as AutocompleteOption).value !== undefined;
+}
+
 const FormAutoComplete = <
 	TFieldValues extends FieldValues = FieldValues,
-	TObject extends Option = Option,
+	TObject extends AutocompleteOption | string = AutocompleteOption,
 	TName extends Path<TFieldValues> = Path<TFieldValues>
 >({
 	name,
+	label,
 	options,
 	defaultValue,
 	blurOnSelect = false,
-	disabled = false,
 	AutocompleteProps = {},
 	TextFieldProps,
 	ControllerProps
@@ -69,7 +68,13 @@ const FormAutoComplete = <
 		formState: { errors }
 	} = useFormContext<TFieldValues>();
 
-	const optionLabelGetter = (option: TObject) => option?.label ?? options.find(({ value }) => value === option.value)?.label ?? '';
+	const optionLabelGetter = (option: TObject): string => {
+		if (optionIsAutocompleteOption(option)) {
+			return option.label;
+		}
+
+		return option;
+	};
 
 	return (
 		<Controller
@@ -86,7 +91,13 @@ const FormAutoComplete = <
 					filterOptions={(opts, { inputValue: textFieldValue, getOptionLabel }) =>
 						opts.filter((opt) => contains(getOptionLabel(opt), textFieldValue))
 					}
-					isOptionEqualToValue={(potentialOptionMatch, selectValueOption) => potentialOptionMatch.value === selectValueOption.value}
+					isOptionEqualToValue={(potentialOptionMatch, selectValueOption) => {
+						if (optionIsAutocompleteOption(potentialOptionMatch) && optionIsAutocompleteOption(selectValueOption)) {
+							return potentialOptionMatch.value === selectValueOption.value;
+						}
+
+						return potentialOptionMatch === selectValueOption;
+					}}
 					autoComplete={true}
 					autoHighlight={true}
 					includeInputInList={true}
@@ -119,22 +130,13 @@ const FormAutoComplete = <
 							<TextField
 								{...TextFieldProps}
 								{...params}
-								sx={{
-									backgroundColor: disabled ? undefined : 'rgba(242, 242, 242, 1)'
-								}}
 								error={Boolean(errors[name])}
 								helperText={(errors[name]?.message as StringOrUndefinedOrNull) ?? ''}
-								variant={TextFieldProps?.variant ?? 'outlined'}
-								fullWidth={TextFieldProps?.fullWidth ?? true}
-								label={undefined}
 								placeholder={AutocompleteProps?.placeholder}
+								label={label}
+								fullWidth
 								InputProps={{
 									...params.InputProps,
-									style: {
-										...TextFieldProps?.InputProps?.style,
-										paddingTop: 0,
-										paddingBottom: 0
-									},
 									inputRef: inputField
 								}}
 							/>

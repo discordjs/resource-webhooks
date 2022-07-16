@@ -7,9 +7,3 @@ createRoot(document.getElementById('root') as HTMLElement).render(
 		<App />
 	</StrictMode>
 );
-
-declare module 'react' {
-	interface HTMLAttributes<T> {
-		'data-option-index'?: number;
-	}
-}

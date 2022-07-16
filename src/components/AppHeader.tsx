@@ -73,7 +73,13 @@ const AppHeader = () => {
 
 					<Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
 						{pages.map((page) => (
-							<Button key={page} onClick={handleCloseNavMenu} sx={{ my: 2, color: 'white', display: 'block' }}>
+							<Button
+								variant="text"
+								color="inherit"
+								key={page}
+								onClick={handleCloseNavMenu}
+								sx={{ my: 2, color: 'white', display: 'block' }}
+							>
 								<RouterLink
 									to={page.toLowerCase()}
 									LinkProps={{

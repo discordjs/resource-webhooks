@@ -791,6 +791,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@sapphire/discord-utilities@npm:^2.11.4":
+  version: 2.11.4
+  resolution: "@sapphire/discord-utilities@npm:2.11.4"
+  checksum: 3c79c0a83f028c44d3a0020209a8e0502a4d0dfba1fe9720bfe4f433d37cdb280c72d5529f08e361ae06ce19d6fab59a3d92992a7216af4e4920166e9b1502cb
+  languageName: node
+  linkType: hard
+
 "@sapphire/eslint-config@npm:^4.3.7":
   version: 4.3.7
   resolution: "@sapphire/eslint-config@npm:4.3.7"
@@ -1442,7 +1449,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"clsx@npm:^1.2.1":
+"clsx@npm:^1.1.0, clsx@npm:^1.2.1":
   version: 1.2.1
   resolution: "clsx@npm:1.2.1"
   checksum: 30befca8019b2eb7dbad38cff6266cf543091dae2825c856a62a8ccf2c3ab9c2907c4d12b288b73101196767f66812365400a227581484a05f968b0307cfaf12
@@ -2643,7 +2650,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hoist-non-react-statics@npm:^3.3.1":
+"hoist-non-react-statics@npm:^3.3.0, hoist-non-react-statics@npm:^3.3.1":
   version: 3.3.2
   resolution: "hoist-non-react-statics@npm:3.3.2"
   dependencies:
@@ -3139,6 +3146,26 @@ __metadata:
   languageName: node
   linkType: hard
 
+"marked-react@npm:^1.2.0":
+  version: 1.2.0
+  resolution: "marked-react@npm:1.2.0"
+  dependencies:
+    marked: ^4.0.12
+  peerDependencies:
+    react: ^16.8.0 || >=17.0.0
+  checksum: 0106a0b84b2866e66af8fb8b08b4ba42477ab87d8597dd7eaef2c7f5c18ff05412b61a0f6ecf90ee69b5855054328b5fd8825faf20027f8204d11144cab76f8b
+  languageName: node
+  linkType: hard
+
+"marked@npm:^4.0.12":
+  version: 4.0.18
+  resolution: "marked@npm:4.0.18"
+  bin:
+    marked: bin/marked.js
+  checksum: a13e886d5059a8500a6fd552feecc16e18fc3636aa491fce372384b1fdea67e323d67ac49f7618f6977e66ca96e39f27400eb5c1273d5ee9c2301e8c33e90dce
+  languageName: node
+  linkType: hard
+
 "merge-stream@npm:^2.0.0":
   version: 2.0.0
   resolution: "merge-stream@npm:2.0.0"
@@ -3380,6 +3407,27 @@ __metadata:
   bin:
     nopt: bin/nopt.js
   checksum: d35fdec187269503843924e0114c0c6533fb54bbf1620d0f28b4b60ba01712d6687f62565c55cc20a504eff0fbe5c63e22340c3fad549ad40469ffb611b04f2f
+  languageName: node
+  linkType: hard
+
+"notistack@npm:^2.0.5":
+  version: 2.0.5
+  resolution: "notistack@npm:2.0.5"
+  dependencies:
+    clsx: ^1.1.0
+    hoist-non-react-statics: ^3.3.0
+  peerDependencies:
+    "@emotion/react": ^11.4.1
+    "@emotion/styled": ^11.3.0
+    "@mui/material": ^5.0.0
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+  peerDependenciesMeta:
+    "@emotion/react":
+      optional: true
+    "@emotion/styled":
+      optional: true
+  checksum: afbf8bf8878c610b3ca58b70164784d2f5683f345bc4b670b5c4114a9155104f087a501422d7883ec8fd90299d6c66029f8bd6b11396baba157fad70c27e167a
   languageName: node
   linkType: hard
 
@@ -4487,6 +4535,7 @@ __metadata:
     "@hookform/resolvers": ^2.9.5
     "@mui/icons-material": ^5.8.4
     "@mui/material": ^5.9.0
+    "@sapphire/discord-utilities": ^2.11.4
     "@sapphire/eslint-config": ^4.3.7
     "@sapphire/fetch": ^2.4.1
     "@sapphire/prettier-config": ^1.4.3
@@ -4509,6 +4558,8 @@ __metadata:
     eslint-plugin-react: ^7.30.1
     eslint-plugin-react-hooks: ^4.6.0
     lodash.get: ^4.4.2
+    marked-react: ^1.2.0
+    notistack: ^2.0.5
     prettier: ^2.7.1
     pretty-quick: ^3.1.3
     react: ^18.2.0

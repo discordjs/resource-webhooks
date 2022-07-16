@@ -30,13 +30,17 @@ const FormTextField = <TFieldValues extends FieldValues = FieldValues, TName ext
 			defaultValue={defaultValue}
 			render={({ field }) => (
 				<TextField
-					fullWidth={true}
-					variant="standard"
 					{...TextFieldProps}
 					{...field}
+					fullWidth
 					label={label}
 					error={Boolean(getProperty(errors, name))}
 					helperText={(getProperty(errors, name)?.message as StringOrUndefinedOrNull) ?? ''}
+					FormHelperTextProps={{
+						sx: {
+							m: 0
+						}
+					}}
 				/>
 			)}
 		/>

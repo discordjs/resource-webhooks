@@ -1,4 +1,10 @@
-const Update = () => {
+import type { Dispatch, FC, SetStateAction } from 'react';
+
+interface UpdatePageProps {
+	setIsLoading: Dispatch<SetStateAction<boolean>>;
+}
+
+const UpdatePage: FC<UpdatePageProps> = () => {
 	return (
 		<>
 			<p>This page will have forms for updating an existing webhook messages</p>
@@ -9,4 +15,4 @@ const Update = () => {
 	);
 };
 
-export default Update;
+export default UpdatePage;
