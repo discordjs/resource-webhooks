@@ -834,10 +834,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@sapphire/utilities@npm:^3.7.0":
+  version: 3.7.0
+  resolution: "@sapphire/utilities@npm:3.7.0"
+  checksum: 3b574586242f015859e913123a5311774ad2d6cb79241c2a3d447a585282bdb04cddcd8e086f757a8ae5d2c49f4a25b4f848d63cebe605c7641364b51c3cfa11
+  languageName: node
+  linkType: hard
+
 "@tootallnate/once@npm:2":
   version: 2.0.0
   resolution: "@tootallnate/once@npm:2.0.0"
   checksum: ad87447820dd3f24825d2d947ebc03072b20a42bfc96cbafec16bff8bbda6c1a81fcb0be56d5b21968560c5359a0af4038a68ba150c3e1694fe4c109a063bed8
+  languageName: node
+  linkType: hard
+
+"@types/autosuggest-highlight@npm:^3.2.0":
+  version: 3.2.0
+  resolution: "@types/autosuggest-highlight@npm:3.2.0"
+  checksum: 1cb51e14fb5e109df8f2882d779d15a04863799f3e8546572d64e70ff4c84247747bffecf4a0b8591a45d05be4dbed6e08f6f766449e9ea73221a037569251ba
   languageName: node
   linkType: hard
 
@@ -848,7 +862,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/lodash@npm:^4.14.175":
+"@types/lodash.get@npm:^4.4.7":
+  version: 4.4.7
+  resolution: "@types/lodash.get@npm:4.4.7"
+  dependencies:
+    "@types/lodash": "*"
+  checksum: 0dbf1960606e4707c34e8ffbe97ffaad0e47fc5df7a6e24ea6e4fe5838d2468aa13360f38815c77b06e3c9932631ae15662b4139036a69ee16aeb54827a21405
+  languageName: node
+  linkType: hard
+
+"@types/lodash@npm:*, @types/lodash@npm:^4.14.175":
   version: 4.14.182
   resolution: "@types/lodash@npm:4.14.182"
   checksum: 7dd137aa9dbabd632408bd37009d984655164fa1ecc3f2b6eb94afe35bf0a5852cbab6183148d883e9c73a958b7fec9a9bcf7c8e45d41195add6a18c34958209
@@ -1238,6 +1261,15 @@ __metadata:
   version: 0.0.7
   resolution: "ast-types-flow@npm:0.0.7"
   checksum: a26dcc2182ffee111cad7c471759b0bda22d3b7ebacf27c348b22c55f16896b18ab0a4d03b85b4020dce7f3e634b8f00b593888f622915096ea1927fa51866c4
+  languageName: node
+  linkType: hard
+
+"autosuggest-highlight@npm:^3.3.2":
+  version: 3.3.2
+  resolution: "autosuggest-highlight@npm:3.3.2"
+  dependencies:
+    remove-accents: ^0.4.2
+  checksum: 98f0840e121ea9ae39bbe56a4fe0836febdb11a7e7382bc57c4a8bc2699bad8bbd0ca2b6b3ae26684f40d2e19a315450c193ae3e4b7ac2444ea8c7dd1ac20869
   languageName: node
   linkType: hard
 
@@ -3026,6 +3058,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"lodash.get@npm:^4.4.2":
+  version: 4.4.2
+  resolution: "lodash.get@npm:4.4.2"
+  checksum: e403047ddb03181c9d0e92df9556570e2b67e0f0a930fcbbbd779370972368f5568e914f913e93f3b08f6d492abc71e14d4e9b7a18916c31fa04bd2306efe545
+  languageName: node
+  linkType: hard
+
 "lodash.merge@npm:^4.6.2":
   version: 4.6.2
   resolution: "lodash.merge@npm:4.6.2"
@@ -3825,6 +3864,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"remove-accents@npm:^0.4.2":
+  version: 0.4.2
+  resolution: "remove-accents@npm:0.4.2"
+  checksum: 84a6988555dea24115e2d1954db99509588d43fe55a1590f0b5894802776f7b488b3151c37ceb9e4f4b646f26b80b7325dcea2fae58bc3865df146e1fa606711
+  languageName: node
+  linkType: hard
+
 "resolve-from@npm:^4.0.0":
   version: 4.0.0
   resolution: "resolve-from@npm:4.0.0"
@@ -4445,12 +4491,16 @@ __metadata:
     "@sapphire/fetch": ^2.4.1
     "@sapphire/prettier-config": ^1.4.3
     "@sapphire/ts-config": ^3.3.4
+    "@sapphire/utilities": ^3.7.0
+    "@types/autosuggest-highlight": ^3.2.0
+    "@types/lodash.get": ^4.4.7
     "@types/node": ^18.0.4
     "@types/react": ^18.0.15
     "@types/react-dom": ^18.0.6
     "@typescript-eslint/eslint-plugin": ^5.30.6
     "@typescript-eslint/parser": ^5.30.6
     "@vitejs/plugin-react": ^2.0.0
+    autosuggest-highlight: ^3.3.2
     discord-api-types: ^0.36.1
     eslint: ^8.19.0
     eslint-config-prettier: ^8.5.0
@@ -4458,6 +4508,7 @@ __metadata:
     eslint-plugin-prettier: ^4.2.1
     eslint-plugin-react: ^7.30.1
     eslint-plugin-react-hooks: ^4.6.0
+    lodash.get: ^4.4.2
     prettier: ^2.7.1
     pretty-quick: ^3.1.3
     react: ^18.2.0
