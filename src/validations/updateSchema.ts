@@ -1,5 +1,5 @@
 import { object, string, type SchemaOf } from 'yup';
-import type { Update } from '../models/updateModel';
+import type { Update } from '../models/UpdateModel';
 import { postSchema } from './postSchema';
 
 export const updateSchema: SchemaOf<Update> = postSchema.concat(
