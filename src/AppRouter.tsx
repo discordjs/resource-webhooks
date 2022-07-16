@@ -1,13 +1,14 @@
 import { useSnackbar } from 'notistack';
-import { useState } from 'react';
+import { lazy, Suspense, useState } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import AppErrorBoundary from './components/AppErrorBoundary';
 import Layout from './components/Layout';
 import Loading from './components/Loading';
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
-import Post from './pages/Post';
-import UpdatePage from './pages/Update';
+
+const Post = lazy(() => import('./pages/Post'));
+const Update = lazy(() => import('./pages/Update'));
 
 function AppRouter() {
 	const [isLoading, setIsLoading] = useState(false);
@@ -29,7 +30,9 @@ function AppRouter() {
 							path="post"
 							element={
 								<AppErrorBoundary>
-									<Post setIsLoading={setIsLoading} />
+									<Suspense fallback={<Loading isLoading={true} />}>
+										<Post setIsLoading={setIsLoading} />
+									</Suspense>
 								</AppErrorBoundary>
 							}
 						/>
@@ -37,7 +40,9 @@ function AppRouter() {
 							path="update"
 							element={
 								<AppErrorBoundary>
-									<UpdatePage setIsLoading={setIsLoading} />
+									<Suspense fallback={<Loading isLoading={true} />}>
+										<Update setIsLoading={setIsLoading} />
+									</Suspense>
 								</AppErrorBoundary>
 							}
 						/>
