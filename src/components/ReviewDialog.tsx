@@ -18,7 +18,7 @@ const ReviewDialog: FC<Props> = ({ reviewDialogOpen, setReviewDialogOpen }) => {
 	const parseText = () => {
 		let [mentionRole, role, text] = formContext.getValues(['mentionRole', 'role', 'text']);
 
-		if (mentionRole && role) {
+		if (mentionRole && role && !text.startsWith(bold('New announcement for'))) {
 			text = `${bold('New announcement for')} @${role.label.replace(/(.+) - \d{18,}/, '$1')}:\n${text}`;
 		}
 

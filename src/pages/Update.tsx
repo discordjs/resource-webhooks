@@ -1,17 +1,72 @@
-import type { Dispatch, FC, SetStateAction } from 'react';
+import { yupResolver } from '@hookform/resolvers/yup';
+import { Box } from '@mui/material';
+import { useState, type Dispatch, type FC, type SetStateAction } from 'react';
+import { FormProvider, SubmitHandler, useForm } from 'react-hook-form';
+import { sendWebhookMessage } from '../api/send-webhook-message';
+import UpdateOrPostContent from '../components/UpdateOrPostContent';
+import type { Update } from '../models/UpdateModel';
+import { loadState, LocalStorageKeys, saveState } from '../utils/localStorage';
+import { postSchema } from '../validations/postSchema';
 
 interface UpdatePageProps {
 	setIsLoading: Dispatch<SetStateAction<boolean>>;
 }
 
-const UpdatePage: FC<UpdatePageProps> = () => {
+const UpdatePage: FC<UpdatePageProps> = ({ setIsLoading }) => {
+	const [reviewDialogOpen, setReviewDialogOpen] = useState(false);
+	const [saveWebhookUrlToLocalhost, setSaveWebhookUrlToLocalhost] = useState(false);
+
+	const formHookMethods = useForm<Update>({
+		resolver: yupResolver(postSchema),
+		mode: 'all',
+		defaultValues: {
+			webhookUrl: '',
+			text: '',
+			messageId: '',
+			mentionRole: false,
+			role: null
+		}
+	});
+
+	const handleSubmit: SubmitHandler<Update> = async (data) => {
+		try {
+			setIsLoading(true);
+			await sendWebhookMessage(data, 'update');
+
+			if (saveWebhookUrlToLocalhost) {
+				const currentlyStoredWebhookUrls = new Set(loadState<string[]>(LocalStorageKeys.WebhookUrls));
+				currentlyStoredWebhookUrls.add(data.webhookUrl);
+
+				saveState<string[]>(LocalStorageKeys.WebhookUrls, [...currentlyStoredWebhookUrls.values()]);
+			}
+
+			formHookMethods.resetField('text');
+
+			enqueueSnackbar('Successfully updated Webhook message!', { variant: 'success' });
+			setReviewDialogOpen(false);
+		} catch (error) {
+			enqueueSnackbar('Failed to patch Webhook message, validate your input and/or check the dev console for more details.', {
+				variant: 'error'
+			});
+		} finally {
+			setIsLoading(false);
+		}
+	};
+
 	return (
-		<>
-			<p>This page will have forms for updating an existing webhook messages</p>
-			<p>This will have an update button</p>
-			<p>This will have a "get raw content" button to get the content for a given messageID and Webhook URL</p>
-			<p>That content will be dumped in an input box after which it can be modified and posted</p>
-		</>
+		<Box sx={{ mt: 2 }}>
+			<FormProvider {...formHookMethods}>
+				<form onSubmit={formHookMethods.handleSubmit(handleSubmit)}>
+					<UpdateOrPostContent
+						type="update"
+						reviewDialogOpen={reviewDialogOpen}
+						saveWebhookUrlToLocalhost={saveWebhookUrlToLocalhost}
+						setReviewDialogOpen={setReviewDialogOpen}
+						setSaveWebhookUrlToLocalhost={setSaveWebhookUrlToLocalhost}
+					/>
+				</form>
+			</FormProvider>
+		</Box>
 	);
 };
 

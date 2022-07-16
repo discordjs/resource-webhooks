@@ -1,13 +1,12 @@
 import { isNullish } from '@sapphire/utilities';
 import { RouteBases, Routes, type RESTPostAPIChannelMessageResult, type RESTPostAPIWebhookWithTokenJSONBody } from 'discord-api-types/rest/v10';
 import type { Post } from '../models/PostModel';
+import type { Update } from '../models/UpdateModel';
 import { linkEscapeRegex, linkEscapeReplacer } from '../utils/linkReplacer';
-import { jumpRegex, SapphireServerId } from './constants';
+import { jumpRegex, SapphireServerId, sleep } from './constants';
 import { bold, roleMention } from './formatters';
 
-const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
-
-export async function createWebhookPost(params: Post) {
+export async function sendWebhookMessage(params: Post | Update, fetchMethod: 'post' | 'update') {
 	const bodyWithMentions: RESTPostAPIWebhookWithTokenJSONBody = {
 		allowed_mentions: {
 			users: [],
@@ -15,7 +14,7 @@ export async function createWebhookPost(params: Post) {
 		}
 	};
 
-	if (params.mentionRole && params.role) {
+	if (params.mentionRole && params.role && !params.text.startsWith(bold('New announcement for'))) {
 		params.text = `${bold('New announcement for')} ${roleMention(params.role.value)}:\n${params.text}`;
 	}
 
@@ -24,14 +23,22 @@ export async function createWebhookPost(params: Post) {
 
 	params.text = params.text.replace(linkEscapeRegex, linkEscapeReplacer);
 
-	const parts = params.text.split('\n\n');
+	let parts = [params.text];
 
 	// Store a reference to the first message
 	let firstMessage: RESTPostAPIChannelMessageResult | null = null;
 
 	// Construct the URL to POST to
-	const url = new URL(RouteBases.api + Routes.webhook(hookID, hookToken));
-	url.searchParams.append('wait', 'true');
+	let url: URL;
+
+	if (isPost(params) && fetchMethod === 'post') {
+		url = new URL(RouteBases.api + Routes.webhook(hookID, hookToken));
+		url.searchParams.append('wait', 'true');
+
+		parts = params.text.split('\n\n');
+	} else {
+		url = new URL(RouteBases.api + Routes.webhookMessage(hookID, hookToken, (params as Update).messageId));
+	}
 
 	// Send each of the parts
 	for (let part of parts) {
@@ -45,7 +52,7 @@ export async function createWebhookPost(params: Post) {
 		};
 
 		const response = await fetch(url, {
-			method: 'POST',
+			method: fetchMethod === 'post' ? 'POST' : 'PATCH',
 			body: JSON.stringify(body),
 			headers: {
 				'Content-Type': 'application/json'
@@ -54,10 +61,16 @@ export async function createWebhookPost(params: Post) {
 
 		const responseJson = (await response.json()) as RESTPostAPIChannelMessageResult;
 
-		if (isNullish(firstMessage)) {
+		if (isNullish(firstMessage) && parts.length > 1) {
 			firstMessage = responseJson;
 		}
 
-		await sleep(1000);
+		if (parts.length > 1) {
+			await sleep(1000);
+		}
 	}
+}
+
+function isPost(params: Post | Update): params is Post {
+	return Boolean((params as Update).messageId);
 }
