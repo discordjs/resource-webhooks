@@ -1,4 +1,4 @@
-import { Backdrop, CircularProgress, useTheme } from '@mui/material';
+import { Backdrop, CircularProgress } from '@mui/material';
 import { useEffect, useState, type FC } from 'react';
 
 interface Props {
@@ -6,8 +6,6 @@ interface Props {
 }
 
 const Loading: FC<Props> = ({ isLoading }) => {
-	const theme = useTheme();
-
 	const [activeElement, setActiveElement] = useState<HTMLElement | null>(null);
 
 	useEffect(() => {
@@ -28,7 +26,7 @@ const Loading: FC<Props> = ({ isLoading }) => {
 	return (
 		<Backdrop
 			sx={{
-				zIndex: theme.zIndex.modal + 1,
+				zIndex: (theme) => theme.zIndex.modal + 1,
 				cursor: 'default'
 			}}
 			open={isLoading}

@@ -2,7 +2,7 @@ import { createTheme, CssBaseline, Grow, ThemeProvider, useMediaQuery } from '@m
 import { SnackbarProvider } from 'notistack';
 import { useMemo } from 'react';
 import AppRouter from './AppRouter';
-import SnackbarDismissButton from './components/SnackbarDismissButton';
+import SnackbarDismissButton from './components/Snackbars/SnackbarDismissButton';
 
 function App() {
 	const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');

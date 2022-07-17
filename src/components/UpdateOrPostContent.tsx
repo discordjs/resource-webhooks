@@ -1,4 +1,4 @@
-import { Button, FormControlLabel, Grid, Switch } from '@mui/material';
+import { Button, Grid } from '@mui/material';
 import { isNullishOrEmpty } from '@sapphire/utilities';
 import { Dispatch, FC, SetStateAction, useRef } from 'react';
 import { useFormContext } from 'react-hook-form';
@@ -17,11 +17,9 @@ interface Props {
 	type: 'update' | 'post';
 	reviewDialogOpen: boolean;
 	setReviewDialogOpen: Dispatch<SetStateAction<boolean>>;
-	saveWebhookUrlToLocalhost: boolean;
-	setSaveWebhookUrlToLocalhost: Dispatch<SetStateAction<boolean>>;
 }
 
-const UpdateOrPostContent: FC<Props> = ({ type, reviewDialogOpen, saveWebhookUrlToLocalhost, setReviewDialogOpen, setSaveWebhookUrlToLocalhost }) => {
+const UpdateOrPostContent: FC<Props> = ({ type, reviewDialogOpen, setReviewDialogOpen }) => {
 	const formContext = useFormContext<Post | Update>();
 	const monacoEditorGridRef = useRef<HTMLDivElement>(null);
 
@@ -34,7 +32,7 @@ const UpdateOrPostContent: FC<Props> = ({ type, reviewDialogOpen, saveWebhookUrl
 			<ReviewDialog reviewDialogOpen={reviewDialogOpen} setReviewDialogOpen={setReviewDialogOpen} />
 			<Grid container spacing={2} justifyContent="flex-start" alignContent="center" alignItems="center">
 				<Grid item xs={12} ref={monacoEditorGridRef}>
-					<FormTextFieldMultiline<Post | Update> label="Text to send" name="text" monacoEditorGridRef={monacoEditorGridRef} />
+					<FormTextFieldMultiline<Post | Update> name="text" monacoEditorGridRef={monacoEditorGridRef} />
 				</Grid>
 				{type === 'update' && (
 					<>
@@ -90,14 +88,6 @@ const UpdateOrPostContent: FC<Props> = ({ type, reviewDialogOpen, saveWebhookUrl
 							]}
 						/>
 					)}
-				</Grid>
-				<Grid item xs={12}>
-					<FormControlLabel
-						control={
-							<Switch onChange={(event) => setSaveWebhookUrlToLocalhost(event.target.checked)} checked={saveWebhookUrlToLocalhost} />
-						}
-						label="Save Webhook URL to LocalStorage?"
-					/>
 				</Grid>
 				<Grid item xs={12} md={6}>
 					<Button fullWidth variant="contained" color="primary" onClick={() => formContext.resetField('text')}>

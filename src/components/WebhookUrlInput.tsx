@@ -1,53 +1,34 @@
-import { FormControlLabel, Grid, Switch } from '@mui/material';
+import { Button, Grid } from '@mui/material';
 import { FC, useState } from 'react';
-import { useFormContext } from 'react-hook-form';
 import FormAutoComplete, { type AutocompleteOption } from '../components/Form/FormAutoComplete';
 import FormTextField from '../components/Form/FormTextField';
 import type { Post } from '../models/PostModel';
 import type { Update } from '../models/UpdateModel';
 import { loadState, LocalStorageKeys } from '../utils/localStorage';
+import AddNewWebhookDialog from './AddNewWebhookDialog';
 
 const WebhookURLInput: FC = () => {
-	const [addNewWebhookUrl, setAddNewWebhookUrl] = useState(false);
-
-	const formContext = useFormContext<Post | Update>();
-
-	const storedWebhookUrls = loadState<AutocompleteOption[]>(LocalStorageKeys.WebhookUrls);
+	const [storedWebhookUrls, setStoredWebhookUrls] = useState(loadState<AutocompleteOption[]>(LocalStorageKeys.WebhookUrls));
+	const [addWebhookDialogOpen, setAddWebhookDialogOpen] = useState(false);
 
 	if (storedWebhookUrls && storedWebhookUrls.length > 0) {
 		return (
 			<>
-				<Grid item xs={12} md={3}>
-					<FormControlLabel
-						control={
-							<Switch
-								onChange={(event) => {
-									formContext.resetField('webhookUrl');
-									return setAddNewWebhookUrl(event.target.checked);
-								}}
-								checked={addNewWebhookUrl}
-							/>
-						}
-						label="Add new Webhook URL"
-					/>
+				<AddNewWebhookDialog
+					addWebhookDialogOpen={addWebhookDialogOpen}
+					setAddWebhookDialogOpen={setAddWebhookDialogOpen}
+					setStoredWebhookUrls={setStoredWebhookUrls}
+				/>
+				<Grid item xs={12} md={4}>
+					<Button onClick={() => setAddWebhookDialogOpen(true)}>Add new Webhook URL</Button>
 				</Grid>
-				<Grid item xs={12} md={9}>
-					{addNewWebhookUrl ? (
-						<FormTextField<Post | Update>
-							label="Webhook URL"
-							name="webhookUrl"
-							TextFieldProps={{
-								required: true
-							}}
-						/>
-					) : (
-						<FormAutoComplete<Post | Update>
-							label="Webhook URL"
-							name="webhookUrl"
-							options={storedWebhookUrls}
-							TextFieldProps={{ required: true }}
-						/>
-					)}
+				<Grid item xs={12} md={8}>
+					<FormAutoComplete<Post | Update>
+						label="Webhook URL"
+						name="webhookUrl"
+						options={storedWebhookUrls}
+						TextFieldProps={{ required: true }}
+					/>
 				</Grid>
 			</>
 		);
