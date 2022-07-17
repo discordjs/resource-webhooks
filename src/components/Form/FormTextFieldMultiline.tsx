@@ -1,31 +1,25 @@
-import { TextField, type TextFieldProps as MTextFieldProps } from '@mui/material';
+import { FormHelperText } from '@mui/material';
 import getProperty from 'lodash.get';
+import type { RefObject } from 'react';
 import { Controller, useFormContext, type FieldValues, type Path } from 'react-hook-form';
+import AutoSizer from 'react-virtualized-auto-sizer';
 
-import type { CommonFormFieldPropsWithLabel, StringOrUndefinedOrNull, TextFieldPropsOmittable } from './types';
+import MonacoEditor from '@monaco-editor/react';
+
+import type { CommonFormFieldProps, StringOrUndefinedOrNull } from './types';
 
 interface FormTextFieldMultilineProps<TFieldValues extends FieldValues = FieldValues, TName extends Path<TFieldValues> = Path<TFieldValues>>
-	extends CommonFormFieldPropsWithLabel<TFieldValues, TName> {
+	extends CommonFormFieldProps<TFieldValues, TName> {
 	/**
-	 * Minimum amount of rows to display
-	 * This will transform the field to an auto-sizing one.
-	 * Recommended to also set {@link FormTextFieldMultilineProps.maxRows}
-	 * @default 2
+	 * The ref to the parent grid element to retrieve its width
 	 */
-	minRows?: number;
-	/** The maximum amount of rows before the auto-sizing component should start scrolling */
-	maxRows?: number;
-	/** Additional properties to pass to the {@link TextField} component from material-ui */
-	TextFieldProps?: Omit<MTextFieldProps, TextFieldPropsOmittable>;
+	monacoEditorGridRef: RefObject<HTMLDivElement>;
 }
 
 const FormTextFieldMultiline = <TFieldValues extends FieldValues = FieldValues, TName extends Path<TFieldValues> = Path<TFieldValues>>({
-	label,
 	name,
 	defaultValue,
-	minRows,
-	maxRows,
-	TextFieldProps,
+	monacoEditorGridRef,
 	ControllerProps
 }: FormTextFieldMultilineProps<TFieldValues, TName>) => {
 	const {
@@ -39,19 +33,59 @@ const FormTextFieldMultiline = <TFieldValues extends FieldValues = FieldValues, 
 			name={name}
 			control={control}
 			defaultValue={defaultValue}
-			render={({ field }) => (
-				<TextField
-					{...TextFieldProps}
-					{...field}
-					fullWidth
-					label={label}
-					multiline={true}
-					minRows={minRows ?? TextFieldProps?.minRows ?? 2}
-					maxRows={maxRows ?? TextFieldProps?.maxRows ?? undefined}
-					error={Boolean(getProperty(errors, name))}
-					helperText={(getProperty(errors, name)?.message as StringOrUndefinedOrNull) ?? ''}
-				/>
-			)}
+			render={({ field }) => {
+				// Unref Monaco editor from react-hook-form
+				Reflect.deleteProperty(field, 'ref');
+
+				return (
+					<>
+						<AutoSizer disableHeight defaultWidth={monacoEditorGridRef.current?.clientWidth ?? 1000}>
+							{({ width }) => (
+								<MonacoEditor
+									width={width}
+									height={200}
+									defaultValue={defaultValue}
+									{...field}
+									language="markdown"
+									theme="vs-dark"
+									options={{
+										selectOnLineNumbers: true,
+										wordWrap: 'on',
+										wrappingStrategy: 'advanced',
+										minimap: {
+											enabled: false
+										},
+										autoClosingQuotes: 'always',
+										bracketPairColorization: {
+											enabled: true
+										},
+										colorDecorators: true,
+										cursorBlinking: 'expand',
+										cursorSmoothCaretAnimation: true,
+										fontLigatures: true,
+										fontFamily: '"Fira Code", "JetBrains Mono", "Menlo", "Monaco", "Consolas", "Courier New", "monospace"',
+										formatOnPaste: true,
+										guides: {
+											bracketPairs: true
+										},
+										rulers: [120],
+										'semanticHighlighting.enabled': true,
+										smartSelect: {
+											selectLeadingAndTrailingWhitespace: true
+										},
+										tabCompletion: 'on',
+										useShadowDOM: true
+									}}
+									onMount={(editor) => editor.focus()}
+								/>
+							)}
+						</AutoSizer>
+						<FormHelperText error={Boolean(getProperty(errors, name))}>
+							{(getProperty(errors, name)?.message as StringOrUndefinedOrNull) ?? ''}
+						</FormHelperText>
+					</>
+				);
+			}}
 		/>
 	);
 };

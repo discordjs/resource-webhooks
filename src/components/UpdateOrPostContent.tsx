@@ -1,6 +1,6 @@
 import { Button, FormControlLabel, Grid, Switch } from '@mui/material';
 import { isNullishOrEmpty } from '@sapphire/utilities';
-import type { Dispatch, FC, SetStateAction } from 'react';
+import { Dispatch, FC, SetStateAction, useRef } from 'react';
 import { useFormContext } from 'react-hook-form';
 import { fetchWebhookMessage } from '../api/fetch-webhook-message';
 import FormAutoComplete from '../components/Form/FormAutoComplete';
@@ -23,6 +23,7 @@ interface Props {
 
 const UpdateOrPostContent: FC<Props> = ({ type, reviewDialogOpen, saveWebhookUrlToLocalhost, setReviewDialogOpen, setSaveWebhookUrlToLocalhost }) => {
 	const formContext = useFormContext<Post | Update>();
+	const monacoEditorGridRef = useRef<HTMLDivElement>(null);
 
 	const mentionRoleWatch = formContext.watch('mentionRole');
 	const webhookUrlWatch = formContext.watch('webhookUrl');
@@ -32,17 +33,8 @@ const UpdateOrPostContent: FC<Props> = ({ type, reviewDialogOpen, saveWebhookUrl
 		<>
 			<ReviewDialog reviewDialogOpen={reviewDialogOpen} setReviewDialogOpen={setReviewDialogOpen} />
 			<Grid container spacing={2} justifyContent="flex-start" alignContent="center" alignItems="center">
-				<Grid item xs={12}>
-					<FormTextFieldMultiline<Post | Update>
-						label="Text to send"
-						name="text"
-						minRows={4}
-						maxRows={16}
-						TextFieldProps={{
-							required: true,
-							autoFocus: true
-						}}
-					/>
+				<Grid item xs={12} ref={monacoEditorGridRef}>
+					<FormTextFieldMultiline<Post | Update> label="Text to send" name="text" monacoEditorGridRef={monacoEditorGridRef} />
 				</Grid>
 				{type === 'update' && (
 					<>
