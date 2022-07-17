@@ -5,6 +5,7 @@ import { FormProvider, useForm, type SubmitHandler } from 'react-hook-form';
 import { sendWebhookMessage } from '../api/send-webhook-message';
 import SaveWebhookUrlDialog from '../components/SaveWebhookUrlDialog';
 import UpdateOrPostContent from '../components/UpdateOrPostContent';
+import WebhookFailedToPostMessage from '../components/WebhookFailedToPostMessage';
 import type { Post } from '../models/PostModel';
 import { postSchema } from '../validations/postSchema';
 
@@ -42,7 +43,7 @@ const PostPage: FC<PostPageProps> = ({ setIsLoading }) => {
 				setSaveWebhookUrlDialogOpen(true);
 			}
 		} catch (error) {
-			enqueueSnackbar('Failed to post Webhook message, validate your input and/or check the dev console for more details.', {
+			enqueueSnackbar(WebhookFailedToPostMessage(), {
 				variant: 'error'
 			});
 		} finally {
