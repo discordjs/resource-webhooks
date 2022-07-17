@@ -31,7 +31,7 @@ export async function sendWebhookMessage(params: Post | Update, fetchMethod: 'po
 	// Construct the URL to POST to
 	let url: URL;
 
-	if (isPost(params) && fetchMethod === 'post') {
+	if (fetchMethod === 'post') {
 		url = new URL(RouteBases.api + Routes.webhook(hookID, hookToken));
 		url.searchParams.append('wait', 'true');
 
@@ -69,8 +69,4 @@ export async function sendWebhookMessage(params: Post | Update, fetchMethod: 'po
 			await sleep(1000);
 		}
 	}
-}
-
-function isPost(params: Post | Update): params is Post {
-	return Boolean((params as Update).messageId);
 }
