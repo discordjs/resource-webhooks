@@ -1,6 +1,7 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 import { Button, Dialog, DialogActions, DialogContent, DialogTitle, Grid } from '@mui/material';
 import uniqueBy from 'lodash.uniqby';
+import { useSnackbar } from 'notistack';
 import type { Dispatch, FC, SetStateAction } from 'react';
 import { FormProvider, SubmitHandler, useForm } from 'react-hook-form';
 import type { Webhook } from '../models/AddNewWebhook';
@@ -17,6 +18,8 @@ interface Props {
 }
 
 const AddNewWebhookDialog: FC<Props> = ({ addWebhookDialogOpen, setAddWebhookDialogOpen, setStoredWebhookUrls }) => {
+	const { enqueueSnackbar } = useSnackbar();
+
 	const formHookMethods = useForm<Webhook>({
 		resolver: yupResolver(addNewWebhookSchema),
 		mode: 'all',
@@ -35,13 +38,6 @@ const AddNewWebhookDialog: FC<Props> = ({ addWebhookDialogOpen, setAddWebhookDia
 		});
 
 		const uniqueWebhookUrls = uniqueBy(currentlyStoredWebhookUrls, 'value');
-
-		console.group('saved');
-		console.log('uniqueWebhookUrls: ', uniqueWebhookUrls);
-		console.log('uniqueWebhookUrls.length: ', uniqueWebhookUrls.length);
-		console.log('currentlyStoredWebhookUrls: ', currentlyStoredWebhookUrls);
-		console.log('currentlyStoredWebhookUrls.length: ', currentlyStoredWebhookUrls.length);
-		console.groupEnd();
 
 		if (uniqueWebhookUrls.length + 1 === currentlyStoredWebhookUrls.length) {
 			enqueueSnackbar(WebhookNotSavedMessage(), { variant: 'info' });

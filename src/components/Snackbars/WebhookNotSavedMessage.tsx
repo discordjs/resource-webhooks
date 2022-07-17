@@ -1,4 +1,5 @@
-import { Link, List, ListItem, ListItemText } from '@mui/material';
+import { List, ListItem, ListItemText } from '@mui/material';
+import RouterLink from '../RouterLink';
 
 const WebhookNotSavedMessage = (): JSX.Element => (
 	<List disablePadding>
@@ -13,9 +14,17 @@ const WebhookNotSavedMessage = (): JSX.Element => (
 				primary={
 					<>
 						If you want to change the label of the URL then you can do so through the{' '}
-						<Link href="/config" target="_self" color="text.primary">
+						<RouterLink
+							to="/config"
+							LinkProps={{
+								underline: 'always',
+								sx: {
+									textDecorationColor: 'rgba(255, 255, 255, 0.4)'
+								}
+							}}
+						>
 							Configuration
-						</Link>{' '}
+						</RouterLink>{' '}
 						page
 					</>
 				}

@@ -1,10 +1,11 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 import { Box } from '@mui/material';
+import { useSnackbar } from 'notistack';
 import { useState, type Dispatch, type FC, type SetStateAction } from 'react';
 import { FormProvider, useForm, type SubmitHandler } from 'react-hook-form';
 import { sendWebhookMessage } from '../api/send-webhook-message';
-import UpdateOrPostContent from '../components/UpdateOrPostContent';
 import WebhookFailedToPostMessage from '../components/Snackbars/WebhookFailedToPostMessage';
+import UpdateOrPostContent from '../components/UpdateOrPostContent';
 import type { Post } from '../models/PostModel';
 import { postSchema } from '../validations/postSchema';
 
@@ -13,6 +14,8 @@ interface PostPageProps {
 }
 
 const PostPage: FC<PostPageProps> = ({ setIsLoading }) => {
+	const { enqueueSnackbar } = useSnackbar();
+
 	const [reviewDialogOpen, setReviewDialogOpen] = useState(false);
 
 	const formHookMethods = useForm<Post>({
