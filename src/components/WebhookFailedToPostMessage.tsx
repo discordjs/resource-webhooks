@@ -14,7 +14,7 @@ const WebhookFailedToPostMessage = (): JSX.Element => {
 					primary={
 						<>
 							Make sure you have no browser extensions that are blocking discord.com, i.e.{' '}
-							<Link href="https://privacybadger.org" target="_blank">
+							<Link href="https://privacybadger.org" target="_blank" color="text.primary">
 								Privacy Badger
 							</Link>
 						</>
