@@ -68,7 +68,6 @@ const FormTextFieldMultiline = <TFieldValues extends FieldValues = FieldValues, 
 										guides: {
 											bracketPairs: true
 										},
-										rulers: [120],
 										'semanticHighlighting.enabled': true,
 										smartSelect: {
 											selectLeadingAndTrailingWhitespace: true
