@@ -31,7 +31,7 @@ const Home = () => {
 							<RouterLink
 								to={card.to}
 								LinkProps={{
-									underline: 'none',
+									underline: 'hover',
 									sx: {
 										color: 'text.primary'
 									}
