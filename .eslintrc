@@ -14,6 +14,7 @@
 			"warn",
 			{
 				"aspects": ["noHref", "invalidHref"],
+				"components": ["Link", "RouterLink"],
 				"specialLink": ["to"]
 			}
 		],
@@ -54,23 +55,6 @@
 	"settings": {
 		"react": {
 			"version": "detect"
-		},
-		"jsx-a11y": {
-			"components": {
-				"Link": "a",
-				"RouterLink": "a",
-				"Button": "button",
-				"IconButton": "button",
-				"Typography": "span"
-			}
 		}
-	},
-	"overrides": [
-		{
-			"files": ["vite-env.d.ts"],
-			"rules": {
-				"spaced-comment": "off"
-			}
-		}
-	]
+	}
 }
