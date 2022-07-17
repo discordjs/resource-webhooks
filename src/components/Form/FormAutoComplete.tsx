@@ -21,7 +21,7 @@ export interface AutocompleteOption {
 
 interface FormAutoCompleteProps<
 	TFieldValues extends FieldValues = FieldValues,
-	TObject extends AutocompleteOption | string = AutocompleteOption,
+	TObject extends AutocompleteOption = AutocompleteOption,
 	TName extends Path<TFieldValues> = Path<TFieldValues>
 > extends CommonFormFieldPropsWithLabel<TFieldValues, TName> {
 	/** The items that should be rendered as menu items */
@@ -43,13 +43,9 @@ function generateUniqueAutoCompleteKey(htmlAttributesWithData: HTMLAttributes<HT
 	return `${htmlAttributesWithData.key}-${htmlAttributesWithData['data-option-index']}`;
 }
 
-function optionIsAutocompleteOption(option: AutocompleteOption | string): option is AutocompleteOption {
-	return typeof option === 'object' && (option as AutocompleteOption).label !== undefined && (option as AutocompleteOption).value !== undefined;
-}
-
 const FormAutoComplete = <
 	TFieldValues extends FieldValues = FieldValues,
-	TObject extends AutocompleteOption | string = AutocompleteOption,
+	TObject extends AutocompleteOption = AutocompleteOption,
 	TName extends Path<TFieldValues> = Path<TFieldValues>
 >({
 	name,
@@ -68,13 +64,7 @@ const FormAutoComplete = <
 		formState: { errors }
 	} = useFormContext<TFieldValues>();
 
-	const optionLabelGetter = (option: TObject): string => {
-		if (optionIsAutocompleteOption(option)) {
-			return option.label;
-		}
-
-		return option;
-	};
+	const optionLabelGetter = (option: TObject) => option?.label ?? options.find(({ value }) => value === option.value)?.label ?? '';
 
 	return (
 		<Controller
@@ -91,13 +81,7 @@ const FormAutoComplete = <
 					filterOptions={(opts, { inputValue: textFieldValue, getOptionLabel }) =>
 						opts.filter((opt) => contains(getOptionLabel(opt), textFieldValue))
 					}
-					isOptionEqualToValue={(potentialOptionMatch, selectValueOption) => {
-						if (optionIsAutocompleteOption(potentialOptionMatch) && optionIsAutocompleteOption(selectValueOption)) {
-							return potentialOptionMatch.value === selectValueOption.value;
-						}
-
-						return potentialOptionMatch === selectValueOption;
-					}}
+					isOptionEqualToValue={(potentialOptionMatch, selectValueOption) => potentialOptionMatch.value === selectValueOption.value}
 					autoComplete={true}
 					autoHighlight={true}
 					includeInputInList={true}

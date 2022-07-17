@@ -1,11 +1,11 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 import { Box } from '@mui/material';
 import { useState, type Dispatch, type FC, type SetStateAction } from 'react';
-import { FormProvider, SubmitHandler, useForm } from 'react-hook-form';
+import { FormProvider, useForm, type SubmitHandler } from 'react-hook-form';
 import { sendWebhookMessage } from '../api/send-webhook-message';
+import SaveWebhookUrlDialog from '../components/SaveWebhookUrlDialog';
 import UpdateOrPostContent from '../components/UpdateOrPostContent';
 import type { Post } from '../models/PostModel';
-import { loadState, LocalStorageKeys, saveState } from '../utils/localStorage';
 import { postSchema } from '../validations/postSchema';
 
 interface PostPageProps {
@@ -14,6 +14,7 @@ interface PostPageProps {
 
 const PostPage: FC<PostPageProps> = ({ setIsLoading }) => {
 	const [reviewDialogOpen, setReviewDialogOpen] = useState(false);
+	const [saveWebhookUrlDialogOpen, setSaveWebhookUrlDialogOpen] = useState(false);
 	const [saveWebhookUrlToLocalhost, setSaveWebhookUrlToLocalhost] = useState(false);
 
 	const formHookMethods = useForm<Post>({
@@ -32,17 +33,14 @@ const PostPage: FC<PostPageProps> = ({ setIsLoading }) => {
 			setIsLoading(true);
 			await sendWebhookMessage(data, 'post');
 
-			if (saveWebhookUrlToLocalhost) {
-				const currentlyStoredWebhookUrls = new Set(loadState<string[]>(LocalStorageKeys.WebhookUrls));
-				currentlyStoredWebhookUrls.add(data.webhookUrl);
-
-				saveState<string[]>(LocalStorageKeys.WebhookUrls, [...currentlyStoredWebhookUrls.values()]);
-			}
-
 			formHookMethods.resetField('text');
 
 			enqueueSnackbar('Successfully posted Webhook message!', { variant: 'success' });
 			setReviewDialogOpen(false);
+
+			if (saveWebhookUrlToLocalhost) {
+				setSaveWebhookUrlDialogOpen(true);
+			}
 		} catch (error) {
 			enqueueSnackbar('Failed to post Webhook message, validate your input and/or check the dev console for more details.', {
 				variant: 'error'
@@ -62,6 +60,10 @@ const PostPage: FC<PostPageProps> = ({ setIsLoading }) => {
 						saveWebhookUrlToLocalhost={saveWebhookUrlToLocalhost}
 						setReviewDialogOpen={setReviewDialogOpen}
 						setSaveWebhookUrlToLocalhost={setSaveWebhookUrlToLocalhost}
+					/>
+					<SaveWebhookUrlDialog
+						saveWebhookUrlDialogOpen={saveWebhookUrlDialogOpen}
+						setSaveWebhookUrlDialogOpen={setSaveWebhookUrlDialogOpen}
 					/>
 				</form>
 			</FormProvider>

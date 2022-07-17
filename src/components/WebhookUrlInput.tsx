@@ -1,7 +1,7 @@
 import { FormControlLabel, Grid, Switch } from '@mui/material';
 import { FC, useState } from 'react';
 import { useFormContext } from 'react-hook-form';
-import FormAutoComplete from '../components/Form/FormAutoComplete';
+import FormAutoComplete, { type AutocompleteOption } from '../components/Form/FormAutoComplete';
 import FormTextField from '../components/Form/FormTextField';
 import type { Post } from '../models/PostModel';
 import type { Update } from '../models/UpdateModel';
@@ -12,7 +12,7 @@ const WebhookURLInput: FC = () => {
 
 	const formContext = useFormContext<Post | Update>();
 
-	const storedWebhookUrls = loadState<string[]>(LocalStorageKeys.WebhookUrls);
+	const storedWebhookUrls = loadState<AutocompleteOption[]>(LocalStorageKeys.WebhookUrls);
 
 	if (storedWebhookUrls && storedWebhookUrls.length > 0) {
 		return (
@@ -41,7 +41,7 @@ const WebhookURLInput: FC = () => {
 							}}
 						/>
 					) : (
-						<FormAutoComplete<Post | Update, string>
+						<FormAutoComplete<Post | Update>
 							label="Webhook URL"
 							name="webhookUrl"
 							options={storedWebhookUrls}
