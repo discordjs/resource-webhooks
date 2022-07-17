@@ -1,3 +1,4 @@
+import { fetch, FetchMethods, FetchResultTypes } from '@sapphire/fetch';
 import { RouteBases, Routes, type RESTGetAPIChannelMessageResult } from 'discord-api-types/rest/v10';
 import type { UseFormReturn } from 'react-hook-form';
 import type { Post } from '../models/PostModel';
@@ -10,14 +11,16 @@ export async function fetchWebhookMessage(formContext: UseFormReturn<Post | Upda
 
 	const url = new URL(RouteBases.api + Routes.webhookMessage(hookID, hookToken, messageId));
 
-	const response = await fetch(url, {
-		method: 'GET',
-		headers: {
-			'Content-Type': 'application/json'
-		}
-	});
+	const response = await fetch<RESTGetAPIChannelMessageResult>(
+		url,
+		{
+			method: FetchMethods.Get,
+			headers: {
+				'Content-Type': 'application/json'
+			}
+		},
+		FetchResultTypes.JSON
+	);
 
-	const responseJson = (await response.json()) as RESTGetAPIChannelMessageResult;
-
-	formContext.setValue('text', responseJson.content, { shouldValidate: true });
+	formContext.setValue('text', response.content, { shouldValidate: true });
 }

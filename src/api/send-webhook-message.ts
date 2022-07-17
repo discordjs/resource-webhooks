@@ -1,3 +1,4 @@
+import { fetch, FetchMethods, FetchResultTypes } from '@sapphire/fetch';
 import { isNullish } from '@sapphire/utilities';
 import { RouteBases, Routes, type RESTPostAPIChannelMessageResult, type RESTPostAPIWebhookWithTokenJSONBody } from 'discord-api-types/rest/v10';
 import type { Post } from '../models/PostModel';
@@ -51,18 +52,20 @@ export async function sendWebhookMessage(params: Post | Update, fetchMethod: 'po
 			content: part
 		};
 
-		const response = await fetch(url, {
-			method: fetchMethod === 'post' ? 'POST' : 'PATCH',
-			body: JSON.stringify(body),
-			headers: {
-				'Content-Type': 'application/json'
-			}
-		});
-
-		const responseJson = (await response.json()) as RESTPostAPIChannelMessageResult;
+		const response = await fetch<RESTPostAPIChannelMessageResult>(
+			url,
+			{
+				method: fetchMethod === 'post' ? FetchMethods.Post : FetchMethods.Patch,
+				body: JSON.stringify(body),
+				headers: {
+					'Content-Type': 'application/json'
+				}
+			},
+			FetchResultTypes.JSON
+		);
 
 		if (isNullish(firstMessage) && parts.length > 1) {
-			firstMessage = responseJson;
+			firstMessage = response;
 		}
 
 		if (parts.length > 1) {
