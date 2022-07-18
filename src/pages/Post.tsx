@@ -48,7 +48,7 @@ const PostPage: FC<PostPageProps> = ({ setIsLoading }) => {
 	};
 
 	return (
-		<Box sx={{ mt: 2 }}>
+		<Box sx={{ mt: 2, width: '100%' }}>
 			<FormProvider {...formHookMethods}>
 				<form onSubmit={formHookMethods.handleSubmit(handleSubmit)}>
 					<UpdateOrPostContent type="post" reviewDialogOpen={reviewDialogOpen} setReviewDialogOpen={setReviewDialogOpen} />
