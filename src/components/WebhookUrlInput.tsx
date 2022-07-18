@@ -11,17 +11,23 @@ const WebhookURLInput: FC = () => {
 	const [storedWebhookUrls, setStoredWebhookUrls] = useState(loadState<AutocompleteOption[]>(LocalStorageKeys.WebhookUrls));
 	const [addWebhookDialogOpen, setAddWebhookDialogOpen] = useState(false);
 
+	const dialogAndButton = (
+		<>
+			<AddNewWebhookDialog
+				addWebhookDialogOpen={addWebhookDialogOpen}
+				setAddWebhookDialogOpen={setAddWebhookDialogOpen}
+				setStoredWebhookUrls={setStoredWebhookUrls}
+			/>
+			<Grid item xs={12} md={4}>
+				<Button onClick={() => setAddWebhookDialogOpen(true)}>Add new Webhook URL</Button>
+			</Grid>
+		</>
+	);
+
 	if (storedWebhookUrls && storedWebhookUrls.length > 0) {
 		return (
 			<>
-				<AddNewWebhookDialog
-					addWebhookDialogOpen={addWebhookDialogOpen}
-					setAddWebhookDialogOpen={setAddWebhookDialogOpen}
-					setStoredWebhookUrls={setStoredWebhookUrls}
-				/>
-				<Grid item xs={12} md={4}>
-					<Button onClick={() => setAddWebhookDialogOpen(true)}>Add new Webhook URL</Button>
-				</Grid>
+				{dialogAndButton}
 				<Grid item xs={12} md={8}>
 					<FormAutoComplete<Post | Update>
 						label="Webhook URL"
@@ -35,15 +41,18 @@ const WebhookURLInput: FC = () => {
 	}
 
 	return (
-		<Grid item xs={12}>
-			<FormTextField<Post | Update>
-				label="Webhook URL"
-				name="webhookUrl"
-				TextFieldProps={{
-					required: true
-				}}
-			/>
-		</Grid>
+		<>
+			{dialogAndButton}
+			<Grid item xs={12} md={8}>
+				<FormTextField<Post | Update>
+					label="Webhook URL"
+					name="webhookUrl"
+					TextFieldProps={{
+						required: true
+					}}
+				/>
+			</Grid>
+		</>
 	);
 };
 
