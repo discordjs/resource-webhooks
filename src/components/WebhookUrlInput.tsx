@@ -1,14 +1,14 @@
 import { Button, Grid } from '@mui/material';
 import { FC, useState } from 'react';
-import FormAutoComplete, { type AutocompleteOption } from '../components/Form/FormAutoComplete';
+import FormAutoComplete from '../components/Form/FormAutoComplete';
 import FormTextField from '../components/Form/FormTextField';
 import type { Post } from '../models/PostModel';
 import type { Update } from '../models/UpdateModel';
 import { loadState, LocalStorageKeys } from '../utils/localStorage';
-import AddNewWebhookDialog from './AddNewWebhookDialog';
+import AddNewWebhookDialog from './Dialogs/AddNewWebhookDialog';
 
 const WebhookURLInput: FC = () => {
-	const [storedWebhookUrls, setStoredWebhookUrls] = useState(loadState<AutocompleteOption[]>(LocalStorageKeys.WebhookUrls));
+	const [storedWebhooks, setStoredWebhooks] = useState(loadState(LocalStorageKeys.WebhookUrls));
 	const [addWebhookDialogOpen, setAddWebhookDialogOpen] = useState(false);
 
 	const dialogAndButton = (
@@ -16,7 +16,7 @@ const WebhookURLInput: FC = () => {
 			<AddNewWebhookDialog
 				addWebhookDialogOpen={addWebhookDialogOpen}
 				setAddWebhookDialogOpen={setAddWebhookDialogOpen}
-				setStoredWebhookUrls={setStoredWebhookUrls}
+				setStoredWebhooks={setStoredWebhooks}
 			/>
 			<Grid item xs={12} md={4}>
 				<Button onClick={() => setAddWebhookDialogOpen(true)}>Add new Webhook URL</Button>
@@ -24,7 +24,7 @@ const WebhookURLInput: FC = () => {
 		</>
 	);
 
-	if (storedWebhookUrls && storedWebhookUrls.length > 0) {
+	if (storedWebhooks && storedWebhooks.length > 0) {
 		return (
 			<>
 				{dialogAndButton}
@@ -32,7 +32,7 @@ const WebhookURLInput: FC = () => {
 					<FormAutoComplete<Post | Update>
 						label="Webhook URL"
 						name="webhookUrl"
-						options={storedWebhookUrls}
+						options={storedWebhooks}
 						TextFieldProps={{ required: true }}
 					/>
 				</Grid>

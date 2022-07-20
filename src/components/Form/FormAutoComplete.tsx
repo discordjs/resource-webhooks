@@ -11,17 +11,13 @@ import match from 'autosuggest-highlight/match';
 import parse from 'autosuggest-highlight/parse';
 import { useRef, type HTMLAttributes } from 'react';
 import { Controller, useFormContext, type FieldValues, type Path } from 'react-hook-form';
+import type { LocalStorageEntry } from '../../utils/localStorage';
 
 import type { CommonFormFieldPropsWithLabel, StringOrUndefinedOrNull } from './types';
 
-export interface AutocompleteOption {
-	label: string;
-	value: string;
-}
-
 interface FormAutoCompleteProps<
 	TFieldValues extends FieldValues = FieldValues,
-	TObject extends AutocompleteOption = AutocompleteOption,
+	TObject extends LocalStorageEntry = LocalStorageEntry,
 	TName extends Path<TFieldValues> = Path<TFieldValues>
 > extends CommonFormFieldPropsWithLabel<TFieldValues, TName> {
 	/** The items that should be rendered as menu items */
@@ -45,7 +41,7 @@ function generateUniqueAutoCompleteKey(htmlAttributesWithData: HTMLAttributes<HT
 
 const FormAutoComplete = <
 	TFieldValues extends FieldValues = FieldValues,
-	TObject extends AutocompleteOption = AutocompleteOption,
+	TObject extends LocalStorageEntry = LocalStorageEntry,
 	TName extends Path<TFieldValues> = Path<TFieldValues>
 >({
 	name,

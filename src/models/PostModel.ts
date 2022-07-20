@@ -1,9 +1,9 @@
-import type { AutocompleteOption } from '../components/Form/FormAutoComplete';
+import type { LocalStorageEntry } from '../utils/localStorage';
 
 export interface Post {
 	webhookUrl: string;
 
 	text: string;
 	mentionRole: boolean;
-	role: AutocompleteOption | null;
+	role: LocalStorageEntry | null;
 }

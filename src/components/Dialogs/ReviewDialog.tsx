@@ -2,10 +2,10 @@ import { Button, Dialog, DialogActions, DialogContent, DialogTitle, Link } from 
 import Markdown from 'marked-react';
 import type { Dispatch, FC, ReactNode, SetStateAction } from 'react';
 import { useFormContext } from 'react-hook-form';
-import { bold } from '../api/formatters';
-import type { Post } from '../models/PostModel';
-import type { Update } from '../models/UpdateModel';
-import { linkEscapeRegex, linkEscapeReplacer } from '../utils/linkReplacer';
+import { bold } from '../../api/formatters';
+import type { Post } from '../../models/PostModel';
+import type { Update } from '../../models/UpdateModel';
+import { linkEscapeRegex, linkEscapeReplacer } from '../../utils/linkReplacer';
 
 interface Props {
 	reviewDialogOpen: boolean;

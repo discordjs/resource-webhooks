@@ -8,9 +8,11 @@ import Loading from './components/Loading';
 import SnackbarDismissButton from './components/Snackbars/SnackbarDismissButton';
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
+import { DarkModeContextProvider } from './utils/darkModeContext';
 
 const Post = lazy(() => import('./pages/Post'));
 const Update = lazy(() => import('./pages/Update'));
+const WebhookConfig = lazy(() => import('./pages/WebhookConfig'));
 
 function App() {
 	const [isLoading, setIsLoading] = useState(false);
@@ -53,41 +55,56 @@ function App() {
 			<ThemeProvider theme={theme}>
 				<CssBaseline />
 				<Loading isLoading={isLoading} />
-				<BrowserRouter>
-					<SnackbarProvider
-						maxSnack={5}
-						TransitionComponent={Grow}
-						action={(snackbarKey) => <SnackbarDismissButton snackbarKey={snackbarKey} />}
-					>
-						<Routes>
-							<Route path="*" element={<Layout />}>
-								<Route path="" element={<Home />} />
-								<Route path="home" element={<Home />} />
-								<Route
-									path="post"
-									element={
-										<AppErrorBoundary>
-											<Suspense fallback={<Loading isLoading={true} />}>
-												<Post setIsLoading={setIsLoading} />
-											</Suspense>
-										</AppErrorBoundary>
-									}
-								/>
-								<Route
-									path="update"
-									element={
-										<AppErrorBoundary>
-											<Suspense fallback={<Loading isLoading={true} />}>
-												<Update setIsLoading={setIsLoading} />
-											</Suspense>
-										</AppErrorBoundary>
-									}
-								/>
-								<Route path="*" element={<NotFound />} />
-							</Route>
-						</Routes>
-					</SnackbarProvider>
-				</BrowserRouter>
+				<DarkModeContextProvider value={prefersDarkMode}>
+					<BrowserRouter>
+						<SnackbarProvider
+							maxSnack={5}
+							TransitionComponent={Grow}
+							action={(snackbarKey) => <SnackbarDismissButton snackbarKey={snackbarKey} />}
+						>
+							<Routes>
+								<Route path="*" element={<Layout />}>
+									<Route path="" element={<Home />} />
+									<Route path="home" element={<Home />} />
+									<Route
+										path="post"
+										element={
+											<AppErrorBoundary>
+												<Suspense fallback={<Loading isLoading={true} />}>
+													<Post setIsLoading={setIsLoading} />
+												</Suspense>
+											</AppErrorBoundary>
+										}
+									/>
+									<Route path="config">
+										<Route path="roles" element={<div>roles</div>}></Route>
+										<Route
+											path="*"
+											element={
+												<AppErrorBoundary>
+													<Suspense fallback={<Loading isLoading={true} />}>
+														<WebhookConfig setIsLoading={setIsLoading} />
+													</Suspense>
+												</AppErrorBoundary>
+											}
+										/>
+									</Route>
+									<Route
+										path="update"
+										element={
+											<AppErrorBoundary>
+												<Suspense fallback={<Loading isLoading={true} />}>
+													<Update setIsLoading={setIsLoading} />
+												</Suspense>
+											</AppErrorBoundary>
+										}
+									/>
+									<Route path="*" element={<NotFound />} />
+								</Route>
+							</Routes>
+						</SnackbarProvider>
+					</BrowserRouter>
+				</DarkModeContextProvider>
 			</ThemeProvider>
 		</>
 	);

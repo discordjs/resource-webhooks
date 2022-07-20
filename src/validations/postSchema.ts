@@ -1,11 +1,11 @@
 import { WebhookRegex } from '@sapphire/discord-utilities';
 import { isObject } from '@sapphire/utilities';
 import { boolean, object, string, type SchemaOf } from 'yup';
-import type { AutocompleteOption } from '../components/Form/FormAutoComplete';
 import type { Post } from '../models/PostModel';
-import { autocompleteOptionSchema } from './autocompleteOptionSchema';
+import type { LocalStorageEntry } from '../utils/localStorage';
+import { localStorageEntrySchema } from './localStorageEntrySchema';
 
-export function transformAutocompleteOptionToStringValue(value: string | AutocompleteOption): string {
+export function transformAutocompleteOptionToStringValue(value: string | LocalStorageEntry): string {
 	if (isObject(value)) {
 		return value.value;
 	}
@@ -20,7 +20,7 @@ export const postSchema: SchemaOf<Post> = object({
 		.transform(transformAutocompleteOptionToStringValue),
 	text: string().required('The text to post with the webhook is required.'),
 	mentionRole: boolean().required('You have to specify whether you want to mention a role or not.'),
-	role: autocompleteOptionSchema
+	role: localStorageEntrySchema
 		.when('mentionRole', {
 			is: true,
 			then: (schema) => schema.required('You have to specify a role to mention.'),

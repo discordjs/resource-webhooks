@@ -4,6 +4,7 @@
 		"module": "ESNext",
 		"target": "ESNext",
 		"lib": ["ESNext", "DOM"],
-		"incremental": false
+		"incremental": false,
+		"downlevelIteration": true
 	}
 }

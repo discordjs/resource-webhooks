@@ -8,12 +8,20 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import Toolbar from '@mui/material/Toolbar';
 import { useState, type MouseEvent } from 'react';
+import { useDarkModeContext } from '../utils/darkModeContext';
 import RouterLink from './RouterLink';
 
-const pages = ['Home', 'Post', 'Update'];
+const pages: [label: string, path: string][] = [
+	['Home', 'home'],
+	['Post', 'post'],
+	['Update', 'update'],
+	['Configure Webhooks', 'config/webhooks'],
+	['Configure Roles', 'config/roles']
+];
 
 const AppHeader = () => {
 	const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
+	const isDarkMode = useDarkModeContext();
 
 	const handleOpenNavMenu = (event: MouseEvent<HTMLElement>) => {
 		setAnchorElNav(event.currentTarget);
@@ -55,16 +63,19 @@ const AppHeader = () => {
 								display: { xs: 'block', md: 'none' }
 							}}
 						>
-							{pages.map((page) => (
-								<MenuItem key={page} onClick={handleCloseNavMenu}>
+							{pages.map(([label, to]) => (
+								<MenuItem key={label} onClick={handleCloseNavMenu}>
 									<RouterLink
-										to={page.toLowerCase()}
+										to={to}
 										LinkProps={{
 											textAlign: 'center',
-											underline: 'none'
+											underline: 'none',
+											sx: {
+												color: isDarkMode ? 'primary.contrastText' : 'text.primary'
+											}
 										}}
 									>
-										{page}
+										{label}
 									</RouterLink>
 								</MenuItem>
 							))}
@@ -72,22 +83,19 @@ const AppHeader = () => {
 					</Box>
 
 					<Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-						{pages.map((page) => (
-							<Button
-								variant="text"
-								color="inherit"
-								key={page}
-								onClick={handleCloseNavMenu}
-								sx={{ my: 2, color: 'white', display: 'block' }}
-							>
+						{pages.map(([label, to]) => (
+							<Button variant="text" color="inherit" key={label} onClick={handleCloseNavMenu} sx={{ my: 2 }}>
 								<RouterLink
-									to={page.toLowerCase()}
+									to={to}
 									LinkProps={{
 										textAlign: 'center',
-										underline: 'none'
+										underline: 'hover',
+										sx: {
+											color: 'primary.contrastText'
+										}
 									}}
 								>
-									{page}
+									{label}
 								</RouterLink>
 							</Button>
 						))}

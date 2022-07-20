@@ -1,9 +1,9 @@
-export const loadState = <T>(key: LocalStorageKeys): T | null => {
+export function loadState(key: LocalStorageKeys): LocalStorageEntry[] {
 	const serializedState = localStorage.getItem(key);
-	return serializedState ? (JSON.parse(serializedState) as T) : null;
-};
+	return serializedState ? JSON.parse(serializedState) : [];
+}
 
-export const saveState = <T>(key: LocalStorageKeys, state: T): T => {
+export function saveState(key: LocalStorageKeys, state: LocalStorageEntry[]): LocalStorageEntry[] {
 	try {
 		const serializedState = JSON.stringify(state);
 		localStorage.setItem(key, serializedState);
@@ -12,12 +12,17 @@ export const saveState = <T>(key: LocalStorageKeys, state: T): T => {
 	}
 
 	return state;
-};
+}
 
-export const clearState = (key: LocalStorageKeys) => {
+export function clearState(key: LocalStorageKeys) {
 	localStorage.removeItem(key);
-};
+}
 
 export enum LocalStorageKeys {
 	WebhookUrls = 'webhook_urls'
+}
+
+export interface LocalStorageEntry {
+	label: string;
+	value: string;
 }

@@ -7,7 +7,7 @@ import FormAutoComplete from '../components/Form/FormAutoComplete';
 import FormSwitch from '../components/Form/FormSwitch';
 import FormTextFieldMultiline from '../components/Form/FormTextFieldMultiline';
 import FormValidationsTooltip from '../components/Form/FormValidationsTooltip';
-import ReviewDialog from '../components/ReviewDialog';
+import ReviewDialog from './Dialogs/ReviewDialog';
 import type { Post } from '../models/PostModel';
 import type { Update } from '../models/UpdateModel';
 import FormTextField from './Form/FormTextField';

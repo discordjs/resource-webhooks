@@ -10,7 +10,8 @@ interface CardData {
 
 const cardData: CardData[] = [
 	{ primary: 'Post', secondary: 'Go here to create new Webhook posts', to: '/post', toLabel: 'Create Post' },
-	{ primary: 'Update', secondary: 'Go here to update existing Webhook posts', to: '/update', toLabel: 'Update Post' }
+	{ primary: 'Update', secondary: 'Go here to update existing Webhook posts', to: '/update', toLabel: 'Update Post' },
+	{ primary: 'Config', secondary: 'Go here to configure your environment', to: '/config/webhooks', toLabel: 'Configuration' }
 ];
 
 const Home = () => {
