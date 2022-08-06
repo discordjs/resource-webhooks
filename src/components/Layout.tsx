@@ -14,7 +14,7 @@ const Layout = () => {
 				maxWidth="lg"
 				sx={{
 					pb: 8,
-					height: 'calc(100vh - 64px - 68.500px)',
+					mb: 3,
 					display: 'flex',
 					justifyContent: isOnConfigPage ? 'flex-start' : 'center',
 					flexDirection: isOnConfigPage ? 'column' : 'row'
