@@ -106,12 +106,6 @@ const WebhookConfig: FC<Props> = ({ setIsLoading }) => {
 				label: 'asc',
 				value: 'unsorted'
 			}}
-			PaperProps={{
-				sx: {
-					mt: 2,
-					mb: 30
-				}
-			}}
 			TableBodyRowProps={(_) => ({
 				hover: true
 			})}
