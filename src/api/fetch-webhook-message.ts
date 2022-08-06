@@ -3,9 +3,12 @@ import { RouteBases, Routes, type RESTGetAPIChannelMessageResult } from 'discord
 import type { UseFormReturn } from 'react-hook-form';
 import type { Post } from '../models/PostModel';
 import type { Update } from '../models/UpdateModel';
+import { isLocalStorageEntry } from '../utils/localStorage';
 
 export async function fetchWebhookMessage(formContext: UseFormReturn<Post | Update>): Promise<void> {
-	const [webhookUrl, messageId] = formContext.getValues(['webhookUrl', 'messageId']);
+	let [webhookUrl, messageId] = formContext.getValues(['webhookUrl', 'messageId']);
+
+	webhookUrl = isLocalStorageEntry(webhookUrl) ? webhookUrl.value : webhookUrl;
 
 	const [hookID, hookToken] = webhookUrl.split('/').slice(-2);
 

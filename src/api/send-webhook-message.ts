@@ -4,6 +4,7 @@ import { RouteBases, Routes, type RESTPostAPIChannelMessageResult, type RESTPost
 import type { Post } from '../models/PostModel';
 import type { Update } from '../models/UpdateModel';
 import { linkEscapeRegex, linkEscapeReplacer } from '../utils/linkReplacer';
+import { isLocalStorageEntry } from '../utils/localStorage';
 import { jumpRegex, SapphireServerId, sleep } from './constants';
 import { bold, roleMention } from './formatters';
 
@@ -18,6 +19,8 @@ export async function sendWebhookMessage(params: Post | Update, fetchMethod: 'po
 	if (params.mentionRole && params.role && !params.text.startsWith(bold('New announcement for'))) {
 		params.text = `${bold('New announcement for')} ${roleMention(params.role.value)}:\n${params.text}`;
 	}
+
+	params.webhookUrl = isLocalStorageEntry(params.webhookUrl) ? params.webhookUrl.value : params.webhookUrl;
 
 	// Get the hookID and hookToken. If it is a release channel then just get the release environment variable.
 	const [hookID, hookToken] = params.webhookUrl.split('/').slice(-2);
