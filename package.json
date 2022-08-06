@@ -22,6 +22,7 @@
 		"@sapphire/discord-utilities": "^2.11.4",
 		"@sapphire/fetch": "^2.4.1",
 		"@sapphire/utilities": "^3.7.0",
+		"@skyra/discord-components-react": "^3.4.1",
 		"autosuggest-highlight": "^3.3.2",
 		"lodash.get": "^4.4.2",
 		"lodash.uniqby": "^4.7.0",

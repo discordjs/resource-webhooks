@@ -7,9 +7,9 @@ import FormAutoComplete from '../components/Form/FormAutoComplete';
 import FormSwitch from '../components/Form/FormSwitch';
 import FormTextFieldMultiline from '../components/Form/FormTextFieldMultiline';
 import FormValidationsTooltip from '../components/Form/FormValidationsTooltip';
-import ReviewDialog from './Dialogs/ReviewDialog';
 import type { Post } from '../models/PostModel';
 import type { Update } from '../models/UpdateModel';
+import ReviewDialog from './Dialogs/ReviewDialog';
 import FormTextField from './Form/FormTextField';
 import WebhookURLInput from './WebhookUrlInput';
 
@@ -29,7 +29,7 @@ const UpdateOrPostContent: FC<Props> = ({ type, reviewDialogOpen, setReviewDialo
 
 	return (
 		<>
-			<ReviewDialog reviewDialogOpen={reviewDialogOpen} setReviewDialogOpen={setReviewDialogOpen} />
+			<ReviewDialog type={type} reviewDialogOpen={reviewDialogOpen} setReviewDialogOpen={setReviewDialogOpen} />
 			<Grid container spacing={2} justifyContent="flex-start" alignContent="center" alignItems="center">
 				<Grid item xs={12} ref={monacoEditorGridRef}>
 					<FormTextFieldMultiline<Post | Update> name="text" monacoEditorGridRef={monacoEditorGridRef} />
