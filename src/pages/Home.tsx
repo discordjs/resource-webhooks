@@ -17,7 +17,16 @@ const cardData: CardData[] = [
 
 const Home = () => {
 	return (
-		<Grid container justifyContent="center" alignContent="center" alignItems="center" spacing={4}>
+		<Grid
+			container
+			justifyContent="center"
+			alignContent="center"
+			alignItems="center"
+			spacing={4}
+			sx={{
+				mt: 1
+			}}
+		>
 			{cardData.map((card, index) => (
 				<Grid item xs={12} sm={6} md={6} key={index}>
 					<Card sx={{ width: '100%', minHeight: 150, maxHeight: 150 }}>
