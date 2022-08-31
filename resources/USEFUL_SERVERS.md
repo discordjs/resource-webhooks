@@ -26,11 +26,6 @@ _ _
 > https://discord.gg/sapphiredev
 
 _ _
-**• Discord Testers**
-> Found a bug in discord? This is the place to report it.
-> https://discord.gg/discord-testers
-
-_ _
 **• Discord API:**
 > Discord API is still the place to go if you need general API help, need support for another library, or just want to chill in a 10000+ member server that's all about coding. Mostly. 
 > https://discord.gg/discord-api
