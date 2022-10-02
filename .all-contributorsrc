@@ -1,84 +1,120 @@
 {
-	"projectName": "resource-webhooks",
-	"projectOwner": "sapphiredev",
-	"repoType": "github",
-	"repoHost": "https://github.com",
-	"files": ["README.md"],
-	"imageSize": 100,
-	"commit": true,
-	"commitConvention": "angular",
-	"contributors": [
-		{
-			"login": "favna",
-			"name": "Jeroen Claassens",
-			"avatar_url": "https://avatars.githubusercontent.com/u/4019718?v=4",
-			"profile": "https://favware.tech/",
-			"contributions": ["code", "content", "doc", "design", "maintenance", "projectManagement"]
-		},
-		{
-			"login": "almostSouji",
-			"name": "Souji",
-			"avatar_url": "https://avatars.githubusercontent.com/u/26532370?v=4",
-			"profile": "https://github.com/almostSouji",
-			"contributions": ["code"]
-		},
-		{
-			"login": "iCrawl",
-			"name": "Noel",
-			"avatar_url": "https://avatars.githubusercontent.com/u/20760160?v=4",
-			"profile": "https://ko-fi.com/crawltogo",
-			"contributions": ["code"]
-		},
-		{
-			"login": "Fyko",
-			"name": "Carter",
-			"avatar_url": "https://avatars.githubusercontent.com/u/45381083?v=4",
-			"profile": "https://fyko.net/",
-			"contributions": ["code"]
-		},
-		{
-			"login": "papaia",
-			"name": "Papaia",
-			"avatar_url": "https://avatars.githubusercontent.com/u/43409674?v=4",
-			"profile": "https://github.com/papaia",
-			"contributions": ["code"]
-		},
-		{
-			"login": "anandre",
-			"name": "anandre",
-			"avatar_url": "https://avatars.githubusercontent.com/u/38661761?v=4",
-			"profile": "https://github.com/anandre",
-			"contributions": ["code"]
-		},
-		{
-			"login": "NotSugden",
-			"name": "Sugden",
-			"avatar_url": "https://avatars.githubusercontent.com/u/28943913?v=4",
-			"profile": "https://github.com/NotSugden",
-			"contributions": ["code"]
-		},
-		{
-			"login": "monbrey",
-			"name": "monbrey",
-			"avatar_url": "https://avatars.githubusercontent.com/u/5294381?v=4",
-			"profile": "https://github.com/monbrey",
-			"contributions": ["code"]
-		},
-		{
-			"login": "dependabot[bot]",
-			"name": "dependabot[bot]",
-			"avatar_url": "https://avatars.githubusercontent.com/in/29110?v=4",
-			"profile": "https://github.com/apps/dependabot",
-			"contributions": ["maintenance"]
-		},
-		{
-			"login": "depfu[bot]",
-			"name": "depfu[bot]",
-			"avatar_url": "https://avatars.githubusercontent.com/in/715?v=4",
-			"profile": "https://github.com/apps/depfu",
-			"contributions": ["maintenance"]
-		}
-	],
-	"contributorsPerLine": 7,
-	"skipCi": true
+  "projectName": "resource-webhooks",
+  "projectOwner": "sapphiredev",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": true,
+  "commitConvention": "angular",
+  "contributors": [
+    {
+      "login": "favna",
+      "name": "Jeroen Claassens",
+      "avatar_url": "https://avatars.githubusercontent.com/u/4019718?v=4",
+      "profile": "https://favware.tech/",
+      "contributions": [
+        "code",
+        "content",
+        "doc",
+        "design",
+        "maintenance",
+        "projectManagement"
+      ]
+    },
+    {
+      "login": "almostSouji",
+      "name": "Souji",
+      "avatar_url": "https://avatars.githubusercontent.com/u/26532370?v=4",
+      "profile": "https://github.com/almostSouji",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "iCrawl",
+      "name": "Noel",
+      "avatar_url": "https://avatars.githubusercontent.com/u/20760160?v=4",
+      "profile": "https://ko-fi.com/crawltogo",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "Fyko",
+      "name": "Carter",
+      "avatar_url": "https://avatars.githubusercontent.com/u/45381083?v=4",
+      "profile": "https://fyko.net/",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "papaia",
+      "name": "Papaia",
+      "avatar_url": "https://avatars.githubusercontent.com/u/43409674?v=4",
+      "profile": "https://github.com/papaia",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "anandre",
+      "name": "anandre",
+      "avatar_url": "https://avatars.githubusercontent.com/u/38661761?v=4",
+      "profile": "https://github.com/anandre",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "NotSugden",
+      "name": "Sugden",
+      "avatar_url": "https://avatars.githubusercontent.com/u/28943913?v=4",
+      "profile": "https://github.com/NotSugden",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "monbrey",
+      "name": "monbrey",
+      "avatar_url": "https://avatars.githubusercontent.com/u/5294381?v=4",
+      "profile": "https://github.com/monbrey",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "dependabot[bot]",
+      "name": "dependabot[bot]",
+      "avatar_url": "https://avatars.githubusercontent.com/in/29110?v=4",
+      "profile": "https://github.com/apps/dependabot",
+      "contributions": [
+        "maintenance"
+      ]
+    },
+    {
+      "login": "depfu[bot]",
+      "name": "depfu[bot]",
+      "avatar_url": "https://avatars.githubusercontent.com/in/715?v=4",
+      "profile": "https://github.com/apps/depfu",
+      "contributions": [
+        "maintenance"
+      ]
+    },
+    {
+      "login": "vladfrangu",
+      "name": "Vlad Frangu",
+      "avatar_url": "https://avatars.githubusercontent.com/u/17960496?v=4",
+      "profile": "https://github.com/vladfrangu",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "skipCi": true
 }
