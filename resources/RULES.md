@@ -26,6 +26,10 @@ _ _
 **8.** No excessive controversial content is allowed, including politics and religion.
 
 _ _
+You can use </report user:1020072425448284263> and </report message:1020072425448284263> to contact server moderators *(both are also available as right-click commands)*
+Note that creating false reports may lead to moderation actions.
+
+_ _
 We are not Discord! 
 We are just some nerds who develop discord bots! 
 • https://dis.gd/report reports (harassment/hacking/abuse) and appeals
