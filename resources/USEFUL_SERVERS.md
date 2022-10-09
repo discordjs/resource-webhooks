@@ -14,12 +14,6 @@ _ _
 > https://discord.gg/typescript
 
 _ _
-**• Akairo Support**
-> Want to find out how to make the next big bot using Akairo?
-> Join the official support server for the Akairo framework!
-> https://discord.gg/arTauDY
-
-_ _
 **• Sapphire Support**
 > Sapphire is a fully customizable framework with first-class TypeScript support that you can use as a robust base for your next Discord bot!
 > Join the official support server for the Sapphire framework!
