@@ -6,7 +6,7 @@ _ _
 • [Documentation](https://discord.js.org/#/docs/discord.js/stable/general/welcome)
 • [GitHub](https://github.com/discordjs/discord.js)
 • [Guide](https://discordjs.guide/)
-• [Update to version 13](https://discordjs.guide/additional-info/changes-in-v13.html)
+• [Update to version 14](https://discordjs.guide/additional-info/changes-in-v14.html)
 • [Discord Developer Documentation](https://discord.com/developers/docs) (needed permissions etc.)
 _ _
 **Learning JavaScript and node.js:**
