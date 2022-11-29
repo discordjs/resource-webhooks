@@ -48,9 +48,9 @@ _ _
 <:sapphire:746069730170896405> <#934614121687687179> Development chat for [`@sapphire/shapeshift`](<https://github.com/sapphiredev/shapeshift>).
 _ _
 **VOICE**
-<:sapphire:746069730170896405> <#737450654901076048> <#788416723606437928> For any general voice banter. Stream your games, hang out with your friends, or do basically anything.
-<:sapphire:746069730170896405> <#746093494224945294> <#749649048708841483> For any coding related voice banter.
-<:sapphire:746069730170896405> <#746093494224945294> <#751570178675835013> The automatic voice AFK channel.
+<:sapphire:746069730170896405> <#737450654901076048> and <#788416723606437928> For any general voice banter. Stream your games, hang out with your friends, or do basically anything.
+<:sapphire:746069730170896405> <#746093494224945294> and <#749649048708841483> For any coding related voice banter.
+<:sapphire:746069730170896405> <#751570178675835013> The automatic voice AFK channel.
 
 
 _ _
