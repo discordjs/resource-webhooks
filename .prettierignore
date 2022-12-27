@@ -1,0 +1,5 @@
+.nuxt/
+.yarn/
+.output/
+dist/
+node_modules/
