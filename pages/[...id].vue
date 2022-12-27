@@ -4,14 +4,8 @@
 			<div class="lg:flex-grow md:w-full lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
 				<h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900 dark:text-gray-100">Header or something</h1>
 
-				<p class="mb-8 leading-relaxed">
-					TODO
-				</p>
+				<p class="mb-8 leading-relaxed">TODOtest</p>
 			</div>
 		</div>
 	</section>
 </template>
-
-<script setup lang="ts">
-
-</script>
