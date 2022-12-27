@@ -1,7 +1,7 @@
 import 'nuxt';
 
 export default defineNuxtConfig({
-	modules: ['@nuxt/image-edge', '@formkit/nuxt', 'nuxt-lodash', 'nuxt-monaco-editor', '@nuxtjs/tailwindcss', 'nuxt-headlessui', 'nuxt-purgecss'],
+	modules: ['@nuxt/image-edge', '@formkit/nuxt', 'nuxt-lodash', '@nuxtjs/tailwindcss', 'nuxt-purgecss'],
 	typescript: {
 		shim: false
 	},

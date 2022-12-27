@@ -679,15 +679,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@headlessui/vue@npm:^1.0.0":
-  version: 1.7.7
-  resolution: "@headlessui/vue@npm:1.7.7"
-  peerDependencies:
-    vue: ^3.2.0
-  checksum: 6ffb0ba1a62e84e5b1c9ccd472845587d2b345f6b34251b86a7723520746ea46cd8d8a0fb7f2912a13154a7dae8d05cf9a34389d71636319212cb5818de0a7ce
-  languageName: node
-  linkType: hard
-
 "@ioredis/commands@npm:^1.1.1":
   version: 1.2.0
   resolution: "@ioredis/commands@npm:1.2.0"
@@ -2449,7 +2440,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"color@npm:^4.2.3":
+"color@npm:^4.2, color@npm:^4.2.3":
   version: 4.2.3
   resolution: "color@npm:4.2.3"
   dependencies:
@@ -2698,6 +2689,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"css-selector-tokenizer@npm:^0.8.0":
+  version: 0.8.0
+  resolution: "css-selector-tokenizer@npm:0.8.0"
+  dependencies:
+    cssesc: ^3.0.0
+    fastparse: ^1.1.2
+  checksum: 1eb7ca7d2c21ede700a0fab7df4547198431c30ba62663d81a566a8abe6ab7524f627ce6c0bde63f34917e199b73be4081e449bd8faf107d155766204082aa0a
+  languageName: node
+  linkType: hard
+
 "css-tree@npm:^1.1.2, css-tree@npm:^1.1.3":
   version: 1.1.3
   resolution: "css-tree@npm:1.1.3"
@@ -2812,6 +2813,21 @@ __metadata:
   version: 0.2.2
   resolution: "cuint@npm:0.2.2"
   checksum: b8127a93a7f16ce120ffcb22108014327c9808b258ee20e7dbb4c6740d7cb0f0c12d18a054eb716b0f2470090666abaae8a082d3cd5ef0e94fa447dd155842c4
+  languageName: node
+  linkType: hard
+
+"daisyui@npm:^2.46.0":
+  version: 2.46.0
+  resolution: "daisyui@npm:2.46.0"
+  dependencies:
+    color: ^4.2
+    css-selector-tokenizer: ^0.8.0
+    postcss-js: ^4.0.0
+    tailwindcss: ^3
+  peerDependencies:
+    autoprefixer: ^10.0.2
+    postcss: ^8.1.6
+  checksum: 9fedcec550fd4aa33dfd424ba8e772f318f6367486cd2aaebc2eff83541c4b82d7f514ab123880b2b1b0b3f4b8ced2aab4bbd43dd1cd951c67253931411f2450
   languageName: node
   linkType: hard
 
@@ -3653,6 +3669,13 @@ __metadata:
   version: 2.1.0
   resolution: "fast-json-stable-stringify@npm:2.1.0"
   checksum: b191531e36c607977e5b1c47811158733c34ccb3bfde92c44798929e9b4154884378536d26ad90dfecd32e1ffc09c545d23535ad91b3161a27ddbb8ebe0cbecb
+  languageName: node
+  linkType: hard
+
+"fastparse@npm:^1.1.2":
+  version: 1.1.2
+  resolution: "fastparse@npm:1.1.2"
+  checksum: c4d199809dc4e8acafeb786be49481cc9144de296e2d54df4540ccfd868d0df73afc649aba70a748925eb32bbc4208b723d6288adf92382275031a8c7e10c0aa
   languageName: node
   linkType: hard
 
@@ -5336,13 +5359,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"monaco-editor@npm:^0.34.1":
-  version: 0.34.1
-  resolution: "monaco-editor@npm:0.34.1"
-  checksum: 4c6b35d7c566ec414b758cdd45dfb08d6fe46e2e8fdeed88b619a52c47592ce6df476d9490a58e5d450339c4a93f09d500adc9c017a348179277b98aa6009fa4
-  languageName: node
-  linkType: hard
-
 "mri@npm:^1.1.5, mri@npm:^1.2.0":
   version: 1.2.0
   resolution: "mri@npm:1.2.0"
@@ -5689,17 +5705,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nuxt-headlessui@npm:^1.0.4":
-  version: 1.0.4
-  resolution: "nuxt-headlessui@npm:1.0.4"
-  dependencies:
-    "@headlessui/vue": ^1.0.0
-    "@nuxt/kit": ^3.0.0
-    pathe: ^1.0.0
-  checksum: 925383a4dffdd698749fb8ea47daf8b452f24a0082e2a10cad110c216f49907ce84750c7b34047b51adc1e385fc4838cc5c811cedbe9863697ccbc64d74987a1
-  languageName: node
-  linkType: hard
-
 "nuxt-lodash@npm:^2.4.1":
   version: 2.4.1
   resolution: "nuxt-lodash@npm:2.4.1"
@@ -5708,18 +5713,6 @@ __metadata:
     "@types/lodash-es": ^4.17.6
     lodash-es: ^4.17.21
   checksum: b7ffa7c182da035a1b3c25cf526b149be8107d65cef23f0aee8f0d32d325153119ac09fbe2d68d162d360160ff78a822896ef1023a22fa2d28900d376d8ab9e1
-  languageName: node
-  linkType: hard
-
-"nuxt-monaco-editor@npm:^1.1.1":
-  version: 1.1.1
-  resolution: "nuxt-monaco-editor@npm:1.1.1"
-  dependencies:
-    "@nuxt/kit": ^3.0.0
-    vite-plugin-static-copy: ^0.12.0
-  peerDependencies:
-    monaco-editor: "*"
-  checksum: 6e734d5395240b803f5d8c89fa353cf97dd29b960293259a6c9de1207360f7e5d97e13988de5ffc05c834905b85523aceaefd2f6cc7912dc2fe1e68f585430d5
   languageName: node
   linkType: hard
 
@@ -7589,7 +7582,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tailwindcss@npm:^3.2.1":
+"tailwindcss@npm:^3, tailwindcss@npm:^3.2.1":
   version: 3.2.4
   resolution: "tailwindcss@npm:3.2.4"
   dependencies:
@@ -8071,20 +8064,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite-plugin-static-copy@npm:^0.12.0":
-  version: 0.12.0
-  resolution: "vite-plugin-static-copy@npm:0.12.0"
-  dependencies:
-    chokidar: ^3.5.3
-    fast-glob: ^3.2.11
-    fs-extra: ^10.1.0
-    picocolors: ^1.0.0
-  peerDependencies:
-    vite: ^3.0.0
-  checksum: 52314aa462a15f290b776f3f79f4c2e4b85fb2a306c2ed2c4e51018182ad0ebe4e748529e7fc60b449bab7e9d2e9a34ce4429afde5bf8e14e6e01b9bb21ad3d0
-  languageName: node
-  linkType: hard
-
 "vite@npm:^3.0.0 || ^4.0.0":
   version: 4.0.3
   resolution: "vite@npm:4.0.3"
@@ -8237,15 +8216,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vue-meta@npm:^2.4.0":
-  version: 2.4.0
-  resolution: "vue-meta@npm:2.4.0"
-  dependencies:
-    deepmerge: ^4.2.2
-  checksum: a6686e7351e941eb1041ffc2129418e7e2ce6b39993ef7cbd16585c2eb8c232cc9dc35873cefa54781420e03f71c88da6b6cf04c427dc91b314182eca655dedf
-  languageName: node
-  linkType: hard
-
 "vue-router@npm:^4.1.6":
   version: 4.1.6
   resolution: "vue-router@npm:4.1.6"
@@ -8302,17 +8272,14 @@ __metadata:
     "@sapphire/ts-config": ^3.3.4
     "@sapphire/utilities": ^3.11.0
     "@skyra/discord-components-core": ^3.5.0
+    daisyui: ^2.46.0
     discord-api-types: ^0.37.24
-    monaco-editor: ^0.34.1
     nuxt: 3.0.0
-    nuxt-headlessui: ^1.0.4
     nuxt-lodash: ^2.4.1
-    nuxt-monaco-editor: ^1.1.1
     nuxt-purgecss: ^2.0.0
     prettier: ^2.8.1
     pretty-quick: ^3.1.3
     typescript: ^4.9.4
-    vue-meta: ^2.4.0
   languageName: unknown
   linkType: soft
 
