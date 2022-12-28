@@ -14,8 +14,10 @@
 		"format:check": "prettier --check ."
 	},
 	"dependencies": {
+		"@pinia/nuxt": "^0.4.6",
 		"@sapphire/utilities": "^3.11.0",
 		"@skyra/discord-components-core": "^3.5.0",
+		"pinia": "^2.0.28",
 		"vee-validate": "^4.7.3",
 		"yup": "^0.32.11"
 	},
