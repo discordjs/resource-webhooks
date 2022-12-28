@@ -27,14 +27,14 @@
 			<p>{{ isSubmitting }}</p>
 			<div class="grid grid-cols-1 lg:grid-cols-2 gap-2 lg:gap-4 w-full mt-5">
 				<button type="button" class="btn btn-accent" @click="resetForm()">Reset form</button>
-				<button type="submit" class="btn btn-primary">Review post</button>
+				<button type="submit" class="btn btn-primary" :disabled="isSubmitting || objectKeys(errors).length > 0">Review post</button>
 			</div>
 		</Form>
 	</div>
 </template>
 
 <script setup lang="ts">
-import { objectValues } from '@sapphire/utilities';
+import { objectKeys, objectValues } from '@sapphire/utilities';
 import { Form, type InvalidSubmissionContext } from 'vee-validate';
 import { postSchema } from '~~/lib/schemas/postSchema';
 import { Post } from '~~/lib/types/Post';
