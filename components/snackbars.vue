@@ -23,7 +23,7 @@
 </template>
 
 <script setup lang="ts">
-import { Snackbar, useSnackbars } from '~~/stores/snackbars';
+import type { Snackbar } from '~~/stores/snackbars';
 
 const snackbarStore = useSnackbars();
 

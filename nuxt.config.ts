@@ -8,7 +8,7 @@ export default defineNuxtConfig({
 		shim: false
 	},
 	imports: {
-		dirs: ['lib/utils']
+		dirs: ['lib/utils', 'stores']
 	},
 	app: {
 		head: {

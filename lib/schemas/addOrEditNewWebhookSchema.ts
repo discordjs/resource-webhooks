@@ -2,7 +2,7 @@ import { object, string, type SchemaOf } from 'yup';
 import type { LocalStorageEntry } from '~~/lib/utils/localStorage';
 import { WebhookRegex } from '~~/lib/utils/WebhookRegex';
 
-export const addNewWebhookSchema: SchemaOf<LocalStorageEntry> = object({
+export const addOrEditNewWebhookSchema: SchemaOf<LocalStorageEntry> = object({
 	value: string().required('The webhook URL is required.').matches(WebhookRegex, 'The webhook URL is invalid.'),
 	label: string()
 		.required('The webhook label is required.')

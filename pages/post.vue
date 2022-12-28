@@ -34,29 +34,17 @@
 </template>
 
 <script setup lang="ts">
-import { objectValues } from '@sapphire/utilities';
 import { Form, type InvalidSubmissionContext } from 'vee-validate';
 import { postSchema } from '~~/lib/schemas/postSchema';
 import { Post } from '~~/lib/types/Post';
-import { useSnackbars } from '~~/stores/snackbars';
 
-const snackbarStore = useSnackbars();
+const onInvalidSubmit = ({ errors }: InvalidSubmissionContext) => useInvalidFormSubmit(errors);
 
 const initialValues: Post = {
 	webhookUrl: '',
 	text: '',
 	role: ''
 };
-
-async function onInvalidSubmit({ errors }: InvalidSubmissionContext) {
-	snackbarStore.$reset();
-
-	for (const error of objectValues(errors)) {
-		if (error) {
-			snackbarStore.addSnackbar({ message: error, severity: 'error' });
-		}
-	}
-}
 
 function onSubmit(values: Record<string, unknown>) {
 	console.log('test');

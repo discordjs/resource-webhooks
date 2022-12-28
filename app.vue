@@ -3,6 +3,8 @@
 		<NuxtPage />
 	</NuxtLayout>
 	<snackbars />
+	<modals-add-webhook />
+	<modals-edit-webhook />
 </template>
 
 <script setup lang="ts">
