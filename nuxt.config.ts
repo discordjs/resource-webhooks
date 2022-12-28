@@ -3,8 +3,12 @@ import 'nuxt';
 export default defineNuxtConfig({
 	modules: ['@nuxt/image-edge', '@vueuse/nuxt', 'nuxt-lodash', '@nuxtjs/tailwindcss', 'nuxt-purgecss', 'nuxt-monaco-editor'],
 	build: { transpile: ['vee-validate'] },
+	ssr: false,
 	typescript: {
 		shim: false
+	},
+	imports: {
+		dirs: ['lib/utils']
 	},
 	app: {
 		head: {

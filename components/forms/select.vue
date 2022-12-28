@@ -1,11 +1,19 @@
 <template>
 	<div class="form-control w-full">
 		<label class="label">
-			<span class="label-text">{{ label }}</span>
+			<span class="label-text"
+				>{{ label
+				}}<span v-if="options.length === 0"
+					>.
+					<span class="text-accent font-bold"
+						>{{ parsedNoOptionString }} <nuxt-link class="link link-primary" :to="addNewOptionHref">configuration page</nuxt-link></span
+					>
+				</span></span
+			>
 		</label>
-		<Field :name="name" v-slot="{ value, errorMessage }" as="select" class="select w-full max-x-ws">
+		<Field :name="name" v-slot="{ value, errorMessage }" as="select" class="select w-full max-x-ws" :disabled="options.length === 0">
 			<option value="">None</option>
-			<option v-for="role in roles" :key="role.value" :value="role" :selected="value && value.value === role.value">
+			<option v-for="role in options" :key="role.value" :value="role" :selected="value && value.value === role.value">
 				{{ role.label + ' - ' + role.value }}
 			</option>
 
@@ -18,16 +26,15 @@
 import { Field } from 'vee-validate';
 import type { LocalStorageEntry } from '~~/lib/utils/localStorage';
 
-defineProps<{ name: string; label: string }>();
-
-const roles: LocalStorageEntry[] = [
-	{
-		label: 'Ping me for announcements',
-		value: '912088476290273300'
-	},
-	{
-		label: 'Dragonite does repo maintenance',
-		value: '901237389257744426'
-	}
-];
+const props = defineProps<{
+	name: string;
+	label: string;
+	optionsStringReplacer: string;
+	addNewOptionHref: string;
+	options: LocalStorageEntry[];
+}>();
+const parsedNoOptionString = 'No {{options}} are saved, selection is disabled. Save new {{options}} through the'.replaceAll(
+	'{{options}}',
+	props.optionsStringReplacer
+);
 </script>

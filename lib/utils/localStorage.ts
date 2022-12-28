@@ -5,15 +5,13 @@ export function loadState(key: LocalStorageKeys): LocalStorageEntry[] {
 	return serializedState ? JSON.parse(serializedState) : [];
 }
 
-export function saveState(key: LocalStorageKeys, state: LocalStorageEntry[]): LocalStorageEntry[] {
+export function saveState(key: LocalStorageKeys, state: LocalStorageEntry[]): void {
 	try {
 		const serializedState = JSON.stringify(state);
 		localStorage.setItem(key, serializedState);
 	} catch {
 		// intentionally empty
 	}
-
-	return state;
 }
 
 export function clearState(key: LocalStorageKeys) {
@@ -25,7 +23,8 @@ export function isLocalStorageEntry(entry: LocalStorageEntry | string): entry is
 }
 
 export enum LocalStorageKeys {
-	WebhookUrls = 'webhook_urls'
+	WebhookUrls = 'webhook_urls',
+	Roles = 'roles'
 }
 
 export interface LocalStorageEntry {

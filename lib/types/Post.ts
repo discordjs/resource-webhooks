@@ -1,7 +1,7 @@
 import type { LocalStorageEntry } from '~~/lib/utils/localStorage';
 
 export interface Post {
-	webhookUrl: string | LocalStorageEntry;
+	webhookUrl: LocalStorageEntry | '';
 	text: string;
 	role: LocalStorageEntry | '';
 }
