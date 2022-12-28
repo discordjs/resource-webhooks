@@ -9,7 +9,6 @@
 				:value="value"
 				:options="options"
 				lang="markdown"
-				@update:modelValue="log(value)"
 				@input="handleChange"
 				@blur="handleBlur"
 				class="h-full w-full"
@@ -24,10 +23,6 @@ import type { editor as monacoEditor } from 'monaco-editor';
 import { Field } from 'vee-validate';
 
 defineProps<{ name: string; label: string }>();
-
-function log(value: string) {
-	console.log(value);
-}
 
 const options: monacoEditor.IEditorConstructionOptions & { theme?: string } = {
 	automaticLayout: true,
