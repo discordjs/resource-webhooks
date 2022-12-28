@@ -4,7 +4,8 @@
 
 @layer base {
 	html,
-	body {
+	body,
+	footer {
 		@apply bg-white dark:bg-zinc-800 text-gray-600 dark:text-gray-200;
 	}
 }

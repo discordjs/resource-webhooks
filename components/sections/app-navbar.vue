@@ -28,6 +28,9 @@
 		</div>
 		<div class="navbar-end hidden lg:flex">
 			<ul class="menu menu-horizontal px-1">
+				<li v-if="$route.path !== '/'">
+					<nuxt-link class="btn btn-ghost normal-case mx-1" to="/">Home</nuxt-link>
+				</li>
 				<li>
 					<nuxt-link class="btn btn-ghost normal-case mx-1" to="/post">Post</nuxt-link>
 				</li>

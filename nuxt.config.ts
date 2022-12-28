@@ -1,7 +1,8 @@
 import 'nuxt';
 
 export default defineNuxtConfig({
-	modules: ['@nuxt/image-edge', '@formkit/nuxt', 'nuxt-lodash', '@nuxtjs/tailwindcss', 'nuxt-purgecss'],
+	modules: ['@nuxt/image-edge', '@vueuse/nuxt', 'nuxt-lodash', '@nuxtjs/tailwindcss', 'nuxt-purgecss', 'nuxt-monaco-editor'],
+	build: { transpile: ['vee-validate'] },
 	typescript: {
 		shim: false
 	},
