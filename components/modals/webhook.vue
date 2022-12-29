@@ -4,7 +4,7 @@
 			<Form
 				@submit="onSubmit"
 				@invalid-submit="onInvalidSubmit"
-				:validation-schema="addOrEditNewWebhookSchema"
+				:validation-schema="addOrEditWebhookSchema(action === 'edit')"
 				:initial-values="{ value: webhook?.value ?? '', label: webhook?.label ?? '' }"
 				v-slot="{ resetForm, isSubmitting, meta }"
 			>
@@ -14,7 +14,9 @@
 				<forms-input name="value" label="Webhook URL" />
 				<div class="grid grid-cols-1 lg:grid-cols-2 gap-2 lg:gap-4 w-full mt-5">
 					<button type="button" class="btn btn-accent" @click="resetForm()">Reset form</button>
-					<button type="submit" class="btn btn-primary" :disabled="isSubmitting || !meta.valid">Add Webhook URL</button>
+					<button type="submit" class="btn btn-primary" :disabled="isSubmitting || !meta.valid">
+						{{ action === 'add' ? 'Add Webhook URL' : 'Update Webhook URL' }}
+					</button>
 				</div>
 			</Form>
 		</div>
@@ -24,7 +26,7 @@
 <script setup lang="ts">
 import { cast } from '@sapphire/utilities';
 import { Form, type InvalidSubmissionContext } from 'vee-validate';
-import { addOrEditNewWebhookSchema } from '~~/lib/schemas/addOrEditNewWebhookSchema';
+import { addOrEditWebhookSchema } from '~~/lib/schemas/addOrEditWebhookSchema';
 import type { LocalStorageEntry } from '~~/lib/utils/localStorage';
 
 const emit = defineEmits(['close-modal']);
@@ -38,7 +40,13 @@ function handleClose(resetForm?: () => void) {
 }
 
 function onSubmit(values: Record<string, unknown>) {
-	props.webhooks.push(cast<LocalStorageEntry>(values));
+	if (props.action === 'add') {
+		props.webhooks.push(cast<LocalStorageEntry>(values));
+	} else {
+		const index = props.webhooks.findIndex((webhook) => webhook.value === props.webhook?.value);
+		props.webhooks.splice(index, 1, cast<LocalStorageEntry>(values));
+	}
+
 	handleClose();
 }
 </script>
