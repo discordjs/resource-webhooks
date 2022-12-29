@@ -920,6 +920,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@popperjs/core@npm:^2.9.0":
+  version: 2.11.6
+  resolution: "@popperjs/core@npm:2.11.6"
+  checksum: 47fb328cec1924559d759b48235c78574f2d71a8a6c4c03edb6de5d7074078371633b91e39bbf3f901b32aa8af9b9d8f82834856d2f5737a23475036b16817f0
+  languageName: node
+  linkType: hard
+
 "@prettier/plugin-xml@npm:^2.2.0":
   version: 2.2.0
   resolution: "@prettier/plugin-xml@npm:2.2.0"
@@ -7500,6 +7507,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"tippy.js@npm:^6.3.7":
+  version: 6.3.7
+  resolution: "tippy.js@npm:6.3.7"
+  dependencies:
+    "@popperjs/core": ^2.9.0
+  checksum: cac955318a65288e8d2dca05059878b003c6e66f92c94f7810f5bc5448eb6646abdf7dacc9bd00020e2611592598d0aae3a28ec9a45349a159603c3fdddce5fb
+  languageName: node
+  linkType: hard
+
 "tmp@npm:^0.0.33":
   version: 0.0.33
   resolution: "tmp@npm:0.0.33"
@@ -8076,6 +8092,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"vue-tippy@npm:next":
+  version: 6.0.0-alpha.65
+  resolution: "vue-tippy@npm:6.0.0-alpha.65"
+  dependencies:
+    tippy.js: ^6.3.7
+  peerDependencies:
+    vue: ^3.2.0
+  checksum: 677a98285c364f4302c893d1c262508656460208bbd96951664aed1a59b37919973b3876e00239f1e88936f117d02d5aab02ec1b9d2e1338e97b633f698bcc28
+  languageName: node
+  linkType: hard
+
 "vue@npm:^3.2.45":
   version: 3.2.45
   resolution: "vue@npm:3.2.45"
@@ -8128,6 +8155,7 @@ __metadata:
     prettier: ^2.8.1
     typescript: ^4.9.4
     vee-validate: ^4.7.3
+    vue-tippy: next
     yup: ^0.32.11
   languageName: unknown
   linkType: soft

@@ -19,6 +19,7 @@
 		"@skyra/discord-components-core": "^3.5.0",
 		"pinia": "^2.0.28",
 		"vee-validate": "^4.7.3",
+		"vue-tippy": "next",
 		"yup": "^0.32.11"
 	},
 	"devDependencies": {

@@ -13,7 +13,7 @@
 				label="Choose the webhook URL to post to"
 				addNewOptionHref="/configure/webhooks"
 				optionsStringReplacer="webhooks"
-				:options="getAllStoredWebhookUrls()"
+				:options="webhooks"
 				class="py-2 lg:py-6"
 			/>
 			<forms-select
@@ -37,6 +37,8 @@
 import { Form, type InvalidSubmissionContext } from 'vee-validate';
 import { postSchema } from '~~/lib/schemas/postSchema';
 import { Post } from '~~/lib/types/Post';
+
+const webhooks = useWebhooks();
 
 const onInvalidSubmit = ({ errors }: InvalidSubmissionContext) => useInvalidFormSubmit(errors);
 

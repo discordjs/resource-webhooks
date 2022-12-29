@@ -1,21 +1,17 @@
 <template>
-	<div class="w-full px-5 h-full">
-		<label for="add-webhook-modal" class="btn btn-primary gap-2 my-5 w-full">
+	<div class="container mx-auto px-5 h-full">
+		<modals-webhook :webhooks="webhooks" :webhook="null" action="add" @close-modal="openModal = null" v-if="openModal === ''" />
+		<button class="btn btn-primary gap-2 my-5 w-full" @click="openModal = ''">
 			<hero-icons-plus />
 			Add new webhook
-		</label>
-		<div class="overflow-x-auto">
-			<table class="table table-zebra w-full">
-				<colgroup>
-					<col class="w-[5%]" />
-					<col class="w-[90%]" />
-					<col class="w-[5%]" />
-				</colgroup>
+		</button>
+		<div class="overflow-x-auto lg:overflow-x-clip">
+			<table class="table table-zebra lg:w-full">
 				<thead>
 					<tr>
-						<th class="text-left">Label</th>
-						<th class="text-left">URL</th>
-						<th class="text-left">Actions</th>
+						<th>Label</th>
+						<th>URL</th>
+						<th>Actions</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -27,22 +23,28 @@
 					<tr v-for="webhook in webhooks" :key="webhook.value" class="hover">
 						<td>{{ webhook.label }}</td>
 						<td>
-							<nuxt-link :to="webhook.value" target="_blank" class="link link-primary">{{ webhook.value }}</nuxt-link>
+							<nuxt-link :to="webhook.value" target="_blank" class="break-words link">{{ webhook.value }}</nuxt-link>
 						</td>
 						<td>
-							<div class="btn-group gap-2">
-								<div class="tooltip" data-tip="Update webhook">
-									<label for="edit-webhook-modal" class="btn btn-sm btn-circle" @click="editableWebhookStore.setWebhook(webhook)">
-										<hero-icons-pencil class="w-4 h-4" />
-									</label>
-								</div>
-								<div class="tooltip" data-tip="Delete webhook">
-									<button class="btn btn-sm btn-circle" @click="removeWebhookUrl(webhook.value)">
-										<hero-icons-trash class="w-4 h-4" />
-									</button>
-								</div>
-							</div>
+							<label content="Update webhook" v-tippy class="btn btn-primary btn-circle btn-sm mr-3" @click="openModal = webhook.value">
+								<hero-icons-pencil class="w-4 h-4" />
+							</label>
+							<button
+								content="Delete webhook"
+								v-tippy
+								class="btn btn-accent btn-circle btn-sm"
+								@click="webhooks = webhooks.filter((w) => w.value !== webhook.value)"
+							>
+								<hero-icons-trash class="w-4 h-4" />
+							</button>
 						</td>
+						<modals-webhook
+							:webhooks="webhooks"
+							:webhook="webhook"
+							action="edit"
+							@close-modal="openModal = null"
+							v-if="openModal === webhook.value"
+						/>
 					</tr>
 				</tbody>
 			</table>
@@ -51,7 +53,6 @@
 </template>
 
 <script setup lang="ts">
-const webhooks = getAllStoredWebhookUrls();
-
-const editableWebhookStore = useEditableWebhook();
+const openModal = useOpenModal();
+const webhooks = useWebhooks();
 </script>

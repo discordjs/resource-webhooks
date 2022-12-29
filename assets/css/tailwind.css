@@ -9,3 +9,9 @@
 		@apply bg-white dark:bg-zinc-800 text-gray-600 dark:text-gray-200;
 	}
 }
+
+.modal {
+	pointer-events: auto;
+	visibility: visible;
+	opacity: 1;
+}

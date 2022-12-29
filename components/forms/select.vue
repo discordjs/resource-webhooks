@@ -13,7 +13,7 @@
 		</label>
 		<Field :name="name" v-slot="{ value, errorMessage }" as="select" class="select w-full max-x-ws" :disabled="options.length === 0">
 			<option value="">None</option>
-			<option v-for="role in options" :key="role.value" :value="role" :selected="value && value.value === role.value">
+			<option v-for="role in options" :key="role.value" :value="JSON.stringify(role)" :selected="value && value.value === role.value">
 				{{ role.label + ' - ' + role.value }}
 			</option>
 
