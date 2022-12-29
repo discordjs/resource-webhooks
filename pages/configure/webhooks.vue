@@ -5,8 +5,8 @@
 			<hero-icons-plus />
 			Add new webhook
 		</button>
-		<div class="overflow-x-auto lg:overflow-x-clip">
-			<table class="table table-zebra lg:w-full">
+		<div class="overflow-x-auto">
+			<table class="table table-zebra md:w-full">
 				<thead>
 					<tr>
 						<th>Label</th>
@@ -23,7 +23,7 @@
 					<tr v-for="webhook in webhooks" :key="webhook.value" class="hover">
 						<td>{{ webhook.label }}</td>
 						<td>
-							<nuxt-link :to="webhook.value" target="_blank" class="break-words link">{{ webhook.value }}</nuxt-link>
+							<nuxt-link :to="webhook.value" target="_blank" class="link">{{ webhook.value }}</nuxt-link>
 						</td>
 						<td>
 							<label content="Update webhook" v-tippy class="btn btn-primary btn-circle btn-sm mr-3" @click="openModal = webhook.value">
