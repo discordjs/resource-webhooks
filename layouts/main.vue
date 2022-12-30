@@ -1,10 +1,8 @@
 <template>
-	<div class="flex flex-col h-screen justify-between">
+	<div>
 		<sections-app-navbar />
-		<main class="flex-auto grid">
-			<section>
-				<slot></slot>
-			</section>
+		<main class="">
+			<slot></slot>
 		</main>
 		<sections-app-footer />
 	</div>
