@@ -1,7 +1,7 @@
 import 'nuxt';
 
 export default defineNuxtConfig({
-	modules: ['@nuxt/image-edge', '@vueuse/nuxt', 'nuxt-lodash', '@nuxtjs/tailwindcss', 'nuxt-purgecss', 'nuxt-monaco-editor', '@pinia/nuxt'],
+	modules: ['@nuxt/image-edge', '@vueuse/nuxt', 'nuxt-lodash', '@nuxtjs/tailwindcss', 'nuxt-monaco-editor', '@pinia/nuxt'],
 	build: { transpile: ['vee-validate'] },
 	ssr: false,
 	typescript: {

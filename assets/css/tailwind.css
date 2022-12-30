@@ -8,6 +8,11 @@
 	footer {
 		@apply bg-white dark:bg-zinc-800 text-gray-600 dark:text-gray-200;
 	}
+
+	main {
+		/*                   footer, navbar, 2x padding, top margin   */
+		height: calc(100vh - (148px + 48px + 8px + 8px + 20px));
+	}
 }
 
 .modal {
