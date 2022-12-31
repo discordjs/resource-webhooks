@@ -6,7 +6,7 @@
 			Add new role
 		</button>
 		<div class="overflow-x-auto">
-			<table class="table table-zebra md:w-full">
+			<table class="table table-zebra w-full">
 				<thead>
 					<tr>
 						<th>Role name</th>
@@ -38,13 +38,7 @@
 								<hero-icons-trash class="w-4 h-4" />
 							</button>
 						</td>
-						<modals-role
-							:roles="roles"
-							:role="role"
-							action="edit"
-							@close-modal="openModal = null"
-							v-if="openModal === role.value"
-						/>
+						<modals-role :roles="roles" :role="role" action="edit" @close-modal="openModal = null" v-if="openModal === role.value" />
 					</tr>
 				</tbody>
 			</table>

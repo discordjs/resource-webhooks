@@ -9,9 +9,13 @@
 		@apply bg-white dark:bg-zinc-800 text-gray-600 dark:text-gray-200;
 	}
 
-	main {
-		/*                        footer, navbar, 2x padding, top margin   */
-		@apply lg:h-[calc(100vh_-_(148px_+_48px_+_8px_+_8px_+_20px))];
+	body {
+		overscroll-behavior-y: none;
+		position: fixed;
+		min-height: 100vh;
+		min-width: 100%;
+		margin: 0;
+		line-height: inherit;
 	}
 }
 

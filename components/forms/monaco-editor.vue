@@ -1,5 +1,5 @@
 <template>
-	<div class="form-control h-1/2 w-full">
+	<div class="form-control h-1/2 w-full mb-4">
 		<label class="label">
 			<span class="label-text">{{ label }}</span>
 		</label>

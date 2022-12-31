@@ -1,5 +1,5 @@
 <template>
-	<header class="navbar bg-base-100">
+	<nav class="navbar bg-base-100 sticky top-0 z-20">
 		<div class="navbar-start flex items-center">
 			<div class="dropdown">
 				<label tabindex="0" class="btn btn-ghost lg:hidden">
@@ -26,7 +26,7 @@
 				><nuxt-img src="/images/gem.svg" style="height: 24px" /><span class="ml-2">Sapphire</span></nuxt-link
 			>
 		</div>
-		<div class="navbar-end hidden lg:flex">
+		<div class="navbar-end w-full hidden lg:flex">
 			<ul class="menu menu-horizontal px-1">
 				<li v-if="$route.path !== '/'">
 					<nuxt-link class="btn btn-ghost normal-case mx-1" to="/">Home</nuxt-link>
@@ -45,5 +45,5 @@
 				</li>
 			</ul>
 		</div>
-	</header>
+	</nav>
 </template>
