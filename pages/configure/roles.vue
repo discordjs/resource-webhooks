@@ -9,9 +9,9 @@
 			<table class="table table-zebra w-full">
 				<thead>
 					<tr>
+						<th>Actions</th>
 						<th>Role name</th>
 						<th>Snowflake</th>
-						<th>Actions</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -21,10 +21,6 @@
 						</td>
 					</tr>
 					<tr v-for="role in roles" :key="role.value" class="hover">
-						<td>{{ role.label }}</td>
-						<td>
-							{{ role.value }}
-						</td>
 						<td>
 							<label content="Update role" v-tippy class="btn btn-primary btn-circle btn-sm mr-3" @click="openModal = role.value">
 								<hero-icons-pencil class="w-4 h-4" />
@@ -37,6 +33,10 @@
 							>
 								<hero-icons-trash class="w-4 h-4" />
 							</button>
+						</td>
+						<td>{{ role.label }}</td>
+						<td>
+							{{ role.value }}
 						</td>
 						<modals-role :roles="roles" :role="role" action="edit" @close-modal="openModal = null" v-if="openModal === role.value" />
 					</tr>

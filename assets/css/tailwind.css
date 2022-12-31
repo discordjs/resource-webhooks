@@ -24,3 +24,9 @@
 	visibility: visible;
 	opacity: 1;
 }
+
+.table th:first-child {
+	@apply relative;
+	left: inherit;
+	z-index: inherit;
+}

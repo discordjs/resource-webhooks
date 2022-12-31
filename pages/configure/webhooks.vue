@@ -9,9 +9,9 @@
 			<table class="table table-zebra w-full">
 				<thead>
 					<tr>
+						<th>Actions</th>
 						<th>Label</th>
 						<th>URL</th>
-						<th>Actions</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -21,10 +21,6 @@
 						</td>
 					</tr>
 					<tr v-for="webhook in webhooks" :key="webhook.value" class="hover">
-						<td>{{ webhook.label }}</td>
-						<td>
-							<nuxt-link :to="webhook.value" target="_blank" class="link">{{ webhook.value }}</nuxt-link>
-						</td>
 						<td>
 							<label content="Update webhook" v-tippy class="btn btn-primary btn-circle btn-sm mr-3" @click="openModal = webhook.value">
 								<hero-icons-pencil class="w-4 h-4" />
@@ -37,6 +33,10 @@
 							>
 								<hero-icons-trash class="w-4 h-4" />
 							</button>
+						</td>
+						<td>{{ webhook.label }}</td>
+						<td>
+							<nuxt-link :to="webhook.value" target="_blank" class="link">{{ webhook.value }}</nuxt-link>
 						</td>
 						<modals-webhook
 							:webhooks="webhooks"
