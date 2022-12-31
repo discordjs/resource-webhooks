@@ -14,12 +14,17 @@
 		position: fixed;
 		min-height: 100vh;
 		min-width: 100%;
-		margin: 0;
-		line-height: inherit;
 	}
 }
 
-.modal {
+.modal,
+.dropdown,
+.dropdown-content,
+.dropdown .dropdown-content,
+.dropdown.dropdown-open .dropdown-content,
+.dropdown.dropdown-hover:hover .dropdown-content,
+.dropdown:not(.dropdown-hover):focus .dropdown-content,
+.dropdown:not(.dropdown-hover):focus-within .dropdown-content {
 	pointer-events: auto;
 	visibility: visible;
 	opacity: 1;
