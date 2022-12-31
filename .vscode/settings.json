@@ -12,5 +12,8 @@
 		"**/.yarn": true,
 		"**/.next/": true,
 		"**/.git/": true
+	},
+	"files.associations": {
+		"*.css": "tailwindcss"
 	}
 }

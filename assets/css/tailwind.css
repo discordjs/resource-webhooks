@@ -10,8 +10,8 @@
 	}
 
 	main {
-		/*                   footer, navbar, 2x padding, top margin   */
-		height: calc(100vh - (148px + 48px + 8px + 8px + 20px));
+		/*                        footer, navbar, 2x padding, top margin   */
+		@apply lg:h-[calc(100vh_-_(148px_+_48px_+_8px_+_8px_+_20px))];
 	}
 }
 
