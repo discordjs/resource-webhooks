@@ -34,7 +34,14 @@
 							</button>
 						</td>
 						<td>
-							<nuxt-link :to="webhook.value" target="_blank" class="link">{{ webhook.label }}</nuxt-link>
+							<nuxt-link
+								:to="webhook.value"
+								target="_blank"
+								class="link"
+								content="Use 'Copy Link Address' to copy the webhook URL"
+								v-tippy
+								>{{ webhook.label }}</nuxt-link
+							>
 						</td>
 						<modals-webhook
 							:webhooks="webhooks"
