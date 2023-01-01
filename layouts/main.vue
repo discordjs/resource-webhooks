@@ -1,8 +1,8 @@
 <template>
-	<div @click="closeDropdownIfOpen">
-		<div>
+	<div class="h-full pb-20" @click="closeDropdownIfOpen">
+		<div class="min-h-full grid grid-layout">
 			<sections-app-navbar />
-			<section class="grid grid-layout-container overflow-auto h-[calc(100vh_-_64px)]">
+			<section class="grid grid-layout-container overscroll-y-none overflow-auto pb-20 lg:pb-0 h-[calc(100vh_-_64px)]">
 				<main>
 					<slot></slot>
 				</main>
