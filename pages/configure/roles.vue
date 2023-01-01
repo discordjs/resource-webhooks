@@ -11,7 +11,6 @@
 					<tr>
 						<th>Actions</th>
 						<th>Role name</th>
-						<th>Snowflake</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -34,9 +33,8 @@
 								<hero-icons-trash class="w-4 h-4" />
 							</button>
 						</td>
-						<td>{{ role.label }}</td>
 						<td>
-							{{ role.value }}
+							<span :content="role.value" v-tippy>{{ role.label }}</span>
 						</td>
 						<modals-role :roles="roles" :role="role" action="edit" @close-modal="openModal = null" v-if="openModal === role.value" />
 					</tr>
