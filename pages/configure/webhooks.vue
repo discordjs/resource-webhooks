@@ -10,8 +10,7 @@
 				<thead>
 					<tr>
 						<th>Actions</th>
-						<th>Label</th>
-						<th>URL</th>
+						<th>Name</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -34,9 +33,8 @@
 								<hero-icons-trash class="w-4 h-4" />
 							</button>
 						</td>
-						<td>{{ webhook.label }}</td>
 						<td>
-							<nuxt-link :to="webhook.value" target="_blank" class="link">{{ webhook.value }}</nuxt-link>
+							<nuxt-link :to="webhook.value" target="_blank" class="link">{{ webhook.label }}</nuxt-link>
 						</td>
 						<modals-webhook
 							:webhooks="webhooks"
