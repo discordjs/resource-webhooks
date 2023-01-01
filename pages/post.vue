@@ -5,7 +5,7 @@
 			@invalid-submit="onInvalidSubmit"
 			:validation-schema="postSchema"
 			:initial-values="initialValues"
-			v-slot="{ resetForm, errors, isSubmitting, meta }"
+			v-slot="{ resetForm, isSubmitting, meta }"
 		>
 			<forms-monaco-editor name="text" label="Message Text" />
 			<forms-select
@@ -23,8 +23,6 @@
 				optionsStringReplacer="roles"
 				:options="getAllStoredRoles()"
 			/>
-			<p>{{ errors }}</p>
-			<p>{{ isSubmitting }}</p>
 			<div class="grid grid-cols-1 lg:grid-cols-2 gap-2 lg:gap-4 w-full mt-5">
 				<button type="button" class="btn btn-accent" @click="resetForm()">Reset form</button>
 				<button type="submit" class="btn btn-primary" :disabled="isSubmitting || !meta.valid">Review post</button>
