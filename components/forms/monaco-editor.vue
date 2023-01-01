@@ -7,6 +7,7 @@
 			<MonacoEditor
 				v-bind="field"
 				:value="value"
+				:model-value="value"
 				:options="options"
 				lang="markdown"
 				@input="handleChange"
