@@ -1,7 +1,7 @@
 %PNG_ABOUT%
 
 
-Welcome to the **Sapphire** Discord server! Please use the "Channels & Roles" menu at the top of the channel list to select your desired channels and roles. Following is a description of all channels and roles of this server.
+Welcome to the **Sapphire** Discord server! Please use the "Channels & Roles" menu at the top of the channel list to select your desired channels and roles. Following are our rules, a description of all channels and roles of this server, and Sapphire related links.
 
 
 %PNG_ROOMS%
