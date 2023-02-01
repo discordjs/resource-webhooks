@@ -1,14 +1,13 @@
 %PNG_ABOUT%
 
 
-Welcome to the **Sapphire** Discord server!
+Welcome to the **Sapphire** Discord server! Please use the "Channels & Roles" menu at the top of the channel list to select your desired channels and roles. Following is a description of all channels and roles of this server.
 
 
 %PNG_ROOMS%
 
 **INFO**
 <:sapphire:746069730170896405> <#737142021084413973> This channel!
-<:sapphire:746069730170896405> <#917524171150471178> Get a role to indicate your preferred pronouns using <@832258414603534380>!
 <:sapphire:746069730170896405> <#737142071319855105> Important announcements about this server, Sapphire, or other topics deemed important to know.
 _ _
 **OPEN DISCUSSIONS**
@@ -19,7 +18,7 @@ _ _
 <:sapphire:746069730170896405> <#737142209639350343> For all banter, chatting, and talking about mostly everything.
 <:sapphire:746069730170896405> <#1049419164877606943> A collection of different topic channels for chatting about those. Coding, gaming, technology and more, this is the place. We use a forum channel so people can pick and choose what topics they want to see and what they don't. Want a new topic? Use `/suggest`!
 <:sapphire:746069730170896405> <#737452979162054717> For using <@&737447852602818591> commands.
-<:sapphire:746069730170896405> <#750076466099912804> Our <@655390915325591629> output channel.
+<:sapphire:746069730170896405> <#750076466099912804> Our <@1063823365363736666> output channel.
 
 
 _ _
@@ -63,7 +62,7 @@ _ _
 %PNG_ROLES%
 
 
-<:sapphire:746069730170896405> <@&912088476290273300> A role that can be requested with `s!role "Ping Me For Announcements"` to get pinged when we post a new announcement in <#737142071319855105>.
+<:sapphire:746069730170896405> <@&912088476290273300> People with this role will get pinged whenever we make an announcement in the <#737142071319855105> channel.
 <:sapphire:746069730170896405> <@&737720527266775083> The role assigned to people who use their Discord Nitro to boost this server, thank you :heart:.
 <:sapphire:746069730170896405> <@&801904484996612137> The role assigned to people who support us on [Patreon](https://sapphirejs.dev/patreon). Much love for supporting Sapphire :heart:!
 <:sapphire:746069730170896405> <@&737143830020620288> People who can help you with Sapphire questions.
@@ -72,7 +71,7 @@ _ _
 <:sapphire:746069730170896405> <@&737143687016087593> People who have contributed to Sapphire are part of the Sapphire GitHub organisation. Did you get access but do you not have the role? Let us know!
 <:sapphire:746069730170896405> <@&737143741487382597> People who have contributed to Sapphire and have access to at least one of the Sapphire GitHub repositories, but are not part of the Sapphire GitHub organisation. Did you get access but do you not have the role? Let us know!
 <:sapphire:746069730170896405> <@&831995541453144174> People who can had their access to <#792132881903386664> restricted.
-<:sapphire:746069730170896405> <@&773511162070564875> A role that can be requested with `s!role "Controversial Access"` to get access to <#768153232136077334>.
+<:sapphire:746069730170896405> <@&773511162070564875> People who have access to <#768153232136077334>.
 
 
 %PNG_RULES%
