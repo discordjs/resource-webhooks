@@ -15,5 +15,6 @@
 	},
 	"files.associations": {
 		"*.css": "tailwindcss"
-	}
+	},
+	"prettier.documentSelectors": ["**/*.svg"]
 }
