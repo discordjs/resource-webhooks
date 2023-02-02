@@ -1125,16 +1125,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/lodash-es@npm:^4.17.6":
-  version: 4.17.6
-  resolution: "@types/lodash-es@npm:4.17.6"
-  dependencies:
-    "@types/lodash": "*"
-  checksum: 9bd239dd525086e278821949ce12fbdd4f100a060fed9323fc7ad5661113e1641f28a7ebab617230ed3474680d8f4de705c1928b48252bb684be6ec9eed715db
-  languageName: node
-  linkType: hard
-
-"@types/lodash@npm:*, @types/lodash@npm:^4.14.175":
+"@types/lodash@npm:^4.14.175":
   version: 4.14.191
   resolution: "@types/lodash@npm:4.14.191"
   checksum: ba0d5434e10690869f32d5ea49095250157cae502f10d57de0a723fd72229ce6c6a4979576f0f13e0aa9fbe3ce2457bfb9fa7d4ec3d6daba56730a51906d1491
@@ -5412,17 +5403,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nuxt-lodash@npm:^2.4.1":
-  version: 2.4.1
-  resolution: "nuxt-lodash@npm:2.4.1"
-  dependencies:
-    "@nuxt/kit": ^3.0.0
-    "@types/lodash-es": ^4.17.6
-    lodash-es: ^4.17.21
-  checksum: b7ffa7c182da035a1b3c25cf526b149be8107d65cef23f0aee8f0d32d325153119ac09fbe2d68d162d360160ff78a822896ef1023a22fa2d28900d376d8ab9e1
-  languageName: node
-  linkType: hard
-
 "nuxt-monaco-editor@npm:^1.1.1":
   version: 1.1.1
   resolution: "nuxt-monaco-editor@npm:1.1.1"
@@ -8008,7 +7988,6 @@ __metadata:
     daisyui: ^2.46.0
     monaco-editor: ^0.34.1
     nuxt: 3.0.0
-    nuxt-lodash: ^2.4.1
     nuxt-monaco-editor: ^1.1.1
     pinia: ^2.0.28
     prettier: ^2.8.1
