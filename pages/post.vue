@@ -24,8 +24,8 @@
 				:options="getAllStoredRoles()"
 			/>
 			<div class="grid grid-cols-1 lg:grid-cols-2 gap-2 lg:gap-4 w-full mt-5">
-				<button type="button" class="btn btn-accent" @click="resetForm()">Reset form</button>
-				<button type="submit" class="btn btn-primary" :disabled="isSubmitting || !meta.valid">Review post</button>
+				<button type="button" class="btn btn-accent btn-shadow" @click="resetForm()">Reset form</button>
+				<button type="submit" class="btn btn-primary btn-shadow" :disabled="isSubmitting || !meta.valid">Review post</button>
 			</div>
 		</Form>
 	</div>

@@ -1,11 +1,11 @@
 <template>
 	<div class="container mx-auto px-5 h-full">
 		<modals-webhook :webhooks="webhooks" :webhook="null" action="add" @close-modal="openModal = null" v-if="openModal === ''" />
-		<button class="btn btn-primary gap-2 my-5 w-full" @click="openModal = ''">
+		<button class="btn btn-primary btn-shadow gap-2 my-5 w-full" @click="openModal = ''">
 			<hero-icons-plus />
 			Add new webhook
 		</button>
-		<div class="overflow-x-auto">
+		<div class="overflow-x-auto shadow-md">
 			<table class="table table-zebra w-full">
 				<thead>
 					<tr>

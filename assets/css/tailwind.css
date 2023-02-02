@@ -34,3 +34,7 @@
 	left: inherit;
 	z-index: inherit;
 }
+
+.btn-shadow {
+	@apply drop-shadow-md;
+}
