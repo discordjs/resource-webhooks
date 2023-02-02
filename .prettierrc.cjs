@@ -6,7 +6,7 @@ module.exports = {
 		{
 			files: '*.svg',
 			options: {
-				parser: 'html'
+				parser: 'xml'
 			}
 		}
 	]
