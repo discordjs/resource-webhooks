@@ -4,18 +4,28 @@ export default {
 		themes: [
 			{
 				dark: {
-					primary: '#2196f3',
-					secondary: '#1EA7C7',
-					accent: '#f32194',
-					neutral: '#6b7280',
-					'base-100': '#111827',
-					info: '#2599b9',
-					success: '#059669',
+					...require('daisyui/src/colors/themes')['[data-theme=dark]'],
+					primary: '#0F52BA',
+					secondary: '#57B8FF',
+					accent: '#F4D58D',
+					info: '#2599B9',
+					success: '#84E296',
 					warning: '#FBBD23',
-					error: '#be123c'
+					error: '#ED474A'
 				}
 			},
-			'light'
+			{
+				light: {
+					...require('daisyui/src/colors/themes')['[data-theme=light]'],
+					primary: '#0F52BA',
+					secondary: '#57B8FF',
+					accent: '#F4D58D',
+					info: '#2599B9',
+					success: '#84E296',
+					warning: '#FBBD23',
+					error: '#ED474A'
+				}
+			}
 		]
 	}
 };
