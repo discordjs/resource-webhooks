@@ -1,5 +1,5 @@
 <template>
-	<nav class="navbar bg-base-100 sticky top-0 z-20">
+	<nav class="navbar bg-slate-50 dark:bg-base-100 sticky top-0 z-20">
 		<div class="navbar-start flex items-center">
 			<div class="dropdown">
 				<label tabindex="0" class="btn btn-ghost lg:hidden" @click="toggleOpenDropdown">
