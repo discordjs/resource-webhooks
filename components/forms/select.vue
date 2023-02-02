@@ -5,8 +5,8 @@
 				>{{ label
 				}}<span v-if="options.length === 0"
 					>.
-					<span class="text-accent font-bold"
-						>{{ parsedNoOptionString }} <nuxt-link class="link link-primary" :to="addNewOptionHref">configuration page</nuxt-link></span
+					<span class="text-error font-bold"
+						>{{ parsedNoOptionString }} <nuxt-link class="link link-secondary" :to="addNewOptionHref">configuration page</nuxt-link></span
 					>
 				</span></span
 			>
