@@ -27,7 +27,7 @@
 							<button
 								content="Delete role"
 								v-tippy
-								class="btn btn-accent btn-circle btn-sm"
+								class="btn btn-secondary btn-circle btn-sm"
 								@click="roles = roles.filter((w) => w.value !== role.value)"
 							>
 								<hero-icons-trash class="w-4 h-4" />
