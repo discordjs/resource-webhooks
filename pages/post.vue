@@ -1,5 +1,5 @@
 <template>
-	<div class="grid grid-cols-1 w-full mt-5 px-5 h-full">
+	<div class="mt-5 grid h-full w-full grid-cols-1 px-5">
 		<Form
 			@submit="onSubmit"
 			@invalid-submit="onInvalidSubmit"
@@ -23,7 +23,7 @@
 				optionsStringReplacer="roles"
 				:options="getAllStoredRoles()"
 			/>
-			<div class="grid grid-cols-1 lg:grid-cols-2 gap-2 lg:gap-4 w-full mt-5">
+			<div class="mt-5 grid w-full grid-cols-1 gap-2 lg:grid-cols-2 lg:gap-4">
 				<button type="button" class="btn btn-accent btn-shadow" @click="resetForm()">Reset form</button>
 				<button type="submit" class="btn btn-primary btn-shadow" :disabled="isSubmitting || !meta.valid">Review post</button>
 			</div>

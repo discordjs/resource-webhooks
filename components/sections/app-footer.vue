@@ -1,8 +1,8 @@
 <template>
 	<footer>
-		<div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
-			<div class="flex flex-wrap flex-row justify-center content-start items-center w-full">
-				<p class="text-sm text-center max-w-full flex-grow-0 basis-full opacity-70 mb-2 mt-4">
+		<div class="container mx-auto flex flex-col items-center px-5 py-8 sm:flex-row">
+			<div class="flex w-full flex-row flex-wrap content-start items-center justify-center">
+				<p class="mb-2 mt-4 max-w-full flex-grow-0 basis-full text-center text-sm opacity-70">
 					Copyright © 2022 The Sapphire Community and its contributors
 				</p>
 

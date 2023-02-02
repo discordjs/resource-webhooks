@@ -142,12 +142,7 @@
 			<feGaussianBlur in="composite1" stdDeviation="10" result="blur" id="feGaussianBlur5058-2" />
 			<feOffset dx="0" dy="6" result="offset" id="feOffset5060-6" />
 			<feComposite in="SourceGraphic" in2="offset" operator="over" result="fbSourceGraphic" id="feComposite5062-1" />
-			<feColorMatrix
-				result="fbSourceGraphicAlpha"
-				in="fbSourceGraphic"
-				values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"
-				id="feColorMatrix5754-8"
-			/>
+			<feColorMatrix result="fbSourceGraphicAlpha" in="fbSourceGraphic" values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0" id="feColorMatrix5754-8" />
 			<feFlood id="feFlood5756-7" flood-opacity="0.384314" flood-color="rgb(48,105,133)" result="flood" in="fbSourceGraphic" />
 			<feComposite in2="fbSourceGraphic" id="feComposite5758-9" in="flood" operator="out" result="composite1" />
 			<feGaussianBlur id="feGaussianBlur5760-2" in="composite1" stdDeviation="3.2" result="blur" />
@@ -174,12 +169,7 @@
 			<feGaussianBlur in="composite1" stdDeviation="10" result="blur" id="feGaussianBlur965" />
 			<feOffset dx="0" dy="6" result="offset" id="feOffset967" />
 			<feComposite in="SourceGraphic" in2="offset" operator="over" result="fbSourceGraphic" id="feComposite969" />
-			<feColorMatrix
-				result="fbSourceGraphicAlpha"
-				in="fbSourceGraphic"
-				values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"
-				id="feColorMatrix971"
-			/>
+			<feColorMatrix result="fbSourceGraphicAlpha" in="fbSourceGraphic" values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0" id="feColorMatrix971" />
 			<feFlood id="feFlood973" flood-opacity="0.384314" flood-color="rgb(48,105,133)" result="flood" in="fbSourceGraphic" />
 			<feComposite in2="fbSourceGraphic" id="feComposite975" in="flood" operator="out" result="composite1" />
 			<feGaussianBlur id="feGaussianBlur977" in="composite1" stdDeviation="3.2" result="blur" />

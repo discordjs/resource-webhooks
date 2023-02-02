@@ -2,7 +2,7 @@
 	<div class="toast toast-top toast-end">
 		<div v-for="snackbar in snackbarStore.snackbars" :key="snackbar.id">
 			<div
-				class="alert shadow-lg justify-start"
+				class="alert justify-start shadow-lg"
 				:class="{
 					'alert-info': snackbar.severity === 'info',
 					'alert-success': snackbar.severity === 'success',

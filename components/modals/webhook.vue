@@ -12,7 +12,7 @@
 				<h3 class="text-lg font-bold">{{ action === 'add' ? 'Add a new Webhook URL' : 'Update Webhook URL' }}</h3>
 				<forms-input name="label" label="Label" />
 				<forms-input name="value" label="Webhook URL" />
-				<div class="grid grid-cols-1 lg:grid-cols-2 gap-2 lg:gap-4 w-full mt-5">
+				<div class="mt-5 grid w-full grid-cols-1 gap-2 lg:grid-cols-2 lg:gap-4">
 					<button type="button" class="btn btn-accent" @click="resetForm()">Reset form</button>
 					<button type="submit" class="btn btn-primary" :disabled="isSubmitting || !meta.valid">
 						{{ action === 'add' ? 'Add Webhook URL' : 'Update Webhook URL' }}

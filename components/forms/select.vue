@@ -1,5 +1,5 @@
 <template>
-	<div class="form-control w-full mb-4">
+	<div class="form-control mb-4 w-full">
 		<label class="label">
 			<span class="label-text"
 				>{{ label
@@ -11,7 +11,7 @@
 				</span></span
 			>
 		</label>
-		<Field :name="name" v-slot="{ value, errorMessage }" as="select" class="select w-full max-x-ws" :disabled="options.length === 0">
+		<Field :name="name" v-slot="{ value, errorMessage }" as="select" class="select max-x-ws w-full" :disabled="options.length === 0">
 			<option value="">None</option>
 			<option v-for="role in options" :key="role.value" :value="JSON.stringify(role)" :selected="value && value.value === role.value">
 				{{ role.label + ' - ' + role.value }}

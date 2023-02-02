@@ -1,12 +1,12 @@
 <template>
-	<div class="container mx-auto px-5 h-full">
+	<div class="container mx-auto h-full px-5">
 		<modals-webhook :webhooks="webhooks" :webhook="null" action="add" @close-modal="openModal = null" v-if="openModal === ''" />
-		<button class="btn btn-primary btn-shadow gap-2 my-5 w-full" @click="openModal = ''">
+		<button class="btn btn-primary btn-shadow my-5 w-full gap-2" @click="openModal = ''">
 			<hero-icons-plus />
 			Add new webhook
 		</button>
 		<div class="overflow-x-auto shadow-md">
-			<table class="table table-zebra w-full">
+			<table class="table-zebra table w-full">
 				<thead>
 					<tr>
 						<th>Actions</th>
@@ -22,7 +22,7 @@
 					<tr v-for="webhook in webhooks" :key="webhook.value" class="hover">
 						<td>
 							<label content="Update webhook" v-tippy class="btn btn-primary btn-circle btn-sm mr-3" @click="openModal = webhook.value">
-								<hero-icons-pencil class="w-4 h-4" />
+								<hero-icons-pencil class="h-4 w-4" />
 							</label>
 							<button
 								content="Delete webhook"
@@ -30,7 +30,7 @@
 								class="btn btn-secondary btn-circle btn-sm"
 								@click="webhooks = webhooks.filter((w) => w.value !== webhook.value)"
 							>
-								<hero-icons-trash class="w-4 h-4" />
+								<hero-icons-trash class="h-4 w-4" />
 							</button>
 						</td>
 						<td>
