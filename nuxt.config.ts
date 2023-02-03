@@ -16,6 +16,20 @@ export default defineNuxtConfig({
 			viewport: 'width=device-width, initial-scale=1',
 			title: 'Webhook Dashboard',
 			htmlAttrs: { lang: 'en_GB' },
+			link: [
+				{ rel: 'manifest', href: '/manifest.webmanifest' },
+				{ rel: 'alternate', href: 'https://www.sapphirejs.dev' },
+				{ rel: 'canonical', href: 'https://www.sapphirejs.dev' },
+				{ rel: 'apple-touch-icon', href: '/favicons/apple-touch-icon.png' },
+				{ rel: 'apple-touch-startup-image', href: '/favicons/apple-startup.png' },
+				{ rel: 'icon', href: '/favicons/android-chrome-192x192.png' },
+				{ rel: 'icon', href: '/favicon.ico' },
+				{ rel: 'icon', href: '/favicons/favicon-16x16.png' },
+				{ rel: 'icon', href: '/favicons/android-chrome-192x192.png' },
+				{ rel: 'icon', href: '/favicons/favicon-32x32.png' },
+				{ rel: 'mask-icon', href: '/favicons/safari-pinned-tab.svg' },
+				{ rel: 'shortcut icon', href: '/favicon.ico' }
+			],
 			meta: [
 				{ name: 'viewport', content: 'width=device-width,initial-scale=1' },
 				{ name: 'apple-mobile-web-app-capable', content: 'yes' },
