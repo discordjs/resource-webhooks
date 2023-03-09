@@ -1,12 +1,7 @@
 <template>
 	<div class="mt-5 grid h-full w-full grid-cols-1 px-5">
-		<Form
-			@submit="onSubmit"
-			@invalid-submit="onInvalidSubmit"
-			:validation-schema="postSchema"
-			:initial-values="initialValues"
-			v-slot="{ resetForm, isSubmitting, meta }"
-		>
+		<form @submit="onSubmit">
+			<modals-review :values="values" @close-modal="openModal = null" v-if="openModal === ''" />
 			<forms-monaco-editor name="text" label="Message Text" />
 			<forms-select
 				name="webhookUrl"
@@ -27,34 +22,28 @@
 				<button type="button" class="btn btn-accent btn-shadow" @click="resetForm()">Reset form</button>
 				<button type="submit" class="btn btn-primary btn-shadow" :disabled="isSubmitting || !meta.valid">Review post</button>
 			</div>
-		</Form>
+		</form>
 	</div>
 </template>
 
 <script setup lang="ts">
-import { Form, type InvalidSubmissionContext } from 'vee-validate';
+import { Form, InvalidSubmissionHandler, SubmissionHandler, useForm } from 'vee-validate';
 import { postSchema } from '~~/lib/schemas/postSchema';
 import { Post } from '~~/lib/types/Post';
 
+const openModal = useOpenModal();
 const webhooks = useWebhooks();
-const snackbars = useSnackbars();
+const { handleSubmit, resetForm, isSubmitting, meta, values } = useForm<Post>({
+	initialValues: {
+		webhookUrl: '',
+		text: '',
+		role: ''
+	},
+	validationSchema: postSchema
+});
 
-const onInvalidSubmit = ({ errors }: InvalidSubmissionContext) => useInvalidFormSubmit(errors);
+const onInvalidSubmit: InvalidSubmissionHandler<Post> = ({ errors }) => useInvalidFormSubmit(errors);
+const onSuccessfulSubmit: SubmissionHandler<Post> = () => (openModal.value = '');
 
-const initialValues: Post = {
-	webhookUrl: '',
-	text: '',
-	role: ''
-};
-
-function onSubmit(values: Record<string, unknown>) {
-	snackbars.show({
-		type: 'danger',
-		message: 'test',
-		pauseOnHover: true,
-		timeout: 6
-	});
-	console.log('test');
-	console.log(JSON.stringify(values, null, 2));
-}
+const onSubmit = handleSubmit(onSuccessfulSubmit, onInvalidSubmit);
 </script>
