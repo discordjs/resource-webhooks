@@ -27,7 +27,7 @@
 </template>
 
 <script setup lang="ts">
-import { Form, InvalidSubmissionHandler, SubmissionHandler, useForm } from 'vee-validate';
+import { useForm, type InvalidSubmissionHandler, type SubmissionHandler } from 'vee-validate';
 import { postSchema } from '~~/lib/schemas/postSchema';
 import { Post } from '~~/lib/types/Post';
 
