@@ -26,7 +26,7 @@
 				</ul>
 			</div>
 			<nuxt-link to="/" class="btn btn-ghost flex items-center justify-start text-xl normal-case"
-				><nuxt-img src="/images/gem.svg" style="height: 24px" /><span class="ml-2">Sapphire</span></nuxt-link
+				><img src="/images/gem.svg" style="height: 24px" /><span class="ml-2">Sapphire</span></nuxt-link
 			>
 		</div>
 		<div class="navbar-end hidden w-full lg:flex">
