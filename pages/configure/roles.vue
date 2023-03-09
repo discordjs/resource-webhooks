@@ -2,7 +2,7 @@
 	<div class="container mx-auto h-full px-5">
 		<modals-role :roles="roles" :role="null" action="add" @close-modal="openModal = null" v-if="openModal === ''" />
 		<button class="btn btn-primary btn-shadow my-5 w-full gap-2" @click="openModal = ''">
-			<hero-icons-plus />
+			<hero-icons-plus class="h-6 w-6" />
 			Add new role
 		</button>
 		<div class="overflow-x-auto shadow-md">
