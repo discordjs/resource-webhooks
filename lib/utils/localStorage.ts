@@ -27,7 +27,7 @@ export enum LocalStorageKeys {
 	Roles = 'roles'
 }
 
-export interface LocalStorageEntry {
+export type LocalStorageEntry = {
 	label: string;
 	value: string;
 }
