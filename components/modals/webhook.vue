@@ -1,13 +1,7 @@
 <template>
 	<div class="modal">
 		<div class="modal-box relative">
-			<Form
-				@submit="onSubmit"
-				@invalid-submit="onInvalidSubmit"
-				:validation-schema="addOrEditWebhookSchema(action === 'edit')"
-				:initial-values="{ value: webhook?.value ?? '', label: webhook?.label ?? '' }"
-				v-slot="{ resetForm, isSubmitting, meta }"
-			>
+			<form @submit="onSubmit">
 				<button class="btn btn-sm btn-circle absolute right-2 top-2" @click="handleClose(resetForm)"><hero-icons-x /></button>
 				<h3 class="text-lg font-bold">{{ action === 'add' ? 'Add a new Webhook URL' : 'Update Webhook URL' }}</h3>
 				<forms-input name="label" label="Label" />
@@ -18,28 +12,35 @@
 						{{ action === 'add' ? 'Add Webhook URL' : 'Update Webhook URL' }}
 					</button>
 				</div>
-			</Form>
+			</form>
 		</div>
 	</div>
 </template>
 
 <script setup lang="ts">
 import { cast } from '@sapphire/utilities';
-import { Form, type InvalidSubmissionContext } from 'vee-validate';
+import { useForm, type InvalidSubmissionHandler, type SubmissionHandler } from 'vee-validate';
 import { addOrEditWebhookSchema } from '~~/lib/schemas/addOrEditWebhookSchema';
 import type { LocalStorageEntry } from '~~/lib/utils/localStorage';
 
 const emit = defineEmits(['close-modal']);
 const props = defineProps<{ webhooks: LocalStorageEntry[]; webhook: LocalStorageEntry | null; action: 'add' | 'edit' }>();
 
-const onInvalidSubmit = ({ errors }: InvalidSubmissionContext) => useInvalidFormSubmit(errors);
+const { handleSubmit, resetForm, isSubmitting, meta } = useForm<LocalStorageEntry>({
+	initialValues: {
+		value: props.webhook?.value ?? '',
+		label: props.webhook?.label ?? ''
+	},
+	validationSchema: addOrEditWebhookSchema(props.action === 'edit')
+});
 
 function handleClose(resetForm?: () => void) {
 	resetForm?.();
 	emit('close-modal');
 }
 
-function onSubmit(values: Record<string, unknown>) {
+const onInvalidSubmit: InvalidSubmissionHandler<LocalStorageEntry> = ({ errors }) => useInvalidFormSubmit(errors);
+const onSuccessfulSubmit: SubmissionHandler<LocalStorageEntry> = (values) => {
 	if (props.action === 'add') {
 		props.webhooks.push(cast<LocalStorageEntry>(values));
 	} else {
@@ -48,5 +49,7 @@ function onSubmit(values: Record<string, unknown>) {
 	}
 
 	handleClose();
-}
+};
+
+const onSubmit = handleSubmit(onSuccessfulSubmit, onInvalidSubmit);
 </script>
