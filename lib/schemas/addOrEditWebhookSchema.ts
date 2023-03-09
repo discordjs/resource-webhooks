@@ -1,8 +1,7 @@
-import { object, string, type SchemaOf } from 'yup';
+import { object, string } from 'yup';
 import { WebhookRegex } from '~~/lib/utils/DiscordRegexes';
-import type { LocalStorageEntry } from '~~/lib/utils/localStorage';
 
-export const addOrEditWebhookSchema = (isUpdating: boolean): SchemaOf<LocalStorageEntry> =>
+export const addOrEditWebhookSchema = (isUpdating: boolean) =>
 	object({
 		value: string()
 			.required('The webhook URL is required.')

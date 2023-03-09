@@ -1,7 +1,6 @@
-import { object, string, type SchemaOf } from 'yup';
-import { LocalStorageEntry } from '~~/lib/utils/localStorage';
+import { object, string } from 'yup';
 
-export const localStorageEntrySchema: SchemaOf<LocalStorageEntry> = object({
+export const localStorageEntrySchema = object({
 	label: string().required('Label for the autocomplete option is required'),
 	value: string().required('Value for the autocomplete option is required')
 });

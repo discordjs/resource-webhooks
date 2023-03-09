@@ -1,8 +1,7 @@
-import { object, string, type SchemaOf } from 'yup';
+import { object, string } from 'yup';
 import { SnowflakeRegex } from '~~/lib/utils/DiscordRegexes';
-import type { LocalStorageEntry } from '~~/lib/utils/localStorage';
 
-export const addOrEditRoleSchema = (isUpdating: boolean): SchemaOf<LocalStorageEntry> =>
+export const addOrEditRoleSchema = (isUpdating: boolean) =>
 	object({
 		value: string()
 			.required('The role snowflake is required.')
