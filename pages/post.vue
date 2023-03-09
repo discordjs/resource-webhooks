@@ -37,6 +37,7 @@ import { postSchema } from '~~/lib/schemas/postSchema';
 import { Post } from '~~/lib/types/Post';
 
 const webhooks = useWebhooks();
+const snackbars = useSnackbars();
 
 const onInvalidSubmit = ({ errors }: InvalidSubmissionContext) => useInvalidFormSubmit(errors);
 
@@ -47,6 +48,12 @@ const initialValues: Post = {
 };
 
 function onSubmit(values: Record<string, unknown>) {
+	snackbars.show({
+		type: 'danger',
+		message: 'test',
+		pauseOnHover: true,
+		timeout: 6
+	});
 	console.log('test');
 	console.log(JSON.stringify(values, null, 2));
 }

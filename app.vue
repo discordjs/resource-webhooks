@@ -2,7 +2,6 @@
 	<NuxtLayout name="main">
 		<NuxtPage />
 	</NuxtLayout>
-	<snackbars />
 </template>
 
 <script setup lang="ts">

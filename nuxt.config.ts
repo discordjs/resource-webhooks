@@ -1,14 +1,14 @@
 import 'nuxt';
 
 export default defineNuxtConfig({
-	modules: ['@vueuse/nuxt', '@nuxtjs/tailwindcss', 'nuxt-monaco-editor', '@pinia/nuxt'],
+	modules: ['@vueuse/nuxt', '@nuxtjs/tailwindcss', 'nuxt-monaco-editor', '@tailvue/nuxt'],
 	build: { transpile: ['vee-validate'] },
 	ssr: false,
 	typescript: {
 		shim: false
 	},
 	imports: {
-		dirs: ['lib/utils', 'stores']
+		dirs: ['lib/utils']
 	},
 	app: {
 		head: {
