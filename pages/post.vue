@@ -8,7 +8,7 @@
 				label="Choose the webhook URL to post to"
 				addNewOptionHref="/configure/webhooks"
 				optionsStringReplacer="webhooks"
-				:options="webhooks"
+				:options="webhookStorage.webhooks"
 				class="py-2 lg:py-6"
 			/>
 			<forms-select
@@ -16,7 +16,7 @@
 				label="Optionally choose a role to mention"
 				addNewOptionHref="/configure/roles"
 				optionsStringReplacer="roles"
-				:options="getAllStoredRoles()"
+				:options="rolesStorage.roles"
 			/>
 			<div class="mt-5 grid w-full grid-cols-1 gap-2 lg:grid-cols-2 lg:gap-4">
 				<button type="button" class="btn btn-accent btn-shadow" @click="resetForm()">Reset form</button>
@@ -31,8 +31,9 @@ import { useForm, type InvalidSubmissionHandler, type SubmissionHandler } from '
 import { postSchema } from '~~/lib/schemas/postSchema';
 import { Post } from '~~/lib/types/Post';
 
+const rolesStorage = useRoles();
+const webhookStorage = useWebhooks();
 const openModal = useOpenModal();
-const webhooks = useWebhooks();
 const { handleSubmit, resetForm, isSubmitting, meta, values } = useForm<Post>({
 	initialValues: {
 		webhookUrl: '',

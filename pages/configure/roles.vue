@@ -1,6 +1,6 @@
 <template>
 	<div class="container mx-auto h-full px-5">
-		<modals-role :roles="roles" :role="null" action="add" @close-modal="openModal = null" v-if="openModal === ''" />
+		<modals-role :roles="rolesStorage.roles" :role="null" action="add" @close-modal="openModal = null" v-if="openModal === ''" />
 		<button class="btn btn-primary btn-shadow my-5 w-full gap-2" @click="openModal = ''">
 			<hero-icons-plus class="h-6 w-6" />
 			Add new role
@@ -14,12 +14,12 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr v-if="roles.length === 0">
+					<tr v-if="rolesStorage.roles.length === 0">
 						<td colspan="3" class="text-center">
 							<span class="opacity-75">No roles stored, add your first with the button above.</span>
 						</td>
 					</tr>
-					<tr v-for="role in roles" :key="role.value" class="hover">
+					<tr v-for="role in rolesStorage.roles" :key="role.value" class="hover">
 						<td>
 							<label content="Update role" v-tippy class="btn btn-primary btn-circle btn-sm mr-3" @click="openModal = role.value">
 								<hero-icons-pencil class="h-4 w-4" />
@@ -28,7 +28,7 @@
 								content="Delete role"
 								v-tippy
 								class="btn btn-secondary btn-circle btn-sm"
-								@click="roles = roles.filter((w) => w.value !== role.value)"
+								@click="rolesStorage.removeRole(role.value)"
 							>
 								<hero-icons-trash class="h-4 w-4" />
 							</button>
@@ -36,7 +36,13 @@
 						<td>
 							<span :content="role.value" v-tippy>{{ role.label }}</span>
 						</td>
-						<modals-role :roles="roles" :role="role" action="edit" @close-modal="openModal = null" v-if="openModal === role.value" />
+						<modals-role
+							:roles="rolesStorage.roles"
+							:role="role"
+							action="edit"
+							@close-modal="openModal = null"
+							v-if="openModal === role.value"
+						/>
 					</tr>
 				</tbody>
 			</table>
@@ -46,5 +52,5 @@
 
 <script setup lang="ts">
 const openModal = useOpenModal();
-const roles = useRoles();
+const rolesStorage = useRoles();
 </script>

@@ -18,15 +18,14 @@
 </template>
 
 <script setup lang="ts">
-import { cast } from '@sapphire/utilities';
 import { useForm, type InvalidSubmissionHandler, type SubmissionHandler } from 'vee-validate';
 import { addOrEditWebhookSchema } from '~~/lib/schemas/addOrEditWebhookSchema';
-import type { LocalStorageEntry } from '~~/lib/utils/localStorage';
+import type { PersistedStorageEntry } from '~~/lib/types/PersistedStorageEntry';
 
 const emit = defineEmits(['close-modal']);
-const props = defineProps<{ webhooks: LocalStorageEntry[]; webhook: LocalStorageEntry | null; action: 'add' | 'edit' }>();
+const props = defineProps<{ webhooks: PersistedStorageEntry[]; webhook: PersistedStorageEntry | null; action: 'add' | 'edit' }>();
 
-const { handleSubmit, resetForm, isSubmitting, meta } = useForm<LocalStorageEntry>({
+const { handleSubmit, resetForm, isSubmitting, meta } = useForm<PersistedStorageEntry>({
 	initialValues: {
 		value: props.webhook?.value ?? '',
 		label: props.webhook?.label ?? ''
@@ -39,13 +38,13 @@ function handleClose(resetForm?: () => void) {
 	emit('close-modal');
 }
 
-const onInvalidSubmit: InvalidSubmissionHandler<LocalStorageEntry> = ({ errors }) => useInvalidFormSubmit(errors);
-const onSuccessfulSubmit: SubmissionHandler<LocalStorageEntry> = (values) => {
+const onInvalidSubmit: InvalidSubmissionHandler<PersistedStorageEntry> = ({ errors }) => useInvalidFormSubmit(errors);
+const onSuccessfulSubmit: SubmissionHandler<PersistedStorageEntry> = (values) => {
 	if (props.action === 'add') {
-		props.webhooks.push(cast<LocalStorageEntry>(values));
+		props.webhooks.push(values);
 	} else {
 		const index = props.webhooks.findIndex((webhook) => webhook.value === props.webhook?.value);
-		props.webhooks.splice(index, 1, cast<LocalStorageEntry>(values));
+		props.webhooks.splice(index, 1, values);
 	}
 
 	handleClose();

@@ -18,15 +18,14 @@
 </template>
 
 <script setup lang="ts">
-import { cast } from '@sapphire/utilities';
 import { useForm, type InvalidSubmissionHandler, type SubmissionHandler } from 'vee-validate';
 import { addOrEditRoleSchema } from '~~/lib/schemas/addOrEditRoleSchema';
-import type { LocalStorageEntry } from '~~/lib/utils/localStorage';
+import type { PersistedStorageEntry } from '~~/lib/types/PersistedStorageEntry';
 
 const emit = defineEmits(['close-modal']);
-const props = defineProps<{ roles: LocalStorageEntry[]; role: LocalStorageEntry | null; action: 'add' | 'edit' }>();
+const props = defineProps<{ roles: PersistedStorageEntry[]; role: PersistedStorageEntry | null; action: 'add' | 'edit' }>();
 
-const { handleSubmit, resetForm, isSubmitting, meta } = useForm<LocalStorageEntry>({
+const { handleSubmit, resetForm, isSubmitting, meta } = useForm<PersistedStorageEntry>({
 	initialValues: {
 		value: props.role?.value ?? '',
 		label: props.role?.label ?? ''
@@ -39,13 +38,13 @@ function handleClose(resetForm?: () => void) {
 	emit('close-modal');
 }
 
-const onInvalidSubmit: InvalidSubmissionHandler<LocalStorageEntry> = ({ errors }) => useInvalidFormSubmit(errors);
-const onSuccessfulSubmit: SubmissionHandler<LocalStorageEntry> = (values) => {
+const onInvalidSubmit: InvalidSubmissionHandler<PersistedStorageEntry> = ({ errors }) => useInvalidFormSubmit(errors);
+const onSuccessfulSubmit: SubmissionHandler<PersistedStorageEntry> = (values) => {
 	if (props.action === 'add') {
-		props.roles.push(cast<LocalStorageEntry>(values));
+		props.roles.push(values);
 	} else {
 		const index = props.roles.findIndex((role) => role.value === props.role?.value);
-		props.roles.splice(index, 1, cast<LocalStorageEntry>(values));
+		props.roles.splice(index, 1, values);
 	}
 	handleClose();
 };

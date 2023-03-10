@@ -1,7 +1,7 @@
-import type { LocalStorageEntry } from '~~/lib/utils/localStorage';
+import type { PersistedStorageEntry } from '~~/lib/types/PersistedStorageEntry';
 
 export type Post = {
-	webhookUrl: LocalStorageEntry | '';
+	webhookUrl: PersistedStorageEntry | '';
 	text: string;
-	role: LocalStorageEntry | '';
+	role: PersistedStorageEntry | '';
 };

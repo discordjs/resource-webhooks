@@ -24,14 +24,14 @@
 
 <script setup lang="ts">
 import { Field } from 'vee-validate';
-import type { LocalStorageEntry } from '~~/lib/utils/localStorage';
+import type { PersistedStorageEntry } from '~~/lib/types/PersistedStorageEntry';
 
 const props = defineProps<{
 	name: string;
 	label: string;
 	optionsStringReplacer: string;
 	addNewOptionHref: string;
-	options: LocalStorageEntry[];
+	options: PersistedStorageEntry[];
 }>();
 const parsedNoOptionString = 'No {{options}} are saved, selection is disabled. Save new {{options}} through the'.replaceAll(
 	'{{options}}',

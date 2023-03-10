@@ -1,8 +1,8 @@
 import { object, string } from 'yup';
-import { localStorageEntrySchema } from '~~/lib/schemas/localStorageEntrySchema';
+import { persistedStorageEntrySchema } from '~~/lib/schemas/persistedStorageEntrySchema';
 
 export const postSchema = object({
-	webhookUrl: localStorageEntrySchema.required('You have to choose the URL of the webhook to post with.').nullable(),
+	webhookUrl: persistedStorageEntrySchema.required('You have to choose the URL of the webhook to post with.').nullable(),
 	text: string().required('The text to post with the webhook is required.'),
-	role: localStorageEntrySchema.required('You have to specify a role to mention.').nullable()
+	role: persistedStorageEntrySchema.required('You have to specify a role to mention.').nullable()
 });

@@ -1,6 +1,6 @@
 <template>
 	<div class="container mx-auto h-full px-5">
-		<modals-webhook :webhooks="webhooks" :webhook="null" action="add" @close-modal="openModal = null" v-if="openModal === ''" />
+		<modals-webhook :webhooks="webhookStorage.webhooks" :webhook="null" action="add" @close-modal="openModal = null" v-if="openModal === ''" />
 		<button class="btn btn-primary btn-shadow my-5 w-full gap-2" @click="openModal = ''">
 			<hero-icons-plus class="h-6 w-6" />
 			Add new webhook
@@ -14,12 +14,12 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr v-if="webhooks.length === 0">
+					<tr v-if="webhookStorage.webhooks.length === 0">
 						<td colspan="3" class="text-center">
 							<span class="opacity-75">No webhooks stored, add your first with the button above.</span>
 						</td>
 					</tr>
-					<tr v-for="webhook in webhooks" :key="webhook.value" class="hover">
+					<tr v-for="webhook in webhookStorage.webhooks" :key="webhook.value" class="hover">
 						<td>
 							<label content="Update webhook" v-tippy class="btn btn-primary btn-circle btn-sm mr-3" @click="openModal = webhook.value">
 								<hero-icons-pencil class="h-4 w-4" />
@@ -28,7 +28,7 @@
 								content="Delete webhook"
 								v-tippy
 								class="btn btn-secondary btn-circle btn-sm"
-								@click="webhooks = webhooks.filter((w) => w.value !== webhook.value)"
+								@click="webhookStorage.removeWebhook(webhook.value)"
 							>
 								<hero-icons-trash class="h-4 w-4" />
 							</button>
@@ -44,7 +44,7 @@
 							>
 						</td>
 						<modals-webhook
-							:webhooks="webhooks"
+							:webhooks="webhookStorage.webhooks"
 							:webhook="webhook"
 							action="edit"
 							@close-modal="openModal = null"
@@ -59,5 +59,5 @@
 
 <script setup lang="ts">
 const openModal = useOpenModal();
-const webhooks = useWebhooks();
+const webhookStorage = useWebhooks();
 </script>
