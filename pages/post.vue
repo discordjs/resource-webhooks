@@ -20,7 +20,7 @@
 			/>
 			<div class="mt-5 grid w-full grid-cols-1 gap-2 lg:grid-cols-2 lg:gap-4">
 				<button type="button" class="btn btn-accent btn-shadow" @click="resetForm()">Reset form</button>
-				<button type="submit" class="btn btn-primary btn-shadow" :disabled="isSubmitting || !meta.valid">Review post</button>
+				<button type="submit" class="btn btn-primary btn-shadow" :disabled="isSubmitting || !meta.dirty || !meta.valid">Review post</button>
 			</div>
 		</form>
 	</div>
