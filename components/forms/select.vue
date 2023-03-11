@@ -2,19 +2,18 @@
 	<div class="form-control mb-4 w-full">
 		<label class="label">
 			<span class="label-text"
-				>{{ label
-				}}<span v-if="options.length === 0"
-					>.
-					<span class="text-error font-bold"
-						>{{ parsedNoOptionString }} <nuxt-link class="link link-secondary" :to="addNewOptionHref">configuration page</nuxt-link></span
-					>
-				</span></span
-			>
+				>{{ label }}
+				<span v-if="options.length === 0">
+					<span class="text-error font-bold">
+						<nuxt-link class="link link-secondary" :to="addNewOptionHref">configuration page</nuxt-link>
+					</span>
+				</span>
+			</span>
 		</label>
 		<Field :name="name" v-slot="{ value, errorMessage }" as="select" class="select max-x-ws w-full" :disabled="options.length === 0">
 			<option value="">None</option>
-			<option v-for="role in options" :key="role.value" :value="JSON.stringify(role)" :selected="value && value.value === role.value">
-				{{ role.label + ' - ' + role.value }}
+			<option v-for="option in options" :key="option.value" :value="option" :selected="value && value.value === option.value">
+				{{ option.label + ' - ' + option.value }}
 			</option>
 
 			<forms-error-message :name="name" :errorMessage="!!errorMessage" />
