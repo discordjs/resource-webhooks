@@ -7,17 +7,8 @@
 				</div>
 			</div>
 			<div v-else-if="error || !data">
-				<div class="grid h-[calc(100vh_-_64px)] place-content-center p-8">
-					<div class="flex w-full flex-row flex-wrap items-center gap-2">
-						<div class="grow-0 basis-full md:basis-[50%]">
-							An error occurred fetching the webhook profile. Please contact the Sapphire developers by joining
-							<nuxt-link to="https://discord.gg/sapphiredev" target="_blank">the official Sapphire server</nuxt-link>
-						</div>
-						<nuxt-link class="btn btn-primary w-full normal-case md:w-40" to="https://discord.gg/sapphiredev" target="_blank"
-							>Support</nuxt-link
-						>
-					</div>
-				</div>
+				An error occurred fetching the webhook profile. Please contact the Sapphire developers by joining
+				<nuxt-link class="link link-secondary" to="https://discord.gg/sapphiredev" target="_blank">the official Sapphire server</nuxt-link>
 			</div>
 			<div v-else>
 				<discord-messages>
@@ -33,10 +24,10 @@
 						<div v-html="parseMarkdownishInput()"></div>
 					</discord-message>
 				</discord-messages>
-				<div class="mt-5 grid w-full grid-cols-1 gap-2 lg:grid-cols-2 lg:gap-4">
-					<button type="button" class="btn btn-error" @click="emits('close-modal')">Cancel</button>
-					<button type="button" class="btn btn-primary" @click="handleConfirm">Confirm</button>
-				</div>
+			</div>
+			<div class="mt-5 grid w-full grid-cols-1 gap-2 lg:grid-cols-2 lg:gap-4">
+				<button type="button" class="btn btn-error" @click="emits('close-modal')">Cancel</button>
+				<button v-show="!pending && !error && data !== null" type="button" class="btn btn-primary" @click="handleConfirm">Confirm</button>
 			</div>
 		</div>
 	</div>
