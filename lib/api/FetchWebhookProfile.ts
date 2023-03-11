@@ -4,35 +4,30 @@ import { RESTGetAPIWebhookWithTokenResult, RouteBases, Routes } from 'discord-ap
 import { isPersistedStorageEntry } from '~~/lib/types/PersistedStorageEntry';
 import { Post } from '~~/lib/types/Post';
 
-export async function fetchWebhookProfile(
-	webhook: Post['webhookUrl'],
-	isUpdating: boolean = false
-): Promise<Partial<Components.DiscordMessage> | null> {
+export async function fetchWebhookProfile(webhook: Post['webhookUrl'], isUpdating: boolean = false): Promise<Partial<Components.DiscordMessage>> {
 	let webhookUrl = isPersistedStorageEntry(webhook) ? webhook.value : webhook;
 
-	if (!webhookUrl) return null;
+	if (!webhookUrl) throw 'No webhook URL provided.';
 
 	const [hookID, hookToken] = webhookUrl.split('/').slice(-2);
 
-	if (!hookID || !hookToken) {
-		return null;
-	}
+	if (!hookID || !hookToken) throw 'Unable to extract webhook ID and token.';
 
 	const url = RouteBases.api + Routes.webhook(hookID, hookToken);
 
 	const data = await Result.fromAsync<RESTGetAPIWebhookWithTokenResult>(async () => {
-		const response = await fetch(url, {
+		return await $fetch(url, {
 			method: 'GET',
 			headers: {
 				'Content-Type': 'application/json'
 			}
 		});
-
-		return response.json() as Promise<RESTGetAPIWebhookWithTokenResult>;
 	});
 
 	return data.match({
-		err: () => null,
+		err: () => {
+			throw 'Unable to fetch webhook profile.';
+		},
 		ok: (dt) => ({
 			avatar: `https://cdn.discordapp.com/avatars/${dt.id}/${dt.avatar}.png?size=4096`,
 			author: dt.name ?? 'Configured Webhook',
