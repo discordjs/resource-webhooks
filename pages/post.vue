@@ -1,7 +1,7 @@
 <template>
 	<div class="mt-5 grid h-full w-full grid-cols-1 px-5">
 		<form @submit="onSubmit">
-			<modals-review :values="values" @close-modal="openModal = null" v-if="openModal === ''" />
+			<modals-review :values="values" :is-editing="false" @close-modal="openModal = null" v-if="openModal === ''" />
 			<forms-monaco-editor name="text" label="Message Text" />
 			<forms-select
 				name="webhookUrl"
@@ -36,9 +36,9 @@ const webhookStorage = useWebhooks();
 const openModal = useOpenModal();
 const { handleSubmit, resetForm, isSubmitting, meta, values } = useForm<Post>({
 	initialValues: {
-		webhookUrl: '',
+		webhookUrl: null,
 		text: '',
-		role: ''
+		role: null
 	},
 	validationSchema: postSchema
 });

@@ -1,7 +1,7 @@
 import type { PersistedStorageEntry } from '~~/lib/types/PersistedStorageEntry';
 
 export type Post = {
-	webhookUrl: PersistedStorageEntry | '';
+	webhookUrl: PersistedStorageEntry | null;
 	text: string;
-	role: PersistedStorageEntry | '';
+	role: PersistedStorageEntry | null;
 };
