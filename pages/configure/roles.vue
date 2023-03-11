@@ -21,20 +21,19 @@
 					</tr>
 					<tr v-for="role in rolesStorage.roles" :key="role.value" class="hover">
 						<td>
-							<label content="Update role" v-tippy class="btn btn-primary btn-circle btn-sm mr-3" @click="openModal = role.value">
-								<hero-icons-pencil class="h-4 w-4" />
-							</label>
-							<button
-								content="Delete role"
-								v-tippy
-								class="btn btn-secondary btn-circle btn-sm"
-								@click="rolesStorage.removeRole(role.value)"
-							>
-								<hero-icons-trash class="h-4 w-4" />
-							</button>
+							<div class="tooltip-custom" data-tip="Update role">
+								<button class="btn btn-primary btn-circle btn-sm mr-3" @click="openModal = role.value">
+									<hero-icons-pencil class="h-4 w-4" />
+								</button>
+							</div>
+							<div class="tooltip-custom" data-tip="Delete role">
+								<button class="btn btn-secondary btn-circle btn-sm" @click="rolesStorage.removeRole(role.value)">
+									<hero-icons-trash class="h-4 w-4" />
+								</button>
+							</div>
 						</td>
 						<td>
-							<span :content="role.value" v-tippy>{{ role.label }}</span>
+							<span class="tooltip tooltip-info" :data-tip="role.value">{{ role.label }}</span>
 						</td>
 						<modals-role
 							:roles="rolesStorage.roles"

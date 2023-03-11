@@ -16,25 +16,31 @@
 	}
 }
 
-.modal,
-.dropdown,
-.dropdown-content,
-.dropdown .dropdown-content,
-.dropdown.dropdown-open .dropdown-content,
-.dropdown.dropdown-hover:hover .dropdown-content,
-.dropdown:not(.dropdown-hover):focus .dropdown-content,
-.dropdown:not(.dropdown-hover):focus-within .dropdown-content {
-	pointer-events: auto;
-	visibility: visible;
-	opacity: 1;
-}
+@layer components {
+	.modal,
+	.dropdown,
+	.dropdown-content,
+	.dropdown .dropdown-content,
+	.dropdown.dropdown-open .dropdown-content,
+	.dropdown.dropdown-hover:hover .dropdown-content,
+	.dropdown:not(.dropdown-hover):focus .dropdown-content,
+	.dropdown:not(.dropdown-hover):focus-within .dropdown-content {
+		pointer-events: auto;
+		visibility: visible;
+		opacity: 1;
+	}
 
-.table th:first-child {
-	@apply relative;
-	left: inherit;
-	z-index: inherit;
-}
+	.table th:first-child {
+		@apply relative;
+		left: inherit;
+		z-index: inherit;
+	}
 
-.btn-shadow {
-	@apply drop-shadow-md;
+	.btn-shadow {
+		@apply drop-shadow-md;
+	}
+
+	.tooltip-custom {
+		@apply tooltip tooltip-right tooltip-info;
+	}
 }

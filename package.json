@@ -43,7 +43,6 @@
 		"unified": "^10.1.2",
 		"vee-validate": "^4.7.4",
 		"vite-plugin-pwa": "^0.14.4",
-		"vue-tippy": "^6.0.0",
 		"yup": "^1.0.2"
 	},
 	"prettier": "@sapphire/prettier-config",

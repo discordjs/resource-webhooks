@@ -21,27 +21,26 @@
 					</tr>
 					<tr v-for="webhook in webhookStorage.webhooks" :key="webhook.value" class="hover">
 						<td>
-							<label content="Update webhook" v-tippy class="btn btn-primary btn-circle btn-sm mr-3" @click="openModal = webhook.value">
-								<hero-icons-pencil class="h-4 w-4" />
-							</label>
-							<button
-								content="Delete webhook"
-								v-tippy
-								class="btn btn-secondary btn-circle btn-sm"
-								@click="webhookStorage.removeWebhook(webhook.value)"
-							>
-								<hero-icons-trash class="h-4 w-4" />
-							</button>
+							<div class="tooltip-custom" data-tip="Update webhook">
+								<button class="btn btn-primary btn-circle btn-sm mr-3" @click="openModal = webhook.value">
+									<hero-icons-pencil class="h-4 w-4" />
+								</button>
+							</div>
+							<div class="tooltip-custom" data-tip="Delete webhook">
+								<button class="btn btn-secondary btn-circle btn-sm" @click="webhookStorage.removeWebhook(webhook.value)">
+									<hero-icons-trash class="h-4 w-4" />
+								</button>
+							</div>
 						</td>
 						<td>
 							<nuxt-link
 								:to="webhook.value"
 								target="_blank"
-								class="link"
-								content="Use 'Copy Link Address' to copy the webhook URL"
-								v-tippy
-								>{{ webhook.label }}</nuxt-link
+								class="link tooltip tooltip-info"
+								data-tip="Use 'Copy Link Address' to copy the webhook URL"
 							>
+								{{ webhook.label }}
+							</nuxt-link>
 						</td>
 						<modals-webhook
 							:webhooks="webhookStorage.webhooks"
