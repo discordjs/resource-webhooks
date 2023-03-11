@@ -17,7 +17,6 @@ export async function fetchWebhookProfile(webhook: Post['webhookUrl'], isUpdatin
 
 	const data = await Result.fromAsync<RESTGetAPIWebhookWithTokenResult>(async () => {
 		return await $fetch(url, {
-			method: 'GET',
 			headers: {
 				'Content-Type': 'application/json'
 			}
