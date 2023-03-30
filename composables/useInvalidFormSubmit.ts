@@ -6,7 +6,8 @@ export default function <T extends object>(errors: T) {
 			$toast.show({
 				type: 'danger',
 				message: error,
-				...defaultToastProps
+				timeout: 10,
+				pauseOnHover: true
 			});
 		}
 	}

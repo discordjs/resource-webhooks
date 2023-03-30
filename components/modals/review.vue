@@ -60,21 +60,25 @@ async function handleConfirm() {
 	try {
 		loadingIndicator.value = true;
 
-		await sendWebhookMessage(props.values, 'post');
+		await sendWebhookMessage(props.values, props.isEditing ? 'update' : 'post');
 
 		emits('reset-form');
 		emits('close-modal');
 
 		$toast.show({
 			type: 'success',
-			message: successfullyPostedMessage,
-			...defaultToastProps
+			message: `Successfully ${props.isEditing ? 'updated' : 'posted'} Webhook message!`,
+			timeout: 10,
+			pauseOnHover: true
 		});
 	} catch (error) {
 		$toast.show({
 			type: 'denied',
-			message: failedToPostMessage,
-			...defaultToastProps
+			message: `Failed to ${
+				props.isEditing ? 'update' : 'post'
+			} Webhook message, validate your input and/or check the dev console for more details. Make sure you have no browser extensions that are blocking discord.com, i.e. Privacy Badger`,
+			timeout: 10,
+			pauseOnHover: true
 		});
 	} finally {
 		loadingIndicator.value = false;

@@ -1,7 +1,7 @@
 <template>
 	<div class="mt-5 grid h-full w-full grid-cols-1 px-5">
 		<form @submit="onSubmit">
-			<modals-review :values="values" :is-editing="false" @close-modal="openModal = null" @reset-form="resetForm()" v-if="openModal === ''" />
+			<modals-review :values="values" :is-editing="true" @close-modal="openModal = null" @reset-form="resetForm()" v-if="openModal === ''" />
 			<forms-monaco-editor name="text" label="Message Text" />
 			<forms-select
 				name="webhookUrl"
@@ -72,13 +72,15 @@ async function getMessageContent() {
 		$toast.show({
 			type: 'success',
 			message: 'Set the content from Discord to the text input field',
-			...defaultToastProps
+			timeout: 10,
+			pauseOnHover: true
 		});
 	} else {
 		$toast.show({
 			type: 'danger',
 			message: 'Failed to fetch message from Discord',
-			...defaultToastProps
+			timeout: 10,
+			pauseOnHover: true
 		});
 	}
 
