@@ -1,19 +1,20 @@
 import { Result } from '@sapphire/result';
 import type { Components } from '@skyra/discord-components-core';
 import { RESTGetAPIWebhookWithTokenResult, RouteBases, Routes } from 'discord-api-types/rest/v10';
-import { isPersistedStorageEntry } from '~~/lib/types/PersistedStorageEntry';
 import { Post } from '~~/lib/types/Post';
 
 export async function fetchWebhookProfile(webhook: Post['webhookUrl'], isUpdating: boolean = false): Promise<Partial<Components.DiscordMessage>> {
-	let webhookUrl = isPersistedStorageEntry(webhook) ? webhook.value : webhook;
+	if (!webhook) throw 'No webhook URL provided.';
 
-	if (!webhookUrl) throw 'No webhook URL provided.';
+	const loadingIndicator = useLoadingIndicator();
 
-	const [hookID, hookToken] = webhookUrl.split('/').slice(-2);
+	const [hookID, hookToken] = webhook.value.split('/').slice(-2);
 
 	if (!hookID || !hookToken) throw 'Unable to extract webhook ID and token.';
 
 	const url = RouteBases.api + Routes.webhook(hookID, hookToken);
+
+	loadingIndicator.value = true;
 
 	const data = await Result.fromAsync<RESTGetAPIWebhookWithTokenResult>(async () => {
 		return await $fetch(url, {
@@ -22,6 +23,8 @@ export async function fetchWebhookProfile(webhook: Post['webhookUrl'], isUpdatin
 			}
 		});
 	});
+
+	loadingIndicator.value = false;
 
 	return data.match({
 		err: () => {
