@@ -8,7 +8,7 @@
 			</div>
 			<div v-else-if="error || !data">
 				An error occurred fetching the webhook profile. Please contact the Sapphire developers by joining
-				<nuxt-link class="link link-secondary" to="https://discord.gg/sapphiredev" target="_blank">the official Sapphire server</nuxt-link>
+				<nuxt-link class="link-secondary link" to="https://discord.gg/sapphiredev" target="_blank">the official Sapphire server</nuxt-link>
 			</div>
 			<div v-else>
 				<discord-messages>
@@ -26,8 +26,8 @@
 				</discord-messages>
 			</div>
 			<div class="mt-5 grid w-full grid-cols-1 gap-2 lg:grid-cols-2 lg:gap-4">
-				<button type="button" class="btn btn-error" @click="emits('close-modal')">Cancel</button>
-				<button v-show="!pending && !error && data !== null" type="button" class="btn btn-primary" @click="handleConfirm">Confirm</button>
+				<button type="button" class="btn-error btn" @click="emits('close-modal')">Cancel</button>
+				<button v-show="!pending && !error && data !== null" type="button" class="btn-primary btn" @click="handleConfirm">Confirm</button>
 			</div>
 		</div>
 	</div>
@@ -36,13 +36,16 @@
 <script setup lang="ts">
 import { bold } from '@discordjs/formatters';
 import { fetchWebhookProfile } from '~~/lib/api/FetchWebhookProfile';
+import { sendWebhookMessage } from '~~/lib/api/SendWebhookMessage';
 import { Post } from '~~/lib/types/Post';
 import { markdownToHtml } from '~~/lib/utils/MarkdownToHTML';
 
-const emits = defineEmits(['close-modal']);
+const emits = defineEmits(['close-modal', 'reset-form']);
 const props = defineProps<{ values: Post; isEditing: boolean }>();
 
 const { data, pending, error } = useAsyncData('webhookProfile', () => fetchWebhookProfile(props.values.webhookUrl));
+const loadingIndicator = useLoadingIndicator();
+const snackbars = useSnackbars();
 
 const parseMarkdownishInput = () => {
 	let parsedText = props.values.text;
@@ -53,9 +56,27 @@ const parseMarkdownishInput = () => {
 	return markdownToHtml(parsedText);
 };
 
-function handleConfirm() {
-	console.log('test');
-	console.log(JSON.stringify(props.values, null, 2));
-	// handleClose();
+async function handleConfirm() {
+	loadingIndicator.value = true;
+	try {
+		await sendWebhookMessage(props.values, 'post');
+
+		emits('reset-form');
+		emits('close-modal');
+
+		snackbars.show({
+			type: 'success',
+			message: successfullyPostedMessage,
+			...defaultSnackbarProps
+		});
+	} catch (error) {
+		snackbars.show({
+			type: 'denied',
+			message: failedToPostMessage,
+			...defaultSnackbarProps
+		});
+	} finally {
+		loadingIndicator.value = false;
+	}
 }
 </script>

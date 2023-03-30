@@ -1,7 +1,7 @@
 <template>
 	<div class="mt-5 grid h-full w-full grid-cols-1 px-5">
 		<form @submit="onSubmit">
-			<modals-review :values="values" :is-editing="false" @close-modal="openModal = null" v-if="openModal === ''" />
+			<modals-review :values="values" :is-editing="false" @close-modal="openModal = null" @reset-form="resetForm()" v-if="openModal === ''" />
 			<forms-monaco-editor name="text" label="Message Text" />
 			<forms-select
 				name="webhookUrl"
@@ -19,8 +19,8 @@
 				:options="rolesStorage.roles"
 			/>
 			<div class="mt-5 grid w-full grid-cols-1 gap-2 lg:grid-cols-2 lg:gap-4">
-				<button type="button" class="btn btn-accent btn-shadow" @click="resetForm()">Reset form</button>
-				<button type="submit" class="btn btn-primary btn-shadow" :disabled="isSubmitting || !meta.dirty || !meta.valid">Review post</button>
+				<button type="button" class="btn-shadow btn-accent btn" @click="resetForm()">Reset form</button>
+				<button type="submit" class="btn-shadow btn-primary btn" :disabled="isSubmitting || !meta.dirty || !meta.valid">Review post</button>
 			</div>
 		</form>
 	</div>

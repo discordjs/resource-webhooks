@@ -6,8 +6,7 @@ export default function <T extends object>(errors: T) {
 			snackbars.show({
 				type: 'danger',
 				message: error,
-				timeout: 6,
-				pauseOnHover: true
+				...defaultSnackbarProps
 			});
 		}
 	}

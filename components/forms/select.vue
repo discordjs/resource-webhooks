@@ -4,13 +4,13 @@
 			<span class="label-text"
 				>{{ label }}
 				<span v-if="options.length === 0">
-					<span class="text-error font-bold">
-						<nuxt-link class="link link-secondary" :to="addNewOptionHref">configuration page</nuxt-link>
+					<span class="font-bold text-error">
+						<nuxt-link class="link-secondary link" :to="addNewOptionHref">configuration page</nuxt-link>
 					</span>
 				</span>
 			</span>
 		</label>
-		<Field :name="name" v-slot="{ value, errorMessage }" as="select" class="select max-x-ws w-full" :disabled="options.length === 0">
+		<Field :name="name" v-slot="{ value, errorMessage }" as="select" class="max-x-ws select w-full" :disabled="options.length === 0">
 			<option value="">None</option>
 			<option v-for="option in options" :key="option.value" :value="option" :selected="value && value.value === option.value">
 				{{ option.label + ' - ' + option.value }}

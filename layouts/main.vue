@@ -1,5 +1,6 @@
 <template>
 	<div class="h-full pb-20" @click="closeDropdownIfOpen">
+		<nuxt-loading-indicator />
 		<div class="grid-layout grid min-h-full">
 			<sections-app-navbar />
 			<section class="grid-layout-container grid h-[calc(100vh_-_64px)] overflow-auto pb-20 lg:pb-0">

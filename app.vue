@@ -1,14 +1,14 @@
 <template>
 	<vite-pwa-manifest />
-	<nuxt-loading-indicator />
+	<loading-indicator />
 	<nuxt-layout name="main">
 		<nuxt-page />
 	</nuxt-layout>
 </template>
 
 <script setup lang="ts">
-import { configure } from 'vee-validate';
 import { defineCustomElements } from '@skyra/discord-components-core/loader';
+import { configure } from 'vee-validate';
 
 defineCustomElements();
 
