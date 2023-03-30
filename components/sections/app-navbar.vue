@@ -8,7 +8,7 @@
 					</svg>
 				</label>
 				<ul tabindex="0" v-if="openDropdown === true" class="dropdown-content menu rounded-box menu-compact mt-3 w-52 bg-base-100 p-2 shadow">
-					<li v-if="$route.path !== '/'">
+					<li>
 						<nuxt-link to="/" @click="toggleOpenDropdown">Home</nuxt-link>
 					</li>
 					<li>
@@ -31,7 +31,7 @@
 		</div>
 		<div class="navbar-end hidden w-full lg:flex">
 			<ul class="menu menu-horizontal px-1">
-				<li v-if="$route.path !== '/'">
+				<li>
 					<nuxt-link class="btn-ghost btn mx-1 normal-case" to="/">Home</nuxt-link>
 				</li>
 				<li>
