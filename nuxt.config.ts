@@ -82,6 +82,13 @@ export default defineNuxtConfig({
 	pinia: {
 		autoImports: ['defineStore', 'acceptHMRUpdate']
 	},
+	nitro: {
+		preset: 'cloudflare-pages',
+		prerender: {
+			routes: ['/'],
+			crawlLinks: true
+		}
+	},
 	pwa: {
 		registerType: 'autoUpdate',
 		includeManifestIcons: false,
