@@ -16,7 +16,7 @@
 	"devDependencies": {
 		"@discordjs/formatters": "^0.2.0",
 		"@iconify/vue": "^4.1.0",
-		"@nuxtjs/tailwindcss": "^6.6.4",
+		"@nuxtjs/tailwindcss": "^6.6.5",
 		"@pinia-plugin-persistedstate/nuxt": "^1.1.1",
 		"@pinia/nuxt": "^0.4.7",
 		"@prettier/plugin-xml": "^2.2.0",
@@ -34,7 +34,7 @@
 		"nuxt-monaco-editor": "^1.2.2",
 		"pinia": "^2.0.33",
 		"prettier": "^2.8.7",
-		"prettier-plugin-tailwindcss": "^0.2.5",
+		"prettier-plugin-tailwindcss": "^0.2.6",
 		"rehype-sanitize": "^5.0.1",
 		"rehype-stringify": "^9.0.3",
 		"remark-parse": "^10.0.1",
@@ -42,7 +42,7 @@
 		"typescript": "^4.9.5",
 		"unified": "^10.1.2",
 		"vee-validate": "^4.8.4",
-		"vite-plugin-pwa": "^0.14.6",
+		"vite-plugin-pwa": "^0.14.7",
 		"yup": "^1.0.2"
 	},
 	"prettier": "@sapphire/prettier-config",
