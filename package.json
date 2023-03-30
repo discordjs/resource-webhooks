@@ -45,5 +45,5 @@
 		"yup": "^1.0.2"
 	},
 	"prettier": "@sapphire/prettier-config",
-	"packageManager": "yarn@3.4.1"
+	"packageManager": "yarn@3.5.0"
 }
