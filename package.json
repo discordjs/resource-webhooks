@@ -9,7 +9,7 @@
 		"dev": "nuxt dev",
 		"generate": "nuxt generate",
 		"preview": "nuxt preview",
-		"start": "node .output/server/index.mjs",
+		"postinstall": "nuxt prepare",
 		"format": "prettier --write .",
 		"format:check": "prettier --check ."
 	},
