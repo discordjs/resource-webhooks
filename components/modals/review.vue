@@ -57,8 +57,9 @@ const parseMarkdownishInput = () => {
 };
 
 async function handleConfirm() {
-	loadingIndicator.value = true;
 	try {
+		loadingIndicator.value = true;
+	
 		await sendWebhookMessage(props.values, 'post');
 
 		emits('reset-form');
