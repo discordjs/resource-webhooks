@@ -21,7 +21,6 @@
 		"@pinia/nuxt": "^0.4.7",
 		"@prettier/plugin-xml": "^2.2.0",
 		"@sapphire/prettier-config": "^1.4.5",
-		"@sapphire/result": "^2.6.0",
 		"@skyra/discord-components-core": "^3.6.0",
 		"@tailvue/nuxt": "^0.1.68",
 		"@vite-pwa/nuxt": "^0.0.7",

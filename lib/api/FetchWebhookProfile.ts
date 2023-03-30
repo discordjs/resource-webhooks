@@ -1,4 +1,3 @@
-import { Result } from '@sapphire/result';
 import type { Components } from '@skyra/discord-components-core';
 import { RESTGetAPIWebhookWithTokenResult, RouteBases, Routes } from 'discord-api-types/rest/v10';
 import { Post } from '~~/lib/types/Post';
@@ -16,28 +15,25 @@ export async function fetchWebhookProfile(webhook: Post['webhookUrl'], isUpdatin
 
 	loadingIndicator.value = true;
 
-	const data = await Result.fromAsync<RESTGetAPIWebhookWithTokenResult>(async () => {
-		return await $fetch(url, {
+	try {
+		const response = await $fetch<RESTGetAPIWebhookWithTokenResult>(url, {
 			headers: {
 				'Content-Type': 'application/json'
 			}
 		});
-	});
 
-	loadingIndicator.value = false;
+		loadingIndicator.value = false;
 
-	return data.match({
-		err: () => {
-			throw 'Unable to fetch webhook profile.';
-		},
-		ok: (dt) => ({
-			avatar: `https://cdn.discordapp.com/avatars/${dt.id}/${dt.avatar}.png?size=4096`,
-			author: dt.name ?? 'Configured Webhook',
+		return {
+			avatar: `https://cdn.discordapp.com/avatars/${response.id}/${response.avatar}.png?size=4096`,
+			author: response.name ?? 'Configured Webhook',
 			ephemeral: false,
 			bot: true,
 			edited: isUpdating,
 			timestamp: new Date(),
 			twentyFour: true
-		})
-	});
+		};
+	} catch {
+		throw 'Unable to fetch webhook profile.';
+	}
 }

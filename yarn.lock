@@ -2188,13 +2188,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/result@npm:^2.6.0":
-  version: 2.6.0
-  resolution: "@sapphire/result@npm:2.6.0"
-  checksum: bab9e963c85c7ea0a410c36617b7d32fca8749739b7fbb61bf7a2eff566d002af78606c379b1a71f2857bf9c04d3f5f1af67f02278da75ac660f2f6ddfef26b5
-  languageName: node
-  linkType: hard
-
 "@skyra/discord-components-core@npm:^3.6.0":
   version: 3.6.0
   resolution: "@skyra/discord-components-core@npm:3.6.0"
@@ -10479,7 +10472,6 @@ __metadata:
     "@pinia/nuxt": ^0.4.7
     "@prettier/plugin-xml": ^2.2.0
     "@sapphire/prettier-config": ^1.4.5
-    "@sapphire/result": ^2.6.0
     "@skyra/discord-components-core": ^3.6.0
     "@tailvue/nuxt": ^0.1.68
     "@vite-pwa/nuxt": ^0.0.7
