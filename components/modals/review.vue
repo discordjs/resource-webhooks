@@ -45,7 +45,7 @@ const props = defineProps<{ values: Post; isEditing: boolean }>();
 
 const { data, pending, error } = useAsyncData('webhookProfile', () => fetchWebhookProfile(props.values.webhookUrl));
 const loadingIndicator = useLoadingIndicator();
-const snackbars = useSnackbars();
+const { $toast } = useNuxtApp();
 
 const parseMarkdownishInput = () => {
 	let parsedText = props.values.text;
@@ -59,22 +59,22 @@ const parseMarkdownishInput = () => {
 async function handleConfirm() {
 	try {
 		loadingIndicator.value = true;
-	
+
 		await sendWebhookMessage(props.values, 'post');
 
 		emits('reset-form');
 		emits('close-modal');
 
-		snackbars.show({
+		$toast.show({
 			type: 'success',
 			message: successfullyPostedMessage,
-			...defaultSnackbarProps
+			...defaultToastProps
 		});
 	} catch (error) {
-		snackbars.show({
+		$toast.show({
 			type: 'denied',
 			message: failedToPostMessage,
-			...defaultSnackbarProps
+			...defaultToastProps
 		});
 	} finally {
 		loadingIndicator.value = false;

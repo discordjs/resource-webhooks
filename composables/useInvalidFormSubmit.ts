@@ -1,12 +1,12 @@
 export default function <T extends object>(errors: T) {
-	const snackbars = useSnackbars();
+	const { $toast } = useNuxtApp();
 
 	for (const error of Object.values(errors)) {
 		if (error) {
-			snackbars.show({
+			$toast.show({
 				type: 'danger',
 				message: error,
-				...defaultSnackbarProps
+				...defaultToastProps
 			});
 		}
 	}

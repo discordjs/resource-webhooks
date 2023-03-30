@@ -1,6 +1,6 @@
-import { ToastProps } from 'tailvue';
+import type { ToastProps } from 'tailvue';
 
-export const defaultSnackbarProps: ToastProps = {
+export const defaultToastProps: ToastProps = {
 	timeout: 10,
 	pauseOnHover: true
 };

@@ -3,6 +3,14 @@
 		<form @submit="onSubmit">
 			<modals-review :values="values" :is-editing="false" @close-modal="openModal = null" @reset-form="resetForm()" v-if="openModal === ''" />
 			<forms-monaco-editor name="text" label="Message Text" />
+			<forms-select
+				name="webhookUrl"
+				label="Choose the webhook URL to post to"
+				addNewOptionHref="/configure/webhooks"
+				optionsStringReplacer="webhooks"
+				:options="webhookStorage.webhooks"
+				class="pt-2 lg:pt-3"
+			/>
 			<forms-input name="messageId" label="Message id to update" />
 			<button
 				type="button"
@@ -12,14 +20,6 @@
 			>
 				Fetch webhook message content from Discord
 			</button>
-			<forms-select
-				name="webhookUrl"
-				label="Choose the webhook URL to post to"
-				addNewOptionHref="/configure/webhooks"
-				optionsStringReplacer="webhooks"
-				:options="webhookStorage.webhooks"
-				class="py-2 lg:py-6"
-			/>
 			<forms-select
 				name="role"
 				label="Optionally choose a role to mention"
@@ -55,7 +55,7 @@ const { handleSubmit, resetForm, isSubmitting, meta, values, setFieldValue } = u
 });
 
 const loadingIndicator = useLoadingIndicator();
-const snackbars = useSnackbars();
+const { $toast } = useNuxtApp();
 
 const onInvalidSubmit: InvalidSubmissionHandler<Update> = ({ errors }) => useInvalidFormSubmit(errors);
 const onSuccessfulSubmit: SubmissionHandler<Update> = () => (openModal.value = '');
@@ -69,16 +69,16 @@ async function getMessageContent() {
 
 	if (data) {
 		setFieldValue('text', data);
-		snackbars.show({
+		$toast.show({
 			type: 'success',
 			message: 'Set the content from Discord to the text input field',
-			...defaultSnackbarProps
+			...defaultToastProps
 		});
 	} else {
-		snackbars.show({
+		$toast.show({
 			type: 'danger',
 			message: 'Failed to fetch message from Discord',
-			...defaultSnackbarProps
+			...defaultToastProps
 		});
 	}
 
