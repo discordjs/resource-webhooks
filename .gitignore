@@ -20,5 +20,6 @@ typings/
 docs/
 
 # Miscellaneous
+.DS_Store
 .tmp/
 coverage/
