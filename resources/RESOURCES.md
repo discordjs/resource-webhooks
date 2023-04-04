@@ -78,6 +78,7 @@ client.on('debug', console.log)
 _ _
 **Affordable hosting providers:**
 • [OVH](https://www.ovh.com/us/vps/) Starting at $3.35/mo for 1 core, 2GB RAM, 20GB SSD
+• [Contabo](https://contabo.com/en/vps/) Starting at €5.99/mo for 4 core, 8GB RAM, 200GB SSD
 • [DigitalOcean](https://www.digitalocean.com/) Starting at $5/mo for 1 core, 1GB RAM, 25GB SSD
 • [Linode](https://www.linode.com/) Starting at $5/mo for 1 core, 1GB RAM, 25GB SSD
 • [Vultr](https://www.vultr.com/) Starting at $2.50/mo for 1 core, 512MB RAM, 10GB SSD
