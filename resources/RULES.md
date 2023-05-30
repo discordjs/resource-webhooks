@@ -1,5 +1,5 @@
-**Please read each of these rules thoroughly.**
-They're for everybody's benefit, and help foster a healthy community.
+# Please read each of these rules thoroughly.
+### They're for everybody's benefit, and help foster a healthy community.
 
 _ _
 **1.** No spamming, advertising, or NSFW content. Don't be a jerk or generally obnoxious - nobody likes trolls.
