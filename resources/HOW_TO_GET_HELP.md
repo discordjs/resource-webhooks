@@ -1,7 +1,7 @@
 ## How to Get Help
 - Before asking: Try to find the solution yourself. *(`CTRL` + `F` in this server can answer a lot of questions)*
 - Skip "I need help", "Help please", "Can I ask a thing", "I have an error" - Yes you can! Getting help is what this server is for!
-- Not a discord.js question? Post in %OTHER_JS_FORUM_CHANNEL% . *(using code in a bot does not mean it is a question about using discord.js!)*
+- Not a discord.js question? Post in %OTHER_JS_FORUM_CHANNEL%. *(using code in a bot does not mean it is a question about using discord.js!)*
 - Consider using %HELP_FORUM_CHANNEL% for questions you think won't be quick to solve.
 - You can use %HELP_V13_CHANNEL% or %HELP_V14_CHANNEL% for questions you expect can be quickly solved.
 - For voice (sending/receiving sound), please use %HELP_VOICE_FORUM_CHANNEL%.
@@ -21,7 +21,7 @@
 - **Research** key words you do not understand before asking what they mean. *(come back and ask, if you cannot find them)*
 ## No Answer?
 - Do not mention uninvolved people to get a response.
-- Consider posting in %HELP_FORUM_CHANNEL% .
+- Consider posting in %HELP_FORUM_CHANNEL%.
 - Try to rephrase your question.
 - Try to give more context / improve your description.
 - Try to find a solution yourself while waiting.
