@@ -21,7 +21,7 @@
 - **Research** key words you do not understand before asking what they mean. *(come back and ask, if you cannot find them)*
 ## No Answer?
 - Do not mention uninvolved people to get a response.
-- Consider posting in #djs-questions .
+- Consider posting in %HELP_FORUM_CHANNEL% .
 - Try to rephrase your question.
 - Try to give more context / improve your description.
 - Try to find a solution yourself while waiting.
