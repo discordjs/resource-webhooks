@@ -31,6 +31,8 @@ jobs:
           RESOURCES: https://discord.com/api/webhooks/${{ secrets.WEBHOOK_RESOURCES_ID }}/${{ secrets.WEBHOOK_RESOURCES_TOKEN }}
           RULES: https://discord.com/api/webhooks/${{ secrets.WEBHOOK_RULES_ID }}/${{ secrets.WEBHOOK_RULES_TOKEN }}
           USEFUL_SERVERS: https://discord.com/api/webhooks/${{ secrets.WEBHOOK_USEFUL_SERVERS_ID }}/${{ secrets.WEBHOOK_USEFUL_SERVERS_TOKEN }}
+          HOW_TO_GET_HELP: https://discord.com/api/webhooks/${{ secrets.WEBHOOK_HOW_TO_GET_HELP_ID }}/${{ secrets.WEBHOOK_HOW_TO_GET_HELP_TOKEN }}
+          HOW_TO_GIVE_HELP: https://discord.com/api/webhooks/${{ secrets.WEBHOOK_HOW_TO_GIVE_HELP_ID }}/${{ secrets.WEBHOOK_HOW_TO_GIVE_HELP_TOKEN }}
           WEBHOOK_AVATAR: ${{ secrets.WEBHOOK_AVATAR }}
           WEBHOOK_NAME: ${{ secrets.WEBHOOK_NAME }}
           DEPLOY_CHANNELS: ${{ github.event.inputs.deployChannels }}
