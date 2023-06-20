@@ -19,6 +19,10 @@ const replacePatterns = {
 	'%HELP_VOICE_FORUM_CHANNEL%': '<#998942774994927646>',
 	'%OTHER_JS_FORUM_CHANNEL%': '<#1081585952654360687>',
 	'%TAG_COMMAND%': '</tag:867892466544148520>',
+	'%COMMAND_REPORT_USER%': '</report user:1020072425448284263>',
+	'%COMMAND_REPORT_MESSAGE%': '</report message:1020072425448284263>',
+	'%GET_HELP_CHANNEL%': '<#1115899560183730286>',
+	'%MENTION_MODS%': '<@&839912195994812420>',
 } as const;
 
 const resolveIdentifier = (channelName: string): string => channelName.toUpperCase().replace(/-/gm, '_');
