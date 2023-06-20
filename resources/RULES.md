@@ -11,7 +11,7 @@ This is an international community. English is the common ground people agreed o
 ## 3. We expect a solid understanding of JavaScript
 If you are new to developing with JavaScript and Node.js, please take some time to familiarize yourself with basic language concepts.
 - This helps you understand the answers people are giving to your questions.
-- You can find some curated online resources in #resources!
+- You can find some curated online resources in %RESOURCES_CHANNEL%!
 - We will gladly point you in the right direction, but you will have to put in some work yourself.
 ## 4. Please ask questions in the relevant channels
 Stick to one appropriate channel per question. Do not ask people to answer you in different channels.
