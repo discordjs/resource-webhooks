@@ -1,7 +1,3 @@
-# Limitless invite link to this server:
-https://discord.gg/djs
-
-_ _
 ### Main discord.js resources:
 - [Documentation](https://discord.js.org)
 - [GitHub](https://github.com/discordjs/discord.js)
