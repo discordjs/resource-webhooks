@@ -32,8 +32,8 @@ You can use %COMMAND_REPORT_USER% and %COMMAND_REPORT_MESSAGE% to contact server
 - Note that creating false reports may lead to moderation actions against you.
 ## We are not Discord!
 ...just some nerds who develop discord bots! 
-- https://dis.gd/report appeals and age updates
-- https://dis.gd/howtoreport reporting to Discord (hacking, harassment, abuse)
-- https://dis.gd/support anything Discord related
-- https://dis.gd/billing payment/nitro
-- https://dis.gd/feedback feedback/feature requests
+- <https://dis.gd/report> appeals and age updates
+- <https://dis.gd/howtoreport> reporting to Discord (hacking, harassment, abuse)
+- <https://dis.gd/support> anything Discord related
+- <https://dis.gd/billing> payment/nitro
+- <https://dis.gd/feedback> feedback/feature requests
