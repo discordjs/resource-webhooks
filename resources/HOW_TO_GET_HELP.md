@@ -3,7 +3,7 @@
 - Skip "I need help", "Help please", "Can I ask a thing", "I have an error" - Yes you can! Getting help is what this server is for!
 - Not a discord.js question? Post in %OTHER_JS_FORUM_CHANNEL%. *(using code in a bot does not mean it is a question about using discord.js!)*
 - Consider using %HELP_FORUM_CHANNEL% for questions you think won't be quick to solve.
-- You can use %HELP_V13_CHANNEL% or %HELP_V14_CHANNEL% for questions you expect can be quickly solved.
+- You can use %HELP_V14_CHANNEL% for questions you expect can be quickly solved.
 - For voice (sending/receiving sound), please use %HELP_VOICE_FORUM_CHANNEL%.
 ## How to Ask a (Good) Question
 - Show your code.
