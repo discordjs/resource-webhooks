@@ -2,7 +2,6 @@
 - [Documentation](https://discord.js.org)
 - [GitHub](https://github.com/discordjs/discord.js)
 - [Guide](https://discordjs.guide/)
-- [Update to version 14](https://discordjs.guide/additional-info/changes-in-v14.html)
 - [Discord Developer Documentation](https://discord.com/developers/docs) (needed permissions etc.)
 _ _
 ### Learning JavaScript and node.js:
@@ -62,9 +61,9 @@ _ _
 For when you can't track that one pesky error down:
 - [Node.js](https://nodejs.org/en/docs/guides/debugging-getting-started/)
 - [Visual Studio Code](https://code.visualstudio.com/docs/nodejs/nodejs-debugging)
-- [Linters](https://discordjs.guide/preparations/setting-up-a-linter.html) (syntax errors and code consistency)
+- [Linters](https://discordjs.guide/legacy/preparations/linter) (syntax errors and code consistency)
 - [MDN list of common errors](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors)
-- [Guide on common errors and how to deal with them](https://discordjs.guide/popular-topics/errors)
+- [Guide on common errors and how to deal with them](https://discordjs.guide/legacy/popular-topics/errors)
 - Discord.js: attach the following two listeners to your Client instance (outside of any other listener scopes)
 ```js
 client.on('debug', console.log)
